@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     @IBAction func startTap(sender: AnyObject) {
         
 
-        UIView.animateWithDuration(NSTimeInterval(0.5), delay: 0, options: .CurveEaseIn, animations: {
+        UIView.animateWithDuration(NSTimeInterval(5), delay: 0, options: .CurveEaseIn, animations: {
             self.startButtonVertical.constant = -self.startButton.frame.height
             self.startButton.layoutIfNeeded()
             }, completion: {

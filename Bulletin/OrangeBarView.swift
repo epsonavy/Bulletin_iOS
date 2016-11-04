@@ -17,12 +17,12 @@ class OrangeBarView : UIView{
     }
     override func drawRect(rect: CGRect){
         let context = UIGraphicsGetCurrentContext()
-        CGContextMoveToPoint(context, 0,0)
-        CGContextAddLineToPoint(context, rect.width, 0)
-        CGContextAddLineToPoint(context, rect.width, rect.height)
-        CGContextAddLineToPoint(context, 0, rect.height)
-        CGContextAddLineToPoint(context, 0, 0)
-        CGContextSetFillColorWithColor(context, UIColor(red:1.00, green:0.55, blue:0.47, alpha:1.0).CGColor)
-        CGContextFillPath(context)
+        CGContextMoveToPoint(context!, 0,0)
+        CGContextAddLineToPoint(context!, rect.width, 0)
+        CGContextAddLineToPoint(context!, rect.width, rect.height)
+        CGContextAddLineToPoint(context!, 0, rect.height)
+        CGContextAddLineToPoint(context!, 0, 0)
+        CGContextSetFillColorWithColor(context!, UIColor(red:1.00, green:0.55, blue:0.47, alpha:1.0).CGColor)
+        CGContextFillPath(context!)
     }
 }

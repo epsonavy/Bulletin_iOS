@@ -12,9 +12,14 @@ class LoginThreeViewController : UIViewController{
     
     var parentVc : LoginViewController!
     
+    @IBOutlet weak var messageLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         parentVc = self.parentViewController as! LoginViewController
+        
+        messageLabel.text = "Please confirm your email ^_^."
+        messageLabel.textColor = Singleton.buttonBgColor
     }
     
     override func didReceiveMemoryWarning() {
