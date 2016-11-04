@@ -36,6 +36,20 @@
 		AACF32D11DCC5AC500139293 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF32D01DCC5AC500139293 /* CircleImageView.swift */; };
 		AACF32D31DCC5C1A00139293 /* sjsu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32D21DCC5C1A00139293 /* sjsu@2x.png */; };
 		AACF32D51DCC6A3000139293 /* kevin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32D41DCC6A3000139293 /* kevin@2x.png */; };
+		AACF32E31DCC955200139293 /* Home Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32D61DCC955200139293 /* Home Filled-50.png */; };
+		AACF32E41DCC955200139293 /* Home-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32D71DCC955200139293 /* Home-50@2x.png */; };
+		AACF32E51DCC955200139293 /* Message Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32D81DCC955200139293 /* Message Filled-50.png */; };
+		AACF32E61DCC955200139293 /* Message-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32D91DCC955200139293 /* Message-50@2x.png */; };
+		AACF32E71DCC955200139293 /* Search-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32DA1DCC955200139293 /* Search-50.png */; };
+		AACF32E81DCC955200139293 /* Settings Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32DB1DCC955200139293 /* Settings Filled-50.png */; };
+		AACF32E91DCC955200139293 /* Settings-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32DC1DCC955200139293 /* Settings-50@2x.png */; };
+		AACF32EA1DCC955200139293 /* Speech Bubble Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32DD1DCC955200139293 /* Speech Bubble Filled-50.png */; };
+		AACF32EB1DCC955200139293 /* Speech Bubble-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32DE1DCC955200139293 /* Speech Bubble-50@2x.png */; };
+		AACF32EC1DCC955200139293 /* Talk Male Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32DF1DCC955200139293 /* Talk Male Filled-50.png */; };
+		AACF32ED1DCC955200139293 /* Talk Male-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32E01DCC955200139293 /* Talk Male-50.png */; };
+		AACF32EE1DCC955200139293 /* User Location Filled-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32E11DCC955200139293 /* User Location Filled-50.png */; };
+		AACF32EF1DCC955200139293 /* User Location-50.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32E21DCC955200139293 /* User Location-50.png */; };
+		AACF32F11DCC979900139293 /* Meeting-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32F01DCC979900139293 /* Meeting-50@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +105,20 @@
 		AACF32D01DCC5AC500139293 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		AACF32D21DCC5C1A00139293 /* sjsu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sjsu@2x.png"; path = "../../../../../Downloads/sjsu@2x.png"; sourceTree = "<group>"; };
 		AACF32D41DCC6A3000139293 /* kevin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "kevin@2x.png"; path = "../../../../../Desktop/kevin@2x.png"; sourceTree = "<group>"; };
+		AACF32D61DCC955200139293 /* Home Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home Filled-50.png"; path = "../../../../../Downloads/Home Filled-50.png"; sourceTree = "<group>"; };
+		AACF32D71DCC955200139293 /* Home-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Home-50@2x.png"; path = "../../../../../Downloads/Home-50@2x.png"; sourceTree = "<group>"; };
+		AACF32D81DCC955200139293 /* Message Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Message Filled-50.png"; path = "../../../../../Downloads/Message Filled-50.png"; sourceTree = "<group>"; };
+		AACF32D91DCC955200139293 /* Message-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Message-50@2x.png"; path = "../../../../../Downloads/Message-50@2x.png"; sourceTree = "<group>"; };
+		AACF32DA1DCC955200139293 /* Search-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Search-50.png"; path = "../../../../../Downloads/Search-50.png"; sourceTree = "<group>"; };
+		AACF32DB1DCC955200139293 /* Settings Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings Filled-50.png"; path = "../../../../../Downloads/Settings Filled-50.png"; sourceTree = "<group>"; };
+		AACF32DC1DCC955200139293 /* Settings-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Settings-50@2x.png"; path = "../../../../../Downloads/Settings-50@2x.png"; sourceTree = "<group>"; };
+		AACF32DD1DCC955200139293 /* Speech Bubble Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Speech Bubble Filled-50.png"; path = "../../../../../Downloads/Speech Bubble Filled-50.png"; sourceTree = "<group>"; };
+		AACF32DE1DCC955200139293 /* Speech Bubble-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Speech Bubble-50@2x.png"; path = "../../../../../Downloads/Speech Bubble-50@2x.png"; sourceTree = "<group>"; };
+		AACF32DF1DCC955200139293 /* Talk Male Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Talk Male Filled-50.png"; path = "../../../../../Downloads/Talk Male Filled-50.png"; sourceTree = "<group>"; };
+		AACF32E01DCC955200139293 /* Talk Male-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Talk Male-50.png"; path = "../../../../../Downloads/Talk Male-50.png"; sourceTree = "<group>"; };
+		AACF32E11DCC955200139293 /* User Location Filled-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User Location Filled-50.png"; path = "../../../../../Downloads/User Location Filled-50.png"; sourceTree = "<group>"; };
+		AACF32E21DCC955200139293 /* User Location-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "User Location-50.png"; path = "../../../../../Downloads/User Location-50.png"; sourceTree = "<group>"; };
+		AACF32F01DCC979900139293 /* Meeting-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Meeting-50@2x.png"; path = "../../../../../Downloads/Meeting-50@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +259,20 @@
 		0500FFFB1DBDF53400E83F4A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				AACF32F01DCC979900139293 /* Meeting-50@2x.png */,
+				AACF32D61DCC955200139293 /* Home Filled-50.png */,
+				AACF32D71DCC955200139293 /* Home-50@2x.png */,
+				AACF32D81DCC955200139293 /* Message Filled-50.png */,
+				AACF32D91DCC955200139293 /* Message-50@2x.png */,
+				AACF32DA1DCC955200139293 /* Search-50.png */,
+				AACF32DB1DCC955200139293 /* Settings Filled-50.png */,
+				AACF32DC1DCC955200139293 /* Settings-50@2x.png */,
+				AACF32DD1DCC955200139293 /* Speech Bubble Filled-50.png */,
+				AACF32DE1DCC955200139293 /* Speech Bubble-50@2x.png */,
+				AACF32DF1DCC955200139293 /* Talk Male Filled-50.png */,
+				AACF32E01DCC955200139293 /* Talk Male-50.png */,
+				AACF32E11DCC955200139293 /* User Location Filled-50.png */,
+				AACF32E21DCC955200139293 /* User Location-50.png */,
 				AACF32D41DCC6A3000139293 /* kevin@2x.png */,
 				AACF32D21DCC5C1A00139293 /* sjsu@2x.png */,
 				0500FFED1DBDE89A00E83F4A /* background@2x.jpg */,
@@ -346,13 +388,27 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACF32E81DCC955200139293 /* Settings Filled-50.png in Resources */,
+				AACF32E41DCC955200139293 /* Home-50@2x.png in Resources */,
+				AACF32E31DCC955200139293 /* Home Filled-50.png in Resources */,
+				AACF32E61DCC955200139293 /* Message-50@2x.png in Resources */,
 				0500FFEE1DBDE89A00E83F4A /* background@2x.jpg in Resources */,
 				AACF32D31DCC5C1A00139293 /* sjsu@2x.png in Resources */,
+				AACF32F11DCC979900139293 /* Meeting-50@2x.png in Resources */,
 				0500FFEC1DBDE71800E83F4A /* bulletin_board_icon@2x.jpg in Resources */,
+				AACF32E91DCC955200139293 /* Settings-50@2x.png in Resources */,
+				AACF32EE1DCC955200139293 /* User Location Filled-50.png in Resources */,
 				AACF32D51DCC6A3000139293 /* kevin@2x.png in Resources */,
 				0500FFC61DBDCF0C00E83F4A /* LaunchScreen.storyboard in Resources */,
+				AACF32EA1DCC955200139293 /* Speech Bubble Filled-50.png in Resources */,
+				AACF32E71DCC955200139293 /* Search-50.png in Resources */,
+				AACF32EF1DCC955200139293 /* User Location-50.png in Resources */,
 				0500FFC31DBDCF0C00E83F4A /* Assets.xcassets in Resources */,
+				AACF32EB1DCC955200139293 /* Speech Bubble-50@2x.png in Resources */,
+				AACF32ED1DCC955200139293 /* Talk Male-50.png in Resources */,
 				0500FFBE1DBDCF0C00E83F4A /* Main.storyboard in Resources */,
+				AACF32EC1DCC955200139293 /* Talk Male Filled-50.png in Resources */,
+				AACF32E51DCC955200139293 /* Message Filled-50.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

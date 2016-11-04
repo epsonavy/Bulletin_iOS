@@ -546,7 +546,7 @@
             </objects>
             <point key="canvasLocation" x="1986" y="990"/>
         </scene>
-        <!--Item 2-->
+        <!--Message-->
         <scene sceneID="WZS-jj-YR3">
             <objects>
                 <viewController storyboardIdentifier="MessageViewController" id="hc1-g6-BGg" customClass="MessageViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
@@ -589,13 +589,13 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="OJb-pi-ya3"/>
+                    <tabBarItem key="tabBarItem" title="Message" image="Message-50.png" id="OJb-pi-ya3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3a-Yf-DkC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3639" y="228"/>
         </scene>
-        <!--Post View Controller-->
+        <!--Post-->
         <scene sceneID="2jQ-Lh-lOs">
             <objects>
                 <viewController storyboardIdentifier="PostViewController" id="z3Q-24-jbR" customClass="PostViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
@@ -608,13 +608,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="more" id="ZFk-h7-BrD"/>
+                    <tabBarItem key="tabBarItem" title="Post" image="Speech Bubble-50.png" id="ZFk-h7-BrD"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Km-p2-lCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3639" y="907.5"/>
         </scene>
-        <!--Item 5-->
+        <!--Setting-->
         <scene sceneID="1sK-oU-59Z">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="o9e-38-bzy" customClass="SettingsViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
@@ -627,13 +627,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 5" id="8XM-03-eM3"/>
+                    <tabBarItem key="tabBarItem" title="Setting" image="Settings-50.png" id="8XM-03-eM3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaZ-Q3-wsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2311.5" y="1132.5"/>
         </scene>
-        <!--Activity View Controller-->
+        <!--Activity-->
         <scene sceneID="v3p-tO-iIu">
             <objects>
                 <viewController storyboardIdentifier="ActivityViewController" id="G2g-CJ-5mC" customClass="ActivityViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
@@ -646,7 +646,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="topRated" id="XHe-2t-pTo"/>
+                    <tabBarItem key="tabBarItem" title="Activity" image="Meeting-50.png" id="XHe-2t-pTo"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSt-84-eko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -723,7 +723,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <tabBarItem key="tabBarItem" systemItem="downloads" id="sfo-of-dHc"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home-50.png" id="sfo-of-dHc"/>
                     <connections>
                         <outlet property="navigationBar" destination="FhH-Sc-a07" id="JVl-9M-6g7"/>
                         <outlet property="navigationBarTopConstraint" destination="u9l-gL-mdZ" id="HMW-jT-nbe"/>
@@ -756,6 +756,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Home-50.png" width="25" height="25"/>
+        <image name="Meeting-50.png" width="25" height="25"/>
+        <image name="Message-50.png" width="25" height="25"/>
+        <image name="Settings-50.png" width="25" height="25"/>
+        <image name="Speech Bubble-50.png" width="25" height="25"/>
         <image name="background.jpg" width="282" height="500"/>
         <image name="sjsu.png" width="876" height="584"/>
     </resources>

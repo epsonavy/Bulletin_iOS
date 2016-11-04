@@ -15,9 +15,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
     var postVc : PostViewController!
     var activityVc : ActivityViewController!
     var settingsVc : SettingsViewController!
-    
-    
-    
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,7 +63,6 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
             }
     }
 
-    
     override func viewDidAppear(animated: Bool){
         super.viewDidAppear(animated)
     }
