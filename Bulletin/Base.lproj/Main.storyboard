@@ -460,7 +460,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjsu.png" translatesAutoresizingMaskIntoConstraints="NO" id="Imb-fO-ZJC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sjsu.png" translatesAutoresizingMaskIntoConstraints="NO" id="Imb-fO-ZJC" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
                                 <rect key="frame" x="82" y="28" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="2qa-Mx-GTi"/>
@@ -488,7 +488,6 @@
                     </view>
                     <connections>
                         <outlet property="locationLabel" destination="lRn-OR-Zgi" id="a23-gW-Yy5"/>
-                        <outlet property="schoolImage" destination="Imb-fO-ZJC" id="u90-7J-HeW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yrz-qZ-ege" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -625,13 +624,26 @@
                     <view key="view" contentMode="scaleToFill" id="4sD-VX-rtW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kevin.png" translatesAutoresizingMaskIntoConstraints="NO" id="msV-rr-M6i" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
+                                <rect key="frame" x="82" y="28" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="Vsd-N3-thz"/>
+                                    <constraint firstAttribute="width" constant="250" id="pTe-vq-Bm8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="msV-rr-M6i" firstAttribute="top" secondItem="Ipv-dG-7fx" secondAttribute="bottom" constant="8" id="a6j-9K-vs2"/>
+                            <constraint firstItem="msV-rr-M6i" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="i1h-k4-YRO"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="Settings-50.png" id="8XM-03-eM3"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaZ-Q3-wsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2311.5" y="1132.5"/>
+            <point key="canvasLocation" x="2310.144927536232" y="1132.3369565217392"/>
         </scene>
         <!--Activity-->
         <scene sceneID="v3p-tO-iIu">
@@ -762,6 +774,7 @@
         <image name="Settings-50.png" width="25" height="25"/>
         <image name="Speech Bubble-50.png" width="25" height="25"/>
         <image name="background.jpg" width="282" height="500"/>
+        <image name="kevin.png" width="97" height="96"/>
         <image name="sjsu.png" width="876" height="584"/>
     </resources>
 </document>
