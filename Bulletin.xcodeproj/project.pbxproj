@@ -40,6 +40,7 @@
 		AA0941671DCDA4AF005F1F8D /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941661DCDA4AF005F1F8D /* ItemStore.swift */; };
 		AA0941691DCDA9F0005F1F8D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941681DCDA9F0005F1F8D /* ItemCell.swift */; };
 		AA09416C1DCDB1DF005F1F8D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09416B1DCDB1DF005F1F8D /* DetailViewController.swift */; };
+		AA09416E1DCE63B7005F1F8D /* ItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09416D1DCE63B7005F1F8D /* ItemImageView.swift */; };
 		AA318E9C1DCC08EE0068F222 /* FlatTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA318E9B1DCC08EE0068F222 /* FlatTextField.swift */; };
 		AACF32D11DCC5AC500139293 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF32D01DCC5AC500139293 /* CircleImageView.swift */; };
 		AACF32D31DCC5C1A00139293 /* sjsu@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AACF32D21DCC5C1A00139293 /* sjsu@2x.png */; };
@@ -117,6 +118,7 @@
 		AA0941661DCDA4AF005F1F8D /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		AA0941681DCDA9F0005F1F8D /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		AA09416B1DCDB1DF005F1F8D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		AA09416D1DCE63B7005F1F8D /* ItemImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemImageView.swift; sourceTree = "<group>"; };
 		AA318E9B1DCC08EE0068F222 /* FlatTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatTextField.swift; sourceTree = "<group>"; };
 		AACF32D01DCC5AC500139293 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		AACF32D21DCC5C1A00139293 /* sjsu@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "sjsu@2x.png"; path = "../../../../../Downloads/sjsu@2x.png"; sourceTree = "<group>"; };
@@ -235,7 +237,7 @@
 				0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */,
 				AA318E9B1DCC08EE0068F222 /* FlatTextField.swift */,
 				AACF32D01DCC5AC500139293 /* CircleImageView.swift */,
-				AA0941681DCDA9F0005F1F8D /* ItemCell.swift */,
+				AA09416D1DCE63B7005F1F8D /* ItemImageView.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -253,8 +255,8 @@
 				0526B7E61DBEBA72005A136C /* HomeViewController.swift */,
 				0526B7E81DBEBAA0005A136C /* MessageViewController.swift */,
 				0526B7EA1DBEBAD4005A136C /* SettingsViewController.swift */,
-				AA09416A1DCDB1BC005F1F8D /* PostGroup */,
 				0526B7EE1DBEBB67005A136C /* ActivityViewController.swift */,
+				AA09416A1DCDB1BC005F1F8D /* PostGroup */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -317,6 +319,7 @@
 			children = (
 				0526B7EC1DBEBB19005A136C /* PostViewController.swift */,
 				AA09416B1DCDB1DF005F1F8D /* DetailViewController.swift */,
+				AA0941681DCDA9F0005F1F8D /* ItemCell.swift */,
 			);
 			name = PostGroup;
 			sourceTree = "<group>";
@@ -481,6 +484,7 @@
 				050000081DBE263300E83F4A /* MainTabBarController.swift in Sources */,
 				050000011DBE16DB00E83F4A /* LoginOneViewController.swift in Sources */,
 				0526B7ED1DBEBB19005A136C /* PostViewController.swift in Sources */,
+				AA09416E1DCE63B7005F1F8D /* ItemImageView.swift in Sources */,
 				AA0941641DCD9C0C005F1F8D /* Item.swift in Sources */,
 				0500FFFF1DBE004B00E83F4A /* OrangeBarView.swift in Sources */,
 				AA0941671DCDA4AF005F1F8D /* ItemStore.swift in Sources */,

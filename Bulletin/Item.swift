@@ -34,7 +34,7 @@ class Item: NSObject {
             let randomNoun = nouns[Int(idx)]
             
             let randomName = "\(randomAdjective) \(randomNoun)"
-            let randomValue = Int(arc4random_uniform(100))
+            let randomValue = Int(arc4random_uniform(2000))
             self.init(name: randomName, price: randomValue)
             
         } else {
