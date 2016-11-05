@@ -66,9 +66,17 @@ class PostViewController : UITableViewController {
         
         cell.nameLabel.text = item.name
         cell.valueLabel.text = "$\(item.price)"
+        cell.dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
         
         return cell
     }
+    
+    let dateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .MediumStyle
+        return formatter
+    }()
     
     /* We don't need to move item
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {

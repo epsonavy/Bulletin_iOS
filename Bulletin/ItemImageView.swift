@@ -15,7 +15,7 @@ import UIKit
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        self.layer.cornerRadius = self.frame.size.width / 4
+        self.layer.cornerRadius = self.frame.size.width / 6
         self.clipsToBounds = true
         self.layer.borderWidth = 4
         self.layer.borderColor = Singleton.sharedInstance.mainThemeColor.CGColor
