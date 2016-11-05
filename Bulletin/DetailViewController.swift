@@ -27,7 +27,12 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    
+    let dateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .MediumStyle
+        return formatter
+    }()
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,7 +40,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         nameField.text = item.name
         priceField.text = "\(item.price)"
         detailField.text = ""
-        dateLabel.text = "\(item.dateCreated)"
+        dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
       /*
         let key = item.itemKey
         let imageToDisplay = imageStore.imageForKey(key)
