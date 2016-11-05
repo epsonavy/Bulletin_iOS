@@ -20,8 +20,10 @@ class PostViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.rowHeight = UITableViewAutomaticDimension
-        tableView.estimatedRowHeight = 65
+        //tableView.rowHeight = 200
+        
+        //tableView.rowHeight = UITableViewAutomaticDimension
+        //tableView.estimatedRowHeight = 65
     }
     
     override func didReceiveMemoryWarning() {
