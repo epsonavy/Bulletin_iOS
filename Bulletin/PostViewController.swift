@@ -79,9 +79,24 @@ class PostViewController : UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             let item = itemStore.allItems[indexPath.row]
-            self.itemStore.removeItem(item)
-            //self.imageStore.deleteImageForKey(item.itemKey)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic )
+            
+            let title = "Delete \(item.name)?"
+            let message = "Are you sure you want to delete this item?"
+            
+            let ac = UIAlertController(title: title, message: message, preferredStyle: .ActionSheet)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Cancel, handler: nil)
+            ac.addAction(cancelAction)
+            
+            let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: {
+                (action) -> Void in
+                self.itemStore.removeItem(item)
+                //self.imageStore.deleteImageForKey(item.itemKey)
+                self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic )
+            })
+            ac.addAction(deleteAction)
+            
+            presentViewController(ac, animated: true, completion: nil)
+            
         }
     }
 }
