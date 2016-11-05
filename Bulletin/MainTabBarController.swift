@@ -12,7 +12,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
     
     var homeVc : HomeViewController!
     var messageVc : MessageViewController!
-    var postVc : PostViewController!
+    var postVc : UINavigationController! // => PostViewController!
     var activityVc : ActivityViewController!
     var settingsVc : SettingsViewController!
   
@@ -42,7 +42,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
         
         homeVc = self.viewControllers![0] as! HomeViewController
         messageVc = self.viewControllers![1] as! MessageViewController
-        postVc = self.viewControllers![2] as! PostViewController
+        postVc = self.viewControllers![2] as! UINavigationController // => PostViewController
         activityVc = self.viewControllers![3] as! ActivityViewController
         settingsVc = self.viewControllers![4] as! SettingsViewController
         

@@ -19,7 +19,7 @@ class LoginTwoViewController : UIViewController{
         parentVc = self.parentViewController as! LoginViewController
         
         locationLabel.text = "You are at San Jose State University ^_^"
-        locationLabel.textColor = Singleton.buttonBgColor
+        locationLabel.textColor = Singleton.sharedInstance.mainThemeColor
     }
     
     override func didReceiveMemoryWarning() {

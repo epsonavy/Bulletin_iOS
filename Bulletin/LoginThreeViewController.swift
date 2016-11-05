@@ -19,7 +19,7 @@ class LoginThreeViewController : UIViewController{
         parentVc = self.parentViewController as! LoginViewController
         
         messageLabel.text = "Please confirm your email ^_^."
-        messageLabel.textColor = Singleton.buttonBgColor
+        messageLabel.textColor = Singleton.sharedInstance.mainThemeColor
     }
     
     override func didReceiveMemoryWarning() {

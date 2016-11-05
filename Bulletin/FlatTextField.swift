@@ -18,9 +18,9 @@ import UIKit
         
         let bottomLine = CALayer()
         bottomLine.frame = CGRectMake(0.0, self.frame.height - 2, self.frame.width, 2.0)
-        bottomLine.backgroundColor = Singleton.buttonBgColor.CGColor
+        bottomLine.backgroundColor = Singleton.sharedInstance.mainThemeColor.CGColor
         self.borderStyle = UITextBorderStyle.None
         self.layer.addSublayer(bottomLine)
-        self.tintColor = Singleton.buttonBgColor
+        self.tintColor = Singleton.sharedInstance.mainThemeColor
     }
 }

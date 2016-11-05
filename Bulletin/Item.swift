@@ -20,4 +20,25 @@ class Item: NSObject {
         
         super.init()
     }
+    
+    // test only: generate random items
+    convenience init(random: Bool = false) {
+        if random {
+            let adjective = ["Fluffy", "Rusty", "Shiny"]
+            let nouns = ["Bear", "Spork", "Mac"]
+            
+            var idx = arc4random_uniform(UInt32(adjective.count))
+            let randomAdjective = adjective[Int(idx)]
+            
+            idx = arc4random_uniform(UInt32(nouns.count))
+            let randomNoun = nouns[Int(idx)]
+            
+            let randomName = "\(randomAdjective) \(randomNoun)"
+            let randomValue = Int(arc4random_uniform(100))
+            self.init(name: randomName, price: randomValue)
+            
+        } else {
+            self.init(name: "", price: 0)
+        }
+    }
 }

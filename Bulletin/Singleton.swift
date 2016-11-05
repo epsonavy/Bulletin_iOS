@@ -13,6 +13,9 @@ class Singleton{
     
     var token : String!
     
-    // main theme color
-    static let buttonBgColor = UIColor(red:1.00, green:0.55, blue:0.52, alpha:1.0)
+    // Main theme color
+    let mainThemeColor = UIColor(red:1.00, green:0.55, blue:0.52, alpha:1.0)
+    
+    // Store item that post by user
+    let itemStore = ItemStore()
 }
