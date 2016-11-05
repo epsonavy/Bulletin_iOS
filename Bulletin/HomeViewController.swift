@@ -9,7 +9,7 @@
 import UIKit
 
 class HomeViewController : UIViewController{
-
+    
     @IBOutlet weak var navigationBar: GrayBarView!
     @IBOutlet weak var navigationBarTopConstraint: NSLayoutConstraint!
     

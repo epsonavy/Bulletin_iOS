@@ -2,12 +2,12 @@
 //  PostViewController.swift
 //  Bulletin
 //
-//  Created by Kevin Trinh on 10/24/16.
+//  Created by Pei Liu on 11/04/16.
 //  Copyright © 2016 KPP, Inc. All rights reserved.
 //
 
 import UIKit
-class PostViewController : UIViewController{
+class PostViewController : UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }

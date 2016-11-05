@@ -595,23 +595,33 @@
             <point key="canvasLocation" x="3639" y="228"/>
         </scene>
         <!--Post-->
-        <scene sceneID="2jQ-Lh-lOs">
+        <scene sceneID="ccv-hQ-zBr">
             <objects>
-                <viewController storyboardIdentifier="PostViewController" id="z3Q-24-jbR" customClass="PostViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="g5r-ba-k9e"/>
-                        <viewControllerLayoutGuide type="bottom" id="8jv-6z-5ru"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8v6-nv-ZJc">
+                <tableViewController id="v0q-2R-HEP" customClass="PostViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="PxX-5C-hv5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Post" image="Speech Bubble-50.png" id="ZFk-h7-BrD"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Km-p2-lCi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="Hbk-uP-ITh">
+                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hbk-uP-ITh" id="T21-pb-xXB">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="v0q-2R-HEP" id="ZTj-wp-oGh"/>
+                            <outlet property="delegate" destination="v0q-2R-HEP" id="TEQ-np-xLv"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Post" image="Speech Bubble-50.png" id="ixc-WJ-UAe"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fn-DB-HII" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3639" y="907.5"/>
+            <point key="canvasLocation" x="3678" y="892"/>
         </scene>
         <!--Setting-->
         <scene sceneID="1sK-oU-59Z">
@@ -632,14 +642,68 @@
                                     <constraint firstAttribute="width" constant="250" id="pTe-vq-Bm8"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sPq-uN-TJy" customClass="FlatTextField" customModule="Bulletin" customModuleProvider="target">
+                                <rect key="frame" x="82" y="314" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="B4R-g4-DBz"/>
+                                    <constraint firstAttribute="width" constant="250" id="sGO-kw-FvM"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJK-36-FUD" customClass="FlatTextField" customModule="Bulletin" customModuleProvider="target">
+                                <rect key="frame" x="82" y="362" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Dwa-QL-dVb"/>
+                                    <constraint firstAttribute="width" constant="250" id="gAp-pw-KsJ"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-Tb-JUR" customClass="FlatTextField" customModule="Bulletin" customModuleProvider="target">
+                                <rect key="frame" x="82" y="409" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fC6-5k-4kP"/>
+                                    <constraint firstAttribute="width" constant="250" id="yZV-Xk-d4N"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ZK-KX-NsC" customClass="FlatTextField" customModule="Bulletin" customModuleProvider="target">
+                                <rect key="frame" x="82" y="461" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="R3Y-ly-8vY"/>
+                                    <constraint firstAttribute="height" constant="30" id="TXe-r0-nG0"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="NJK-36-FUD" firstAttribute="top" secondItem="sPq-uN-TJy" secondAttribute="bottom" constant="18" id="N8p-B5-U2f"/>
+                            <constraint firstItem="4ZK-KX-NsC" firstAttribute="top" secondItem="nQr-Tb-JUR" secondAttribute="bottom" constant="22" id="QlN-Aj-bdd"/>
+                            <constraint firstItem="nQr-Tb-JUR" firstAttribute="top" secondItem="NJK-36-FUD" secondAttribute="bottom" constant="17" id="RLf-41-Bia"/>
+                            <constraint firstItem="nQr-Tb-JUR" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="X53-zW-B40"/>
                             <constraint firstItem="msV-rr-M6i" firstAttribute="top" secondItem="Ipv-dG-7fx" secondAttribute="bottom" constant="8" id="a6j-9K-vs2"/>
+                            <constraint firstItem="sPq-uN-TJy" firstAttribute="top" secondItem="msV-rr-M6i" secondAttribute="bottom" constant="36" id="bQy-wV-bNb"/>
+                            <constraint firstItem="4ZK-KX-NsC" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="g4z-aK-zic"/>
                             <constraint firstItem="msV-rr-M6i" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="i1h-k4-YRO"/>
+                            <constraint firstItem="sPq-uN-TJy" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="jrh-SP-hB9"/>
+                            <constraint firstItem="NJK-36-FUD" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="sXa-av-4Uc"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Setting" image="Settings-50.png" id="8XM-03-eM3"/>
+                    <connections>
+                        <outlet property="email" destination="nQr-Tb-JUR" id="uAq-of-89V"/>
+                        <outlet property="firstName" destination="sPq-uN-TJy" id="KoJ-4w-c9j"/>
+                        <outlet property="lastName" destination="NJK-36-FUD" id="xj6-N6-pcV"/>
+                        <outlet property="phoneNum" destination="4ZK-KX-NsC" id="Bnd-o7-fPg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaZ-Q3-wsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -757,7 +821,7 @@
                     <connections>
                         <segue destination="WzW-1g-WSk" kind="relationship" relationship="viewControllers" id="8El-lN-1eN"/>
                         <segue destination="hc1-g6-BGg" kind="relationship" relationship="viewControllers" id="FT3-EW-p4f"/>
-                        <segue destination="z3Q-24-jbR" kind="relationship" relationship="viewControllers" id="5gf-W2-F8a"/>
+                        <segue destination="v0q-2R-HEP" kind="relationship" relationship="viewControllers" id="XwS-sW-U6B"/>
                         <segue destination="G2g-CJ-5mC" kind="relationship" relationship="viewControllers" id="NCW-sJ-vR3"/>
                         <segue destination="o9e-38-bzy" kind="relationship" relationship="viewControllers" id="OYQ-ti-eBB"/>
                     </connections>
