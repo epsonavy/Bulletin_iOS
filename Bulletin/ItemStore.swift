@@ -13,7 +13,7 @@ class ItemStore {
 
     //test only
     init() {
-        for _ in 0..<5 {
+        for _ in 0..<3 {
             createItem()
         }
     }

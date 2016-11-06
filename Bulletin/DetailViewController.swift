@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
     @IBOutlet var nameField: UITextField!
     @IBOutlet var priceField: UITextField!
@@ -59,6 +59,28 @@ class DetailViewController: UIViewController, UITextFieldDelegate {
         } else {
             item.price = 0
         }
+    }
+    
+    @IBAction func takePic(sender: UIBarButtonItem) {
+        let imagePicker = UIImagePickerController()
+        
+        if UIImagePickerController.isSourceTypeAvailable(.Camera) {
+            imagePicker.sourceType = .Camera
+        } else {
+            imagePicker.sourceType = .PhotoLibrary
+        }
+        imagePicker.delegate = self
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        // Store images in the ImageStore
+        //imageStore.setImage(image, forKey: item.itemKey)
+        imageView.image = image
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     // Dismissing the keyboard
