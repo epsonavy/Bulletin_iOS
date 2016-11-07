@@ -26,6 +26,14 @@ class ItemStore {
         return newItem
     }
     
+    func addEmptyItem() -> Item {
+        let newItem = Item(random: false)
+        
+        allItems.append(newItem)
+        
+        return newItem
+    }
+    
     func removeItem(item: Item) {
         if let index = allItems.indexOf(item) {
             allItems.removeAtIndex(index)

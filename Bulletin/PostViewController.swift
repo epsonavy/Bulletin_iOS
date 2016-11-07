@@ -8,8 +8,9 @@
 
 import UIKit
 class PostViewController : UITableViewController {
-    //var itemStore: ItemStore!
+    
     let itemStore = Singleton.sharedInstance.itemStore
+    let imageStore = Singleton.sharedInstance.imageStore
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,13 +42,13 @@ class PostViewController : UITableViewController {
                 let item = itemStore.allItems[row]
                 let detailViewController = segue.destinationViewController as! DetailViewController
                 detailViewController.item = item
-                //detailViewController.imageStore = imageStore
+                detailViewController.imageStore = imageStore
             }
         }
     }
     
     @IBAction func addNewItem(sender: AnyObject) {
-        let newItem =  itemStore.createItem()
+        let newItem =  itemStore.addEmptyItem()
         if let index = itemStore.allItems.indexOf(newItem) {
             let indexPath = NSIndexPath(forRow: index, inSection: 0)
             
@@ -68,6 +69,17 @@ class PostViewController : UITableViewController {
         cell.valueLabel.text = "$\(item.price)"
         cell.dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
         
+        let key = item.itemKey
+        
+        if let imageToDisplay = imageStore.imageForKey(key) {
+            cell.thumb.image = imageToDisplay
+        }
+        
+        // test only: for random items
+        if (item.image != nil) {
+            cell.thumb.image = item.image
+        }
+        
         return cell
     }
     
@@ -78,7 +90,7 @@ class PostViewController : UITableViewController {
         return formatter
     }()
     
-    /* We don't need to move item
+    /* We don't need to move item, optional for now
     override func tableView(tableView: UITableView, moveRowAtIndexPath sourceIndexPath: NSIndexPath, toIndexPath destinationIndexPath: NSIndexPath) {
         itemStore.moveItemAtIndex(sourceIndexPath.row, toIndex: destinationIndexPath.row)
     } 
@@ -98,7 +110,7 @@ class PostViewController : UITableViewController {
             let deleteAction = UIAlertAction(title: "Delete", style: .Destructive, handler: {
                 (action) -> Void in
                 self.itemStore.removeItem(item)
-                //self.imageStore.deleteImageForKey(item.itemKey)
+                self.imageStore.deleteImageForKey(item.itemKey)
                 self.tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic )
             })
             ac.addAction(deleteAction)

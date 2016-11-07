@@ -27,6 +27,8 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         }
     }
     
+    var imageStore: ImageStore!
+    
     let dateFormatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
         formatter.dateStyle = .MediumStyle
@@ -41,10 +43,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         priceField.text = "\(item.price)"
         detailField.text = ""
         dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
-      /*
+      
         let key = item.itemKey
         let imageToDisplay = imageStore.imageForKey(key)
-        imageView.image = imageToDisplay*/
+        imageView.image = imageToDisplay
     }
     
     override func viewWillDisappear(animated: Bool) {
@@ -78,7 +80,7 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         // Store images in the ImageStore
-        //imageStore.setImage(image, forKey: item.itemKey)
+        imageStore.setImage(image, forKey: item.itemKey)
         imageView.image = image
         dismissViewControllerAnimated(true, completion: nil)
     }

@@ -12,6 +12,7 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var valueLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var thumb: ItemImageView!
     
     // Adjust font size according to user system setting
     func updateLabels() {
