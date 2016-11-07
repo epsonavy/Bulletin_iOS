@@ -743,6 +743,7 @@
                         <outlet property="firstName" destination="sPq-uN-TJy" id="KoJ-4w-c9j"/>
                         <outlet property="lastName" destination="NJK-36-FUD" id="xj6-N6-pcV"/>
                         <outlet property="phoneNum" destination="4ZK-KX-NsC" id="Bnd-o7-fPg"/>
+                        <outlet property="profilePic" destination="msV-rr-M6i" id="yZZ-ml-i7S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaZ-Q3-wsF" userLabel="First Responder" sceneMemberID="firstResponder"/>

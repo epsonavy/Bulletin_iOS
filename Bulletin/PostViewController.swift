@@ -69,17 +69,16 @@ class PostViewController : UITableViewController {
         cell.valueLabel.text = "$\(item.price)"
         cell.dateLabel.text = dateFormatter.stringFromDate(item.dateCreated)
         
-        let key = item.itemKey
-        
-        if let imageToDisplay = imageStore.imageForKey(key) {
-            cell.thumb.image = imageToDisplay
-        }
-        
         // test only: for random items
         if (item.image != nil) {
             cell.thumb.image = item.image
         }
         
+        let key = item.itemKey
+        
+        if let imageToDisplay = imageStore.imageForKey(key) {
+            cell.thumb.image = imageToDisplay
+        }
         return cell
     }
     
