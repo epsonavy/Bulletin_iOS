@@ -675,7 +675,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kevin.png" translatesAutoresizingMaskIntoConstraints="NO" id="msV-rr-M6i" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="msV-rr-M6i" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
                                 <rect key="frame" x="82" y="28" width="250" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="Vsd-N3-thz"/>
@@ -1040,8 +1040,8 @@
         <image name="Settings-50.png" width="25" height="25"/>
         <image name="Speech Bubble-50.png" width="25" height="25"/>
         <image name="background.jpg" width="282" height="500"/>
-        <image name="kevin.png" width="97" height="96"/>
         <image name="noImage.png" width="110" height="110"/>
+        <image name="profile.jpg" width="312" height="197"/>
         <image name="sjsu.png" width="876" height="584"/>
     </resources>
 </document>
