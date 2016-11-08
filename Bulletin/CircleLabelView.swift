@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CircleLabelView : UILabel{
+@IBDesignable class CircleLabelView : UILabel{
     override init(frame: CGRect){
         super.init(frame: frame)
         self.backgroundColor = UIColor.clearColor()
