@@ -57,6 +57,9 @@
 		AACF32D11DCC5AC500139293 /* CircleImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACF32D01DCC5AC500139293 /* CircleImageView.swift */; };
 		AAD42CBD1DD29E4F001DC51E /* Meeting-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD42CBC1DD29E4F001DC51E /* Meeting-50@2x.png */; };
 		AAD42CC11DD2A52F001DC51E /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = AAD42CC01DD2A52F001DC51E /* profile@2x.png */; };
+		AAD42CC41DD2B74E001DC51E /* OneMessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD42CC31DD2B74E001DC51E /* OneMessageViewController.swift */; };
+		AAD42CC71DD2BD6C001DC51E /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD42CC61DD2BD6C001DC51E /* MessageCell.swift */; };
+		AAD42CC91DD2BD89001DC51E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAD42CC81DD2BD89001DC51E /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +136,9 @@
 		AACF32D01DCC5AC500139293 /* CircleImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImageView.swift; sourceTree = "<group>"; };
 		AAD42CBC1DD29E4F001DC51E /* Meeting-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Meeting-50@2x.png"; sourceTree = "<group>"; };
 		AAD42CC01DD2A52F001DC51E /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
+		AAD42CC31DD2B74E001DC51E /* OneMessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OneMessageViewController.swift; sourceTree = "<group>"; };
+		AAD42CC61DD2BD6C001DC51E /* MessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
+		AAD42CC81DD2BD89001DC51E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -248,9 +254,9 @@
 				050000021DBE16E800E83F4A /* LoginTwoViewController.swift */,
 				050000041DBE16F000E83F4A /* LoginThreeViewController.swift */,
 				0526B7E61DBEBA72005A136C /* HomeViewController.swift */,
-				0526B7E81DBEBAA0005A136C /* MessageViewController.swift */,
 				0526B7EA1DBEBAD4005A136C /* SettingsViewController.swift */,
 				0526B7EE1DBEBB67005A136C /* ActivityViewController.swift */,
+				AAD42CC21DD2B657001DC51E /* Message */,
 				AA09416A1DCDB1BC005F1F8D /* PostGroup */,
 			);
 			name = ViewControllers;
@@ -316,6 +322,25 @@
 				AA09416B1DCDB1DF005F1F8D /* DetailViewController.swift */,
 			);
 			name = PostGroup;
+			sourceTree = "<group>";
+		};
+		AAD42CC21DD2B657001DC51E /* Message */ = {
+			isa = PBXGroup;
+			children = (
+				AAD42CC51DD2BD47001DC51E /* Model */,
+				0526B7E81DBEBAA0005A136C /* MessageViewController.swift */,
+				AAD42CC31DD2B74E001DC51E /* OneMessageViewController.swift */,
+			);
+			name = Message;
+			sourceTree = "<group>";
+		};
+		AAD42CC51DD2BD47001DC51E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AAD42CC61DD2BD6C001DC51E /* MessageCell.swift */,
+				AAD42CC81DD2BD89001DC51E /* Message.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +500,7 @@
 				050000081DBE263300E83F4A /* MainTabBarController.swift in Sources */,
 				050000011DBE16DB00E83F4A /* LoginOneViewController.swift in Sources */,
 				0526B7ED1DBEBB19005A136C /* PostViewController.swift in Sources */,
+				AAD42CC91DD2BD89001DC51E /* Message.swift in Sources */,
 				AA09416E1DCE63B7005F1F8D /* ItemImageView.swift in Sources */,
 				AA0941641DCD9C0C005F1F8D /* Item.swift in Sources */,
 				0500FFFF1DBE004B00E83F4A /* OrangeBarView.swift in Sources */,
@@ -484,6 +510,7 @@
 				0526B7E71DBEBA72005A136C /* HomeViewController.swift in Sources */,
 				0526B7EB1DBEBAD4005A136C /* SettingsViewController.swift in Sources */,
 				AACF32D11DCC5AC500139293 /* CircleImageView.swift in Sources */,
+				AAD42CC71DD2BD6C001DC51E /* MessageCell.swift in Sources */,
 				050000031DBE16E800E83F4A /* LoginTwoViewController.swift in Sources */,
 				AA318E9C1DCC08EE0068F222 /* FlatTextField.swift in Sources */,
 				050000051DBE16F000E83F4A /* LoginThreeViewController.swift in Sources */,
@@ -495,6 +522,7 @@
 				AACC49D61DCF2DEE009D66B5 /* ImageStore.swift in Sources */,
 				0500FFF01DBDE98400E83F4A /* Singleton.swift in Sources */,
 				0500FFFD1DBDF58F00E83F4A /* CircleLabelView.swift in Sources */,
+				AAD42CC41DD2B74E001DC51E /* OneMessageViewController.swift in Sources */,
 				0500FFF61DBDF17700E83F4A /* GrayBarView.swift in Sources */,
 				0500FFC11DBDCF0C00E83F4A /* Bulletin.xcdatamodeld in Sources */,
 			);

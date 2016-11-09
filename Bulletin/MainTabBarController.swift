@@ -11,7 +11,7 @@ import UIKit
 class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIScrollViewDelegate{
     
     var homeVc : HomeViewController!
-    var messageVc : MessageViewController!
+    var messageVc : UINavigationController! // =>MessageViewController!
     var postVc : UINavigationController! // => PostViewController!
     var activityVc : ActivityViewController!
     var settingsVc : SettingsViewController!
@@ -41,7 +41,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
         self.view.addGestureRecognizer(swipeDownGestureRecognizer)
         
         homeVc = self.viewControllers![0] as! HomeViewController
-        messageVc = self.viewControllers![1] as! MessageViewController
+        messageVc = self.viewControllers![1] as! UINavigationController // =>MessageViewController
         postVc = self.viewControllers![2] as! UINavigationController // => PostViewController
         activityVc = self.viewControllers![3] as! ActivityViewController
         settingsVc = self.viewControllers![4] as! SettingsViewController

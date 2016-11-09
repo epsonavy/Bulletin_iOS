@@ -8,7 +8,19 @@
 
 import UIKit
 
-class MessageViewController : UIViewController{
+class MessageViewController : UITableViewController {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ShowMessage" {
+            /*
+            if let row = tableView.indexPathForSelectedRow?.row{
+                let item = itemStore.allItems[row]
+                let detailViewController = segue.destinationViewController as! DetailViewController
+                detailViewController.item = item
+                detailViewController.imageStore = imageStore
+            }*/
+        }
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
     }
