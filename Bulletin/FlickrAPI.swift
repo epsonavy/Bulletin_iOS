@@ -7,6 +7,8 @@
 //
 
 
+// FlickerAPI test random picture loading
+
 import Foundation
 
 enum Method: String {

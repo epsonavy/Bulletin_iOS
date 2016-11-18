@@ -835,21 +835,42 @@
                                                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="KXR-R7-nyW">
                                                     <rect key="frame" x="80" y="80" width="20" height="20"/>
                                                 </activityIndicatorView>
+                                                <view alpha="0.80000000000000004" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hgu-4f-QWZ">
+                                                    <rect key="frame" x="0.0" y="131" width="180" height="49"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$200" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeT-ZW-xNN">
+                                                            <rect key="frame" x="23" y="14" width="134" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                            <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <size key="shadowOffset" width="1" height="-1"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.88235294119999996" green="0.34509803919999998" blue="0.16078431369999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                             </subviews>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="5Vj-Ma-beM" firstAttribute="top" secondItem="vyd-oh-5BP" secondAttribute="top" id="HBy-LB-mSj"/>
+                                            <constraint firstItem="Hgu-4f-QWZ" firstAttribute="trailing" secondItem="5Vj-Ma-beM" secondAttribute="trailing" id="ImC-Gu-dg7"/>
                                             <constraint firstAttribute="bottom" secondItem="5Vj-Ma-beM" secondAttribute="bottom" id="J4L-fn-9bP"/>
                                             <constraint firstAttribute="trailing" secondItem="5Vj-Ma-beM" secondAttribute="trailing" id="Jzf-CV-BTP"/>
                                             <constraint firstItem="KXR-R7-nyW" firstAttribute="centerY" secondItem="vyd-oh-5BP" secondAttribute="centerY" id="KZz-7j-7jv"/>
+                                            <constraint firstItem="Hgu-4f-QWZ" firstAttribute="leading" secondItem="5Vj-Ma-beM" secondAttribute="leading" id="WwW-as-axr"/>
+                                            <constraint firstItem="Hgu-4f-QWZ" firstAttribute="top" secondItem="KXR-R7-nyW" secondAttribute="bottom" constant="31" id="bJR-3c-Ix7"/>
+                                            <constraint firstItem="Hgu-4f-QWZ" firstAttribute="bottom" secondItem="5Vj-Ma-beM" secondAttribute="bottom" id="lP9-aE-sNq"/>
                                             <constraint firstItem="5Vj-Ma-beM" firstAttribute="centerX" secondItem="vyd-oh-5BP" secondAttribute="centerX" id="ts8-xl-8Xv"/>
                                             <constraint firstItem="KXR-R7-nyW" firstAttribute="centerX" secondItem="vyd-oh-5BP" secondAttribute="centerX" id="tvR-dX-cwe"/>
                                             <constraint firstItem="5Vj-Ma-beM" firstAttribute="centerY" secondItem="vyd-oh-5BP" secondAttribute="centerY" id="vjP-dH-9Us"/>
                                             <constraint firstItem="5Vj-Ma-beM" firstAttribute="leading" secondItem="vyd-oh-5BP" secondAttribute="leading" id="yaY-qp-8eC"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="bottomRect" destination="Hgu-4f-QWZ" id="Nn5-fA-hFW"/>
                                             <outlet property="imageView" destination="5Vj-Ma-beM" id="6H4-RZ-us5"/>
+                                            <outlet property="priceTag" destination="eeT-ZW-xNN" id="MvW-Xo-fX4"/>
                                             <outlet property="spinner" destination="KXR-R7-nyW" id="R27-4a-jGi"/>
                                             <segue destination="ra5-oY-3g9" kind="show" identifier="ShowPhoto" id="c3h-tu-2zr"/>
                                         </connections>
@@ -897,7 +918,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSf-kd-b3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4544.927536231884" y="-423.91304347826087"/>
+            <point key="canvasLocation" x="4543.4782608695659" y="-423.91304347826087"/>
         </scene>
         <!--Photo Info View Controller-->
         <scene sceneID="HBn-PV-CLo">

@@ -11,14 +11,21 @@ import UIKit
 class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!
+    @IBOutlet weak var bottomRect: UIView!
+    @IBOutlet weak var priceTag: UILabel!
     
     func updateWithImage(image: UIImage?) {
         if let imageToDisplay = image {
             spinner.stopAnimating()
             imageView.image = imageToDisplay
+            bottomRect.hidden = false
+            priceTag.hidden = false
         } else {
             spinner.startAnimating()
             imageView.image = nil
+            bottomRect.hidden = true
+            priceTag.hidden = true
+            
         }
     }
     
