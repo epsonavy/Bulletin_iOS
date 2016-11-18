@@ -19,4 +19,7 @@ class Singleton{
     // Store item that post by user
     let itemStore = ItemStore()
     let imageStore = ImageStore()
+    let messageStore = MessageStore()
+    let photoStore = PhotoStore()
+    
 }

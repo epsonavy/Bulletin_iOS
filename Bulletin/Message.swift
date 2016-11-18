@@ -10,14 +10,14 @@ import UIKit
 
 class Message: NSObject {
     var name: String
-    var price: Int
+    var detail: String
     let dateCreated: NSDate
     let itemKey: String
     var image: UIImage?
     
-    init(name: String, price: Int, url: String) {
+    init(name: String, detail: String, url: String) {
         self.name = name
-        self.price = price
+        self.detail = detail
         self.dateCreated = NSDate()
         self.itemKey = NSUUID().UUIDString
         super.init()
@@ -45,8 +45,8 @@ class Message: NSObject {
     // test only: generate random items
     convenience init(random: Bool = false) {
         if random {
-            let adjective = ["Macbook Air", "Macbook Pro", "Surface Pro"]
-            let nouns = ["2014", "2015", "2016"]
+            let adjective = ["Hello", "Still available?", "Hi, I am ..."]
+            let nouns = ["Kevin", "Peter", "Jeff"]
             let urls = ["http://45.62.255.194/sample1.jpg",
                         "http://45.62.255.194/sample2.jpg",
                         "http://45.62.255.194/sample3.jpg"]
@@ -57,16 +57,16 @@ class Message: NSObject {
             idx = arc4random_uniform(UInt32(nouns.count))
             let randomNoun = nouns[Int(idx)]
             
-            let randomName = "\(randomAdjective) \(randomNoun)"
-            let randomValue = Int(arc4random_uniform(2000))
+            let randomName = "\(randomNoun)"
+            let randomDetail = "\(randomAdjective)"
             
             idx = arc4random_uniform(UInt32(urls.count))
             let randomUrl = urls[Int(idx)]
             
-            self.init(name: randomName, price: randomValue, url: randomUrl)
+            self.init(name: randomName, detail: randomDetail, url: randomUrl)
             
         } else {
-            self.init(name: "Please edit this item", price: 0, url: "")
+            self.init(name: "No Name", detail:"No Detail", url: "")
         }
     }
 }

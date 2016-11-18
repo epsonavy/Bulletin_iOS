@@ -10,4 +10,11 @@ import UIKit
 
 class MessageCell: UITableViewCell {
 
+    @IBOutlet weak var someoneProfile: CircleImageView!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var msgDetail: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
 }
