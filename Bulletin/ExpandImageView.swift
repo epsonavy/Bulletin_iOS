@@ -99,8 +99,6 @@ class ExpandImageView: UIView {
     func incrementImageCounter() -> Int!{
         let retCounter : Int! = imageCounter
         imageCounter = imageCounter + 1
-        print(imageCounter)
-        print("count \(images.count)")
         if(imageCounter >= images.count) {
            imageCounter = 0
         }

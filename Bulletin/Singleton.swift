@@ -11,6 +11,12 @@ import UIKit
 class Singleton{
     static let sharedInstance = Singleton()
     
+    //replace with aws address later
+    let API : BulletinAPI = BulletinAPI("http://localhost:8080/api")
+    
+    
+    var email : String!
+    
     var token : String!
     
     // Main theme color

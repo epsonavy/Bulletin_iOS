@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate {
     @IBOutlet var titleView: UIView!
 
     @IBOutlet var emailView: UIView!
@@ -23,11 +23,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     var expandImageView : ExpandImageView!
     
+    var singleton : Singleton!
+    
     
     var keyboardRect : CGRect!
     var emailPosition : CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
+        singleton = Singleton.sharedInstance
         
         passwordViewVerticalConstraint.constant = -passwordView.frame.width
         
@@ -102,6 +105,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             self.passwordViewVerticalConstraint.constant = 0
         })
     }
+
+    
     
     func showPasswordField(){
         self.passwordTextField.becomeFirstResponder()
@@ -117,13 +122,87 @@ class ViewController: UIViewController, UITextFieldDelegate {
         })
         
     }
+    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
+        if(buttonIndex == 1){
+            transitionToRegisterVc()
+        }
+    }
     
     
     func transitionToRegisterVc(){
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
+    func promptUserToRegister(){
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+        
+        singleton.email = self.emailTextField.text
+        let alertView : UIAlertView = UIAlertView(title: "Account not found!", message: "Would you like to register?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
+        alertView.show()
+        
+    }
+    func checkEmailComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
+        let responseHTTP = response as! NSHTTPURLResponse!
+        let resCode = responseHTTP.statusCode
+        
+        if(resCode == 418){
+            //display popup dialog to ask whether or not user wants to sign up
+            
+            
+            promptUserToRegister()
+        }
+        
+        
+        
+        
+        //if successful..
+        if(resCode == 200){
+            showPasswordField()
+        }
+        
+        
+    }
     
+    func promptInvalidAccount(){
+        let alertView : UIAlertView = UIAlertView(title: "Wrong login!", message: "It seems your login information does not match!", delegate: self, cancelButtonTitle: "Okay")
+        alertView.show();
+    }
+    
+    func checkLoginComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
+        let responseHTTP = response as! NSHTTPURLResponse!
+        let resCode = responseHTTP.statusCode
+        
+        if(resCode == 418){
+            promptUserToRegister()
+        }else if (resCode == 400){
+            promptInvalidAccount()
+        }else if (resCode == 200){
+            //get the token and store it
+            print("good to go")
+            singleton.API.setToken("yes")
+            
+            var decodedJson : AnyObject
+            do {
+                decodedJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+                singleton.API.setToken(decodedJson["token"] as! String!)
+            }
+            catch (let e) {
+                //Error in parsing
+                print(e)
+            }
+
+            
+            transitionToMainTabBar()
+            
+            
+        }
+    }
+    
+    func transitionToMainTabBar(){
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabBarController") as! MainTabBarController
+        self.presentViewController(vc, animated: true, completion: nil)
+    }
 
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -132,14 +211,19 @@ class ViewController: UIViewController, UITextFieldDelegate {
             
             //debug purposes..
             if(self.emailTextField.text!.characters.count < 1){
+                //display empty field dialog box
                 transitionToRegisterVc()
+            }else{
+                singleton.API.checkAccountExists(self.emailTextField.text, completion: checkEmailComplete)
             }
             
-            showPasswordField()
             return true
         }
         if self.passwordTextField.isFirstResponder(){
             self.passwordTextField.resignFirstResponder()
+            
+            singleton.API.login(self.emailTextField.text, password: self.passwordTextField.text, completion: checkLoginComplete)
+            
             return true
         }
         return true

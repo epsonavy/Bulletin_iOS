@@ -89,7 +89,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iYq-GP-icI">
-                                <rect key="frame" x="0.0" y="30" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="35" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bulletin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eT3-sN-jNb">
                                         <rect key="frame" x="15" y="8" width="391" height="43"/>
@@ -126,8 +126,8 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="c2j-pT-UJ5" secondAttribute="bottom" constant="18" id="3oH-9F-Va2"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Lia-pv-84X" secondAttribute="trailing" constant="-20" id="8Gf-2g-eTZ"/>
                             <constraint firstItem="Lia-pv-84X" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="8Va-fU-0uY"/>
+                            <constraint firstItem="iYq-GP-icI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="GoL-Ev-jRv"/>
                             <constraint firstItem="c2j-pT-UJ5" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="Ldy-l8-tU6"/>
-                            <constraint firstItem="iYq-GP-icI" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="Q0P-nt-jdH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lia-pv-84X" secondAttribute="bottom" constant="77" id="QXz-Pw-V5F"/>
                             <constraint firstAttribute="trailingMargin" secondItem="c2j-pT-UJ5" secondAttribute="trailing" constant="-20" id="bQl-6f-Krc"/>
                             <constraint firstItem="iYq-GP-icI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="hlP-tF-rIy"/>
