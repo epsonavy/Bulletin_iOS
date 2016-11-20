@@ -16,6 +16,10 @@ import UIKit
     }
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.layer.cornerRadius = 1
+        self.layer.backgroundColor = UIColor(red:1.00, green:0.55, blue:0.52, alpha:1.0).CGColor
+        self.layer.borderColor = UIColor.blackColor().CGColor
+        self.setTitleColor(UIColor.whiteColor(), forState: .Normal)
     }
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -44,7 +48,5 @@ import UIKit
 
     func scaleUp(){
         scaleAnimation(1.05, 1.05)
-    }
-    override func drawRect(rect: CGRect) {
     }
 }

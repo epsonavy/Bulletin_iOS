@@ -23,8 +23,8 @@ import UIKit
     override func drawTextInRect(rect: CGRect) {
         let innerRadius : CGFloat = 2
         let circle = UIBezierPath(ovalInRect: CGRect(x: rect.origin.x + innerRadius / 2, y: rect.origin.y + innerRadius / 2, width: rect.width - innerRadius, height: rect.height - innerRadius))
-        circle.lineWidth = 2
-        UIColor(red:1.00, green:0.55, blue:0.47, alpha:1.0).setStroke()
+        circle.lineWidth = 1
+        UIColor(red:0, green:0, blue:0, alpha:0.3).setStroke()
         circle.stroke()
         super.drawTextInRect(rect)
     }

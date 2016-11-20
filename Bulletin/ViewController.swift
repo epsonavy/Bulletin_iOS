@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate, ModalPopupDelegate {
     @IBOutlet var titleView: UIView!
 
     @IBOutlet var emailView: UIView!
@@ -70,6 +70,19 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
         expandImageView.addGestureRecognizer(hideKeyboardRecognizer)
         
         
+        
+    }
+    
+    func modalPopupOkay(sender: ModalPopup) {
+        
+    }
+    
+    func modalPopupClosed(sender: ModalPopup) {
+        if sender.id == 1 {
+            transitionToRegisterVc()
+        }else if sender.id == 3{
+            transitionToRegisterVc()
+        }
     }
     
     func hideKeyboard(gestureRecognizer: UIGestureRecognizer){
@@ -130,16 +143,14 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
     
     
     func transitionToRegisterVc(){
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as! LoginViewController
+        singleton.email = self.emailTextField.text
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterViewController") as! RegisterViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
     func promptUserToRegister(){
-        self.emailTextField.resignFirstResponder()
-        self.passwordTextField.resignFirstResponder()
-        
-        singleton.email = self.emailTextField.text
-        let alertView : UIAlertView = UIAlertView(title: "Account not found!", message: "Would you like to register?", delegate: self, cancelButtonTitle: "No", otherButtonTitles: "Yes")
-        alertView.show()
+        let modalPopup : ModalPopup = ModalPopup(message: "Let's get you registered!", delegate: self)
+        modalPopup.id = 1
+        modalPopup.show()
         
     }
     func checkEmailComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
@@ -165,8 +176,9 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
     }
     
     func promptInvalidAccount(){
-        let alertView : UIAlertView = UIAlertView(title: "Wrong login!", message: "It seems your login information does not match!", delegate: self, cancelButtonTitle: "Okay")
-        alertView.show();
+        let modalPopup : ModalPopup = ModalPopup(message: "Your account information was not recognized!", delegate: self)
+        modalPopup.id = 0
+        modalPopup.show()
     }
     
     func checkLoginComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
@@ -179,8 +191,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
             promptInvalidAccount()
         }else if (resCode == 200){
             //get the token and store it
-            print("good to go")
-            singleton.API.setToken("yes")
             
             var decodedJson : AnyObject
             do {
@@ -212,7 +222,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
             //debug purposes..
             if(self.emailTextField.text!.characters.count < 1){
                 //display empty field dialog box
-                transitionToRegisterVc()
+                let modalPopup : ModalPopup = ModalPopup(message: "Please enter your campus email address! (Debug mode)", delegate: self)
+                modalPopup.id = 3
+                modalPopup.show()
+                
             }else{
                 singleton.API.checkAccountExists(self.emailTextField.text, completion: checkEmailComplete)
             }

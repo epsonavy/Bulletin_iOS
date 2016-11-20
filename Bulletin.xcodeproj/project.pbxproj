@@ -7,9 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		050000011DBE16DB00E83F4A /* LoginOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050000001DBE16DB00E83F4A /* LoginOneViewController.swift */; };
-		050000031DBE16E800E83F4A /* LoginTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050000021DBE16E800E83F4A /* LoginTwoViewController.swift */; };
-		050000051DBE16F000E83F4A /* LoginThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050000041DBE16F000E83F4A /* LoginThreeViewController.swift */; };
 		050000081DBE263300E83F4A /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050000071DBE263300E83F4A /* MainTabBarController.swift */; };
 		0500FFB91DBDCF0C00E83F4A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFB81DBDCF0C00E83F4A /* AppDelegate.swift */; };
 		0500FFBB1DBDCF0C00E83F4A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFBA1DBDCF0C00E83F4A /* ViewController.swift */; };
@@ -23,7 +20,6 @@
 		0500FFEC1DBDE71800E83F4A /* bulletin_board_icon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0500FFEB1DBDE71800E83F4A /* bulletin_board_icon@2x.jpg */; };
 		0500FFEE1DBDE89A00E83F4A /* background@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 0500FFED1DBDE89A00E83F4A /* background@2x.jpg */; };
 		0500FFF01DBDE98400E83F4A /* Singleton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFEF1DBDE98400E83F4A /* Singleton.swift */; };
-		0500FFF21DBDEA6F00E83F4A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFF11DBDEA6F00E83F4A /* LoginViewController.swift */; };
 		0500FFF61DBDF17700E83F4A /* GrayBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFF51DBDF17700E83F4A /* GrayBarView.swift */; };
 		0500FFFD1DBDF58F00E83F4A /* CircleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFFC1DBDF58F00E83F4A /* CircleLabelView.swift */; };
 		0500FFFF1DBE004B00E83F4A /* OrangeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */; };
@@ -61,6 +57,11 @@
 		057B82AF1DE00BA7009B059E /* SF-UI-Text-BoldItalic.otf in Resources */ = {isa = PBXBuildFile; fileRef = 057B82A11DE00BA7009B059E /* SF-UI-Text-BoldItalic.otf */; };
 		057B82B11DE00F30009B059E /* asian_ghetto_men@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B82B01DE00F30009B059E /* asian_ghetto_men@2x.png */; };
 		057B82B31DE01438009B059E /* BulletinAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82B21DE01438009B059E /* BulletinAPI.swift */; };
+		057B82B51DE180CC009B059E /* ModalPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82B41DE180CC009B059E /* ModalPopup.swift */; };
+		057B82B81DE181AC009B059E /* ModalPopupDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82B71DE181AC009B059E /* ModalPopupDelegate.swift */; };
+		057B82BA1DE18B60009B059E /* exclamation_icon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 057B82B91DE18B60009B059E /* exclamation_icon@2x.jpg */; };
+		057B82BF1DE19D7B009B059E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82BE1DE19D7B009B059E /* RegisterViewController.swift */; };
+		057B82C11DE1A449009B059E /* name_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B82C01DE1A449009B059E /* name_icon@2x.png */; };
 		AA0941641DCD9C0C005F1F8D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941631DCD9C0C005F1F8D /* Item.swift */; };
 		AA0941671DCDA4AF005F1F8D /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941661DCDA4AF005F1F8D /* ItemStore.swift */; };
 		AA0941691DCDA9F0005F1F8D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941681DCDA9F0005F1F8D /* ItemCell.swift */; };
@@ -116,9 +117,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		050000001DBE16DB00E83F4A /* LoginOneViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginOneViewController.swift; sourceTree = "<group>"; };
-		050000021DBE16E800E83F4A /* LoginTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTwoViewController.swift; sourceTree = "<group>"; };
-		050000041DBE16F000E83F4A /* LoginThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginThreeViewController.swift; sourceTree = "<group>"; };
 		050000071DBE263300E83F4A /* MainTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		0500FFB51DBDCF0C00E83F4A /* Bulletin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bulletin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0500FFB81DBDCF0C00E83F4A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,7 +136,6 @@
 		0500FFEB1DBDE71800E83F4A /* bulletin_board_icon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "bulletin_board_icon@2x.jpg"; path = "../bulletin_board_icon@2x.jpg"; sourceTree = "<group>"; };
 		0500FFED1DBDE89A00E83F4A /* background@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background@2x.jpg"; path = "../background@2x.jpg"; sourceTree = "<group>"; };
 		0500FFEF1DBDE98400E83F4A /* Singleton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Singleton.swift; sourceTree = "<group>"; };
-		0500FFF11DBDEA6F00E83F4A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		0500FFF51DBDF17700E83F4A /* GrayBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrayBarView.swift; sourceTree = "<group>"; };
 		0500FFFC1DBDF58F00E83F4A /* CircleLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLabelView.swift; sourceTree = "<group>"; };
 		0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeBarView.swift; sourceTree = "<group>"; };
@@ -176,6 +173,11 @@
 		057B82A11DE00BA7009B059E /* SF-UI-Text-BoldItalic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "SF-UI-Text-BoldItalic.otf"; path = "../SF-UI-Text-BoldItalic.otf"; sourceTree = "<group>"; };
 		057B82B01DE00F30009B059E /* asian_ghetto_men@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "asian_ghetto_men@2x.png"; path = "../asian_ghetto_men@2x.png"; sourceTree = "<group>"; };
 		057B82B21DE01438009B059E /* BulletinAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinAPI.swift; sourceTree = "<group>"; };
+		057B82B41DE180CC009B059E /* ModalPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPopup.swift; sourceTree = "<group>"; };
+		057B82B71DE181AC009B059E /* ModalPopupDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModalPopupDelegate.swift; sourceTree = "<group>"; };
+		057B82B91DE18B60009B059E /* exclamation_icon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "exclamation_icon@2x.jpg"; path = "../exclamation_icon@2x.jpg"; sourceTree = "<group>"; };
+		057B82BE1DE19D7B009B059E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		057B82C01DE1A449009B059E /* name_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "name_icon@2x.png"; path = "../name_icon@2x.png"; sourceTree = "<group>"; };
 		AA0941631DCD9C0C005F1F8D /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AA0941661DCDA4AF005F1F8D /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		AA0941681DCDA9F0005F1F8D /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		0500FFB71DBDCF0C00E83F4A /* Bulletin */ = {
 			isa = PBXGroup;
 			children = (
+				057B82B61DE1818B009B059E /* Delegates */,
 				050000061DBE246900E83F4A /* Common */,
 				0500FFFA1DBDF52B00E83F4A /* Resources */,
 				0500FFF81DBDF50300E83F4A /* ViewControllers */,
@@ -313,6 +316,7 @@
 				AACF32D01DCC5AC500139293 /* CircleImageView.swift */,
 				AA09416D1DCE63B7005F1F8D /* ItemImageView.swift */,
 				057B82761DDFF39F009B059E /* ExpandImageView.swift */,
+				057B82B41DE180CC009B059E /* ModalPopup.swift */,
 			);
 			name = Controls;
 			sourceTree = "<group>";
@@ -321,12 +325,8 @@
 			isa = PBXGroup;
 			children = (
 				057B82751DDFF32A009B059E /* Main */,
-				0500FFF91DBDF51700E83F4A /* NavigationControllers */,
+				057B82BB1DE195FF009B059E /* Registration */,
 				050000071DBE263300E83F4A /* MainTabBarController.swift */,
-				0500FFF11DBDEA6F00E83F4A /* LoginViewController.swift */,
-				050000001DBE16DB00E83F4A /* LoginOneViewController.swift */,
-				050000021DBE16E800E83F4A /* LoginTwoViewController.swift */,
-				050000041DBE16F000E83F4A /* LoginThreeViewController.swift */,
 				0526B7EA1DBEBAD4005A136C /* SettingsViewController.swift */,
 				0526B7EE1DBEBB67005A136C /* ActivityViewController.swift */,
 				AA332A671DDE35940076C4A3 /* Home */,
@@ -334,13 +334,6 @@
 				AA09416A1DCDB1BC005F1F8D /* PostGroup */,
 			);
 			name = ViewControllers;
-			sourceTree = "<group>";
-		};
-		0500FFF91DBDF51700E83F4A /* NavigationControllers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = NavigationControllers;
 			sourceTree = "<group>";
 		};
 		0500FFFA1DBDF52B00E83F4A /* Resources */ = {
@@ -355,6 +348,8 @@
 		0500FFFB1DBDF53400E83F4A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				057B82C01DE1A449009B059E /* name_icon@2x.png */,
+				057B82B91DE18B60009B059E /* exclamation_icon@2x.jpg */,
 				057B82B01DE00F30009B059E /* asian_ghetto_men@2x.png */,
 				AAD42CBC1DD29E4F001DC51E /* Meeting-50@2x.png */,
 				AAA851FD1DD29A4600E36FF1 /* User Location Filled-50.png */,
@@ -442,6 +437,22 @@
 				057B82A11DE00BA7009B059E /* SF-UI-Text-BoldItalic.otf */,
 			);
 			name = Text;
+			sourceTree = "<group>";
+		};
+		057B82B61DE1818B009B059E /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				057B82B71DE181AC009B059E /* ModalPopupDelegate.swift */,
+			);
+			name = Delegates;
+			sourceTree = "<group>";
+		};
+		057B82BB1DE195FF009B059E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				057B82BE1DE19D7B009B059E /* RegisterViewController.swift */,
+			);
+			name = Registration;
 			sourceTree = "<group>";
 		};
 		AA0941651DCDA2A0005F1F8D /* Model */ = {
@@ -614,6 +625,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				057B82C11DE1A449009B059E /* name_icon@2x.png in Resources */,
+				057B82BA1DE18B60009B059E /* exclamation_icon@2x.jpg in Resources */,
 				057B82B11DE00F30009B059E /* asian_ghetto_men@2x.png in Resources */,
 				057B82A21DE00BA7009B059E /* SF-UI-Text-Ultrathin.otf in Resources */,
 				057B82A31DE00BA7009B059E /* SF-UI-Text-UltrathinItalic.otf in Resources */,
@@ -687,9 +700,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0500FFF21DBDEA6F00E83F4A /* LoginViewController.swift in Sources */,
 				050000081DBE263300E83F4A /* MainTabBarController.swift in Sources */,
-				050000011DBE16DB00E83F4A /* LoginOneViewController.swift in Sources */,
 				0526B7ED1DBEBB19005A136C /* PostViewController.swift in Sources */,
 				AAD42CC91DD2BD89001DC51E /* Message.swift in Sources */,
 				AA09416E1DCE63B7005F1F8D /* ItemImageView.swift in Sources */,
@@ -697,6 +708,7 @@
 				057B82771DDFF39F009B059E /* ExpandImageView.swift in Sources */,
 				0500FFFF1DBE004B00E83F4A /* OrangeBarView.swift in Sources */,
 				AA0941671DCDA4AF005F1F8D /* ItemStore.swift in Sources */,
+				057B82B51DE180CC009B059E /* ModalPopup.swift in Sources */,
 				AA332A6A1DDE35F20076C4A3 /* FlickrAPI.swift in Sources */,
 				AA332A721DDEC73C0076C4A3 /* PhotoStore.swift in Sources */,
 				0526B7E91DBEBAA0005A136C /* MessageViewController.swift in Sources */,
@@ -704,13 +716,12 @@
 				0526B7E71DBEBA72005A136C /* HomeViewController.swift in Sources */,
 				0526B7EB1DBEBAD4005A136C /* SettingsViewController.swift in Sources */,
 				AACF32D11DCC5AC500139293 /* CircleImageView.swift in Sources */,
+				057B82BF1DE19D7B009B059E /* RegisterViewController.swift in Sources */,
 				AAD42CC71DD2BD6C001DC51E /* MessageCell.swift in Sources */,
 				AA332A741DDECAAE0076C4A3 /* PhotoInfoViewController.swift in Sources */,
 				AA332A6C1DDE361B0076C4A3 /* Photo.swift in Sources */,
-				050000031DBE16E800E83F4A /* LoginTwoViewController.swift in Sources */,
 				AA332A6E1DDEC57A0076C4A3 /* PhotoDataSource.swift in Sources */,
 				AA318E9C1DCC08EE0068F222 /* FlatTextField.swift in Sources */,
-				050000051DBE16F000E83F4A /* LoginThreeViewController.swift in Sources */,
 				AA332A701DDEC5A60076C4A3 /* PhotoCollectionViewCell.swift in Sources */,
 				057B82B31DE01438009B059E /* BulletinAPI.swift in Sources */,
 				AA09416C1DCDB1DF005F1F8D /* DetailViewController.swift in Sources */,
@@ -725,6 +736,7 @@
 				AAD42CC41DD2B74E001DC51E /* DetailMessageViewController.swift in Sources */,
 				0500FFF61DBDF17700E83F4A /* GrayBarView.swift in Sources */,
 				0500FFC11DBDCF0C00E83F4A /* Bulletin.xcdatamodeld in Sources */,
+				057B82B81DE181AC009B059E /* ModalPopupDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

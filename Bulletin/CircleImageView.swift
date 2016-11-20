@@ -17,7 +17,7 @@ import UIKit
         super.init(coder: aDecoder)
         self.layer.cornerRadius = self.frame.size.width / 2
         self.clipsToBounds = true
-        self.layer.borderWidth = 4
-        self.layer.borderColor = Singleton.sharedInstance.mainThemeColor.CGColor
+        self.layer.borderWidth = 1
+        self.layer.borderColor = Singleton.sharedInstance.secondaryColor.CGColor
     }
 }

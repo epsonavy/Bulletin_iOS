@@ -21,6 +21,7 @@ class Singleton{
     
     // Main theme color
     let mainThemeColor = UIColor(red:1.00, green:0.55, blue:0.52, alpha:1.0)
+    let secondaryColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     
     // Store item that post by user
     let itemStore = ItemStore()
