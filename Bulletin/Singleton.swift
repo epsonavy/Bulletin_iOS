@@ -15,12 +15,11 @@ class Singleton{
     let API : BulletinAPI = BulletinAPI("http://localhost:8080/api")
     
     
-    var email : String!
-    
+    //pretty vital. you need this or nothing will work.
     var token : String!
     
     // Main theme color
-    let mainThemeColor = UIColor(red:1.00, green:0.55, blue:0.52, alpha:1.0)
+    let mainThemeColor = UIColor(red:1.00, green:0.54, blue:0.48, alpha:1.0)
     let secondaryColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
     
     // Store item that post by user
@@ -28,5 +27,13 @@ class Singleton{
     let imageStore = ImageStore()
     let messageStore = MessageStore()
     let photoStore = PhotoStore()
+    
+    //user information for registering process
+    //these should already be validated by Register View Controller
+    var email : String!
+    var password: String!
+    var displayName : String!
+    
+    
     
 }

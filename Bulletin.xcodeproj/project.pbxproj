@@ -62,6 +62,7 @@
 		057B82BA1DE18B60009B059E /* exclamation_icon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 057B82B91DE18B60009B059E /* exclamation_icon@2x.jpg */; };
 		057B82BF1DE19D7B009B059E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82BE1DE19D7B009B059E /* RegisterViewController.swift */; };
 		057B82C11DE1A449009B059E /* name_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B82C01DE1A449009B059E /* name_icon@2x.png */; };
+		05C8C70D1DE2CEA50063930F /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C8C70C1DE2CEA50063930F /* ConfirmViewController.swift */; };
 		AA0941641DCD9C0C005F1F8D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941631DCD9C0C005F1F8D /* Item.swift */; };
 		AA0941671DCDA4AF005F1F8D /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941661DCDA4AF005F1F8D /* ItemStore.swift */; };
 		AA0941691DCDA9F0005F1F8D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941681DCDA9F0005F1F8D /* ItemCell.swift */; };
@@ -178,6 +179,7 @@
 		057B82B91DE18B60009B059E /* exclamation_icon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "exclamation_icon@2x.jpg"; path = "../exclamation_icon@2x.jpg"; sourceTree = "<group>"; };
 		057B82BE1DE19D7B009B059E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		057B82C01DE1A449009B059E /* name_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "name_icon@2x.png"; path = "../name_icon@2x.png"; sourceTree = "<group>"; };
+		05C8C70C1DE2CEA50063930F /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		AA0941631DCD9C0C005F1F8D /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AA0941661DCDA4AF005F1F8D /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		AA0941681DCDA9F0005F1F8D /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
@@ -324,8 +326,7 @@
 		0500FFF81DBDF50300E83F4A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				057B82751DDFF32A009B059E /* Main */,
-				057B82BB1DE195FF009B059E /* Registration */,
+				057B82751DDFF32A009B059E /* Login */,
 				050000071DBE263300E83F4A /* MainTabBarController.swift */,
 				0526B7EA1DBEBAD4005A136C /* SettingsViewController.swift */,
 				0526B7EE1DBEBB67005A136C /* ActivityViewController.swift */,
@@ -377,12 +378,14 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
-		057B82751DDFF32A009B059E /* Main */ = {
+		057B82751DDFF32A009B059E /* Login */ = {
 			isa = PBXGroup;
 			children = (
 				0500FFBA1DBDCF0C00E83F4A /* ViewController.swift */,
+				057B82BE1DE19D7B009B059E /* RegisterViewController.swift */,
+				05C8C70C1DE2CEA50063930F /* ConfirmViewController.swift */,
 			);
-			name = Main;
+			name = Login;
 			sourceTree = "<group>";
 		};
 		057B827E1DE009FB009B059E /* Fonts */ = {
@@ -445,14 +448,6 @@
 				057B82B71DE181AC009B059E /* ModalPopupDelegate.swift */,
 			);
 			name = Delegates;
-			sourceTree = "<group>";
-		};
-		057B82BB1DE195FF009B059E /* Registration */ = {
-			isa = PBXGroup;
-			children = (
-				057B82BE1DE19D7B009B059E /* RegisterViewController.swift */,
-			);
-			name = Registration;
 			sourceTree = "<group>";
 		};
 		AA0941651DCDA2A0005F1F8D /* Model */ = {
@@ -735,6 +730,7 @@
 				0500FFFD1DBDF58F00E83F4A /* CircleLabelView.swift in Sources */,
 				AAD42CC41DD2B74E001DC51E /* DetailMessageViewController.swift in Sources */,
 				0500FFF61DBDF17700E83F4A /* GrayBarView.swift in Sources */,
+				05C8C70D1DE2CEA50063930F /* ConfirmViewController.swift in Sources */,
 				0500FFC11DBDCF0C00E83F4A /* Bulletin.xcdatamodeld in Sources */,
 				057B82B81DE181AC009B059E /* ModalPopupDelegate.swift in Sources */,
 			);

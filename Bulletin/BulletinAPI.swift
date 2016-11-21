@@ -30,14 +30,23 @@ class BulletinAPI{
     }
     
     
-    func checkAccountExists(email: String!, completion : (response : NSURLResponse?, data : NSData?, error : NSError?) -> (Void)){
+    func checkEmailExists(email: String!, completion : (response : NSURLResponse?, data : NSData?, error : NSError?) -> (Void)){
         //  /register/check
         
-        let url : NSURL! = NSURL(string: apiAddress + "/register/check/?email=" + email);
+        let url : NSURL! = NSURL(string: apiAddress + "/register/check/email/?email=" + email);
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "GET"
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion);
+    }
+    
+    func checkDisplayNameExists(displayName: String!, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        let url : NSURL! = NSURL(string: apiAddress + "/register/check/name/?display_name=" + displayName)
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+        
     }
     
     func login(email: String!, password: String!, completion : (response : NSURLResponse?, data : NSData?, error : NSError?) -> (Void)){
@@ -61,4 +70,33 @@ class BulletinAPI{
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
         
     }
+    
+    
+    func register(email: String!, displayName: String!, password: String!, completion : (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        
+        let url : NSURL! = NSURL(string: apiAddress + "/register/")
+        
+        let request = NSMutableURLRequest(URL: url)
+        
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        
+        let loginDetails = ["email": email, "password" : password, "display_name" : displayName]
+        request.HTTPMethod = "POST"
+        
+        do{
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(loginDetails, options: .PrettyPrinted)
+            request.HTTPBody = jsonData
+            print(NSString(data: jsonData, encoding: NSUTF8StringEncoding))
+        }catch{
+            
+        }
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+        
+        
+    }
+    
+    //USE SESSION FOR REGISTRATION
+    
 }

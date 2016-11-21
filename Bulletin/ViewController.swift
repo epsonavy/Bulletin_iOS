@@ -35,6 +35,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         self.navigationController?.interactivePopGestureRecognizer!.enabled = true
 
         
+        UIView.setAnimationsEnabled(true)
+        
         singleton = Singleton.sharedInstance
         
         passwordViewVerticalConstraint.constant = -passwordView.frame.width
@@ -73,6 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         let hideKeyboardRecognizer : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         
         expandImageView.addGestureRecognizer(hideKeyboardRecognizer)
+        self.view.layoutIfNeeded()
         
         
         
@@ -85,8 +88,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
     func modalPopupClosed(sender: ModalPopup) {
         if sender.id == 1 {
             transitionToRegisterVc()
-        }else if sender.id == 3{
-            transitionToRegisterVc()
+        }else if sender.id == 4{
+            
         }
     }
     
@@ -102,11 +105,10 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let keyboardRect = keyboardFrame.CGRectValue()
         self.keyboardRect = keyboardRect
+        self.emailViewVerticalConstraint.constant = keyboardRect.height + self.emailPosition
+        self.passwordViewVerticalConstraint.constant = keyboardRect.height
         UIView.animateWithDuration(1, animations: {
-            self.emailViewVerticalConstraint.constant = keyboardRect.height + self.emailPosition
-        })
-        UIView.animateWithDuration(1, animations: {
-            self.passwordViewVerticalConstraint.constant = keyboardRect.height
+           self.view.layoutIfNeeded()
         })
         
     }
@@ -116,11 +118,10 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let keyboardRect = keyboardFrame.CGRectValue()
         self.keyboardRect = keyboardRect
+        self.emailViewVerticalConstraint.constant =  self.emailPosition
+        self.passwordViewVerticalConstraint.constant = 0
         UIView.animateWithDuration(1, animations: {
-            self.emailViewVerticalConstraint.constant =  self.emailPosition
-        })
-        UIView.animateWithDuration(1, animations: {
-            self.passwordViewVerticalConstraint.constant = 0
+            self.view.layoutIfNeeded()
         })
     }
 
@@ -129,19 +130,17 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         self.passwordTextField.becomeFirstResponder()
         
         self.emailPosition = emailView.frame.height
-        
-        UIView.animateWithDuration(1, animations: {
-            self.emailViewVerticalConstraint.constant = self.keyboardRect.height + self.emailPosition
+        self.emailViewVerticalConstraint.constant = self.keyboardRect.height + self.emailPosition
+        self.passwordViewVerticalConstraint.constant = self.keyboardRect.height
+
+        UIView.animateWithDuration(0.5, animations: {
+            self.view.layoutIfNeeded()
         })
-        
-        UIView.animateWithDuration(1, animations: {
-            self.passwordViewVerticalConstraint.constant = self.keyboardRect.height
-        })
-        
     }
 
     
     func transitionToRegisterVc(){
+        resignFirstResponders()
         singleton.email = self.emailTextField.text
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterViewController") as! RegisterViewController
         self.navigationController?.pushViewController(vc, animated: true)
@@ -150,6 +149,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         let modalPopup : ModalPopup = ModalPopup(message: "Let's get you registered!", delegate: self)
         modalPopup.id = 1
         modalPopup.show()
+        resignFirstResponders()
         
     }
     func checkEmailComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
@@ -159,14 +159,9 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         if(resCode == 418){
             //display popup dialog to ask whether or not user wants to sign up
             
-            
             promptUserToRegister()
         }
         
-        
-        
-        
-        //if successful..
         if(resCode == 200){
             showPasswordField()
         }
@@ -174,10 +169,37 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         
     }
     
+    func validateEmail(email : String!) -> Bool{
+        
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let validFormat = emailTest.evaluateWithObject(email)
+        if validFormat == false{
+            let modalPopup = ModalPopup(message: "Incorrect email address format!", delegate: self)
+            modalPopup.id = 4
+            modalPopup.show()
+            self.emailTextField.resignFirstResponder()
+            
+            return false
+        }
+        
+        if email.rangeOfString(".edu") == nil {
+            let modalPopup = ModalPopup(message: "Please use an .edu email!", delegate: self)
+            modalPopup.id = 4
+            modalPopup.show()
+            self.emailTextField.resignFirstResponder()
+            return false
+        }
+        
+        return true
+    }
+    
     func promptInvalidAccount(){
         let modalPopup : ModalPopup = ModalPopup(message: "Your account information was not recognized!", delegate: self)
         modalPopup.id = 0
         modalPopup.show()
+
     }
     
     func checkLoginComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
@@ -208,7 +230,13 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         }
     }
     
+    func resignFirstResponders(){
+        self.emailTextField.resignFirstResponder()
+        self.passwordTextField.resignFirstResponder()
+    }
+    
     func transitionToMainTabBar(){
+        resignFirstResponders()
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabBarController") as! MainTabBarController
         self.presentViewController(vc, animated: true, completion: nil)
     }
@@ -216,17 +244,18 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if self.emailTextField.isFirstResponder(){
-            self.emailTextField.resignFirstResponder()
-            
             //debug purposes..
             if(self.emailTextField.text!.characters.count < 1){
                 //display empty field dialog box
-                let modalPopup : ModalPopup = ModalPopup(message: "Please enter your campus email address! (Debug mode)", delegate: self)
+                let modalPopup : ModalPopup = ModalPopup(message: "Please enter your campus email address!", delegate: self)
                 modalPopup.id = 3
                 modalPopup.show()
+                resignFirstResponders()
                 
             }else{
-                singleton.API.checkAccountExists(self.emailTextField.text, completion: checkEmailComplete)
+                if validateEmail(self.emailTextField.text){
+                    singleton.API.checkEmailExists(self.emailTextField.text, completion: checkEmailComplete)
+                }
             }
             
             return true
@@ -245,6 +274,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         super.viewWillAppear(animated)
         
         if self.isMovingFromParentViewController(){
+            print("mmmm")
             self.expandImageView.prepare()
             self.expandImageView.beginExpanding()
         }

@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Foundation
 
-class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
+class RegisterViewController: UIViewController, UIGestureRecognizerDelegate, ModalPopupDelegate{
     @IBOutlet var titleView: UIView!
 
     @IBOutlet var emailView: UIView!
@@ -42,10 +43,16 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
     
     var backTapView : UIView!
     
+    var processing : Bool!
+    
+    
+    let singleton : Singleton! = Singleton.sharedInstance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         position = 0
         firstKeyboard = true
+        processing = false
         //shouldve made it a fucking scrollview
     
         
@@ -54,7 +61,6 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
         
         self.view.bringSubviewToFront(titleView) //this guy has to appear first..
         self.view.bringSubviewToFront(okayButton)
-        emailTextField.becomeFirstResponder()
         emailTextField.autocorrectionType = UITextAutocorrectionType.No
         displayNameTextField.autocorrectionType = UITextAutocorrectionType.No
         
@@ -63,44 +69,185 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
         passwordTextField.returnKeyType = UIReturnKeyType.Continue
         confirmPasswordTextField.returnKeyType = UIReturnKeyType.Go
         
+        emailTextField.text = singleton.email
+        
         
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardShowing), name: UIKeyboardWillShowNotification, object: nil)
         
+                NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardHiding), name: UIKeyboardWillHideNotification, object: nil)
         
-        emailVerticalConstraint.constant = self.view.frame.height
-        displayNameVerticalConstraint.constant = self.view.frame.height
-        passwordVerticalConstraint.constant = self.view.frame.height
-        confirmPasswordVerticalConstraint.constant = self.view.frame.height
+        
+        emailVerticalConstraint.constant = 0
+        displayNameVerticalConstraint.constant = 0
+        passwordVerticalConstraint.constant = 0
+        confirmPasswordVerticalConstraint.constant = 0
         
         
         okayButton.addTarget(self, action: #selector(tapForward), forControlEvents: .TouchUpInside)
         
-        
 
     }
     
+    func modalPopupOkay(sender: ModalPopup) {
+        
+    }
+    
+    func modalPopupClosed(sender: ModalPopup) {
+        if sender.id == 0{
+            emailTextField.becomeFirstResponder()
+        }else if sender.id == 1{
+            displayNameTextField.becomeFirstResponder()
+        }else if sender.id == 2{
+            passwordTextField.becomeFirstResponder()
+        }else if sender.id == 3{
+            confirmPasswordTextField.becomeFirstResponder()
+        }else if sender.id == 4 {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
+    }
+    
+    
+    override func viewDidAppear(animated: Bool){
+        super.viewDidAppear(animated)
+        emailTextField.becomeFirstResponder()
+     
+    }
+    
+    //use some regular exppressions here..
+    
     func validateEmail(email : String!) -> Bool{
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
+        
+        let emailTest = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        let validFormat = emailTest.evaluateWithObject(email)
+        if validFormat == false{
+            let modalPopup = ModalPopup(message: "Incorrect email address format!", delegate: self)
+            modalPopup.id = 0
+            modalPopup.show()
+            
+            return false
+        }
+        
+        if email.rangeOfString(".edu") == nil {
+            let modalPopup = ModalPopup(message: "Please use an .edu email!", delegate: self)
+            modalPopup.id = 0
+            modalPopup.show()
+            return false
+        }
+        
+        
+        
         return true
     }
     
+    func keyboardHiding(notification: NSNotification){
+        okayButtonVerticalConstraint.constant = 0
+        UIView.animateWithDuration(2, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
     func validateDisplayName(displayName : String!) -> Bool{
+        let RegEx = "\\A\\w{3,22}\\z"
+        let Test = NSPredicate(format:"SELF MATCHES %@", RegEx)
+        let validFormat = Test.evaluateWithObject(displayName)
+        
+        if displayName.characters.count < 3 {
+            let modalPopup = ModalPopup(message: "Display name is too short!", delegate: self)
+            modalPopup.id = 1
+            modalPopup.show()
+            return false
+        }
+        if displayName.characters.count > 25 {
+            let modalPopup = ModalPopup(message: "Display name is too long!", delegate: self)
+            modalPopup.id = 1
+            modalPopup.show()
+            return false
+        }
+        
+        
+        if validFormat == false{
+            let modalPopup = ModalPopup(message: "Only letters and numbers allowed!", delegate: self)
+            modalPopup.id = 1
+            modalPopup.show()
+            return false
+        }
+        
         return true
     }
     
     func validatePassword(password: String!) -> Bool{
+        
+        if password.characters.count < 3 {
+            let modalPopup = ModalPopup(message: "Password is too short!", delegate: self)
+            modalPopup.id = 2
+            modalPopup.show()
+            return false
+        }
         return true
     }
     
     
     func validateConfirmPassword(confirmPassword: String!) -> Bool{
+        if(self.passwordTextField.text != confirmPassword){
+            let modalPopup = ModalPopup(message: "Passwords do not match!", delegate: self)
+            modalPopup.id = 3
+            modalPopup.show()
+            return false
+        }
         return true
     }
     
-    func registerAndLogin(){
-        //disable all ui activity here..
-        transitionToMainTabBar()
+    func transitionToConfirm(){
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ConfirmViewController") as! ConfirmViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func loginComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        let responseHTTP = response as! NSHTTPURLResponse!
+        let resCode = responseHTTP.statusCode
+        
+        if (resCode == 200){
+            //get the token and store it
+            
+            var decodedJson : AnyObject
+            do {
+                decodedJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+                singleton.API.setToken(decodedJson["token"] as! String!)
+            }
+            catch (let e) {
+                //Error in parsing
+                print(e)
+            }
+            
+            transitionToConfirm()
+            
+            
+            
+            
+        }else{
+            let modalPopup : ModalPopup = ModalPopup(message: "Could not log you in!", delegate: self)
+            modalPopup.id = 4
+            modalPopup.show()
+        }
+    }
+    func registerComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        let responseHTTP = response as! NSHTTPURLResponse!
+        let resCode = responseHTTP.statusCode
+        
+        if(resCode == 400){
+            let modalPopup : ModalPopup = ModalPopup(message: "There was an problem with registering!", delegate: self)
+            modalPopup.id = 4
+            modalPopup.show()
+        }else if (resCode == 200){
+            //get the token and store it
+            
+            //registration complete.. now log in.
+            singleton.API.login(singleton.email, password: singleton.password, completion: loginComplete)
+            
+        }
     }
     
     func transitionToMainTabBar(){
@@ -114,7 +261,58 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
         return true
     }
     
+    func resignFirstResponders(){
+        emailTextField.resignFirstResponder()
+        displayNameTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        confirmPasswordTextField.resignFirstResponder()
+    }
+    
+    func checkEmailComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        processing = false
+        okayButton.setTitle("Next", forState: .Normal)
+        let responseHTTP = response as! NSHTTPURLResponse!
+        let resCode = responseHTTP.statusCode
+        
+        if(resCode == 200){
+            resignFirstResponders()
+            let modalPopup = ModalPopup(message: "Email is already registered!", delegate: self)
+            modalPopup.id = 0
+            modalPopup.show()
+        }else if(resCode == 418){
+            nextRegisterItem()
+        }
+        
+    }
+    func checkDisplayNameComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        processing = false
+        okayButton.setTitle("Next", forState: .Normal)
+        let responseHTTP = response as! NSHTTPURLResponse!
+        let resCode = responseHTTP.statusCode
+        
+        if(resCode == 200){
+            resignFirstResponders()
+            let modalPopup = ModalPopup(message: "Display name is already taken!", delegate: self)
+            modalPopup.id = 1
+            modalPopup.show()
+        }else if(resCode == 418){
+            nextRegisterItem()
+        }
+
+    }
+    
+    func nextRegisterItem(){
+        position = position + 1
+        changePosition(position)
+    }
+    
     func tapForward(sender : UIButton){
+        
+        if let seeProcessing = processing {
+            if (seeProcessing){ //don't let users do it again.
+                return
+            }
+        }
         if(position < 4){
             
             
@@ -138,12 +336,31 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
             if let seeValid = valid{
                 if(seeValid){
                     if(position >= 3){
-                        registerAndLogin()
+                        transitionToConfirm()
                     }else{
-                        position = position + 1
-                        changePosition(position)
+                        if position == 0{
+                            okayButton.setTitle("Checking", forState: .Normal)
+                            singleton.API.checkEmailExists(self.emailTextField.text, completion: checkEmailComplete)
+                            processing = true
+                            
+                        }else if position == 1{
+                            okayButton.setTitle("Checking", forState: .Normal)
+                            singleton.API.checkDisplayNameExists(self.displayNameTextField.text, completion: checkDisplayNameComplete)
+            
+                            processing = true
+                        }else if position == 3{
+                            //final step
+                            okayButton.setTitle("Verifying", forState: .Normal)
+                            singleton.API.register(self.emailTextField.text, displayName: self.displayNameTextField.text, password: self.passwordTextField.text, completion: registerComplete)
+                            
+                            processing = true
+                        }else{
+                            nextRegisterItem()
+                        }
                     }
                   
+                }else{
+                    resignFirstResponders()
                 }
             }
             
@@ -151,6 +368,11 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
     }
     
     func tapBack(){
+        if let seeProcessing = processing {
+            if (seeProcessing){ //don't let users do it again.
+                return
+            }
+        }
         if(position > 0){
             position = position - 1
             changePosition(position)
@@ -159,7 +381,7 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
     
 
     func loadBackTapView(){
-        self.backTapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - keyboardRect.height - self.okayButton.frame.height))
+        self.backTapView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - keyboardRect.height - self.okayButton.frame.height - fieldViewHeight))
         self.view.addSubview(backTapView)
         
         let tapBackGestureRecognizer : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapBack))
@@ -173,9 +395,9 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
         let keyboardRect = keyboardFrame.CGRectValue()
         
         self.keyboardRect = keyboardRect
-        
+        self.okayButtonVerticalConstraint.constant = keyboardRect.height
         UIView.animateWithDuration(1, animations: {
-            self.okayButtonVerticalConstraint.constant = keyboardRect.height
+            self.view.layoutIfNeeded()
             }, completion: {
                 (finished : Bool) -> Void in
                 self.loadBackTapView()
@@ -192,9 +414,10 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
     //if you put 1, it will be one above..if you put three you're a bitch
     
     func moveConstraintAboveKeyboard(constraint : NSLayoutConstraint, view : UIView, position : CGFloat!){
-        UIView.animateWithDuration(1, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 10, options: [], animations: { // I KNOW THIS IS GHETTO MEOW
-            constraint.constant = self.keyboardRect.height + self.okayButton.frame.height + CGFloat(self.fieldViewHeight * CGFloat(position))
-            view.alpha = 1 - CGFloat(position / 10) * 2.5
+        constraint.constant = self.keyboardRect.height + self.okayButton.frame.height + CGFloat(self.fieldViewHeight * CGFloat(position))
+        UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.8, initialSpringVelocity: 5, options: [], animations: { // I KNOW THIS IS GHETTO MEOW
+            self.view.layoutIfNeeded()
+            view.alpha = 1 - CGFloat(position / 10) * 3
         }, completion: nil)
     }
 
@@ -207,14 +430,14 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
             self.emailTextField.becomeFirstResponder()
             moveConstraintAboveKeyboard(emailVerticalConstraint, view: emailView, position: 0)
             moveConstraintAboveKeyboard(displayNameVerticalConstraint, view: displayNameView, position: -1)
-            moveConstraintAboveKeyboard(passwordVerticalConstraint, view: passwordView, position: -1)
-            moveConstraintAboveKeyboard(confirmPasswordVerticalConstraint, view: confirmPasswordView, position: -1)
+            moveConstraintAboveKeyboard(passwordVerticalConstraint, view: passwordView, position: -2)
+            moveConstraintAboveKeyboard(confirmPasswordVerticalConstraint, view: confirmPasswordView, position: -3)
         }else if (position == 1){
             self.displayNameTextField.becomeFirstResponder()
             moveConstraintAboveKeyboard(emailVerticalConstraint, view: emailView, position: 1)
             moveConstraintAboveKeyboard(displayNameVerticalConstraint, view: displayNameView, position: 0)
             moveConstraintAboveKeyboard(passwordVerticalConstraint, view: passwordView, position: -1)
-            moveConstraintAboveKeyboard(confirmPasswordVerticalConstraint, view:confirmPasswordView, position: -1)
+            moveConstraintAboveKeyboard(confirmPasswordVerticalConstraint, view:confirmPasswordView, position: -2)
         }else if (position == 2){
             self.passwordTextField.becomeFirstResponder()
             moveConstraintAboveKeyboard(emailVerticalConstraint, view: emailView, position: 2)
@@ -227,6 +450,11 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate{
             moveConstraintAboveKeyboard(displayNameVerticalConstraint, view: displayNameView, position: 2)
             moveConstraintAboveKeyboard(passwordVerticalConstraint, view:passwordView, position: 1)
             moveConstraintAboveKeyboard(confirmPasswordVerticalConstraint, view: confirmPasswordView, position: 0)
+        }
+        if position != 3 {
+            okayButton.setTitle("Next", forState: .Normal)
+        }else{
+            okayButton.setTitle("Confirm", forState: .Normal)
         }
         
     }

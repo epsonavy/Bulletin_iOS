@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulletin/ViewController.swift"
-            timestampString = "501329893.648836"
+            timestampString = "501408312.250798"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "67"
-            endingLineNumber = "67"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulletin/RegisterViewController.swift"
-            timestampString = "501386556.751211"
+            timestampString = "501419242.972408"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
-            landmarkName = "tapForward(_:)"
+            startingLineNumber = "338"
+            endingLineNumber = "338"
+            landmarkName = "tapForward(sender:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
