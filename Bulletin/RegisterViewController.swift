@@ -217,6 +217,8 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate, Mod
                 decodedJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
                 singleton.API.setToken(decodedJson["token"] as! String!)
                 print("Token was set to \(singleton.API.token)")
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setValue(singleton.API.token, forKey:"token")
             }
             catch (let e) {
                 //Error in parsing

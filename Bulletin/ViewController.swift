@@ -31,6 +31,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
     var emailPosition : CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setValue("token", forKey:"token")
         
         self.navigationController?.interactivePopGestureRecognizer!.enabled = true
 
@@ -41,7 +43,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         
         passwordViewVerticalConstraint.constant = -passwordView.frame.width
         
-        emailViewVerticalConstraint.constant = 0
+        emailViewVerticalConstraint.constant = -emailView.frame.width
+        self.view.layoutIfNeeded()
         
         expandImageView = ExpandImageView(frame: self.view.frame)
         expandImageView.addImage(UIImage(named: "background.jpg")!)
@@ -79,6 +82,11 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         
         
         
+    }
+    override func viewDidAppear(animated: Bool){
+        super.viewDidAppear(animated)
+        
+        viewTokenSaved() //this just checks if you already have a token
     }
     
     func modalPopupOkay(sender: ModalPopup) {
@@ -202,6 +210,38 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
 
     }
     
+    func showEmailField(){
+        self.emailViewVerticalConstraint.constant = 0
+        UIView.animateWithDuration(1, animations: {
+            self.view.layoutIfNeeded()
+        })
+    }
+    
+    func checkTokenComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        let responseHTTP = response as! NSHTTPURLResponse!
+        let resCode = responseHTTP.statusCode
+        if(resCode == 200){
+            transitionToMainTabBar()
+        }else{
+            showEmailField()
+        }
+    }
+    
+    func viewTokenSaved(){
+        let defaults = NSUserDefaults.standardUserDefaults()
+        if let token = defaults.stringForKey("token"){
+            
+            //if a token exists
+            singleton.API.setToken(token)
+            singleton.API.checkToken(token, completion: checkTokenComplete)
+            
+        }else{
+            //no token
+            showEmailField()
+        }
+        
+    }
+    
     func checkLoginComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
         let responseHTTP = response as! NSHTTPURLResponse!
         let resCode = responseHTTP.statusCode
@@ -217,6 +257,8 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
             do {
                 decodedJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
                 singleton.API.setToken(decodedJson["token"] as! String!)
+                let defaults = NSUserDefaults.standardUserDefaults()
+                defaults.setValue(singleton.API.token, forKey:"token")
             }
             catch (let e) {
                 //Error in parsing

@@ -159,6 +159,15 @@ class BulletinAPI{
         
     }
     
+    
+    func checkToken(token: String!, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        let url : NSURL! = NSURL(string: apiAddress + "/auth?token=" + token);
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion);
+        
+    }
 
     
 }
