@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate, ModalPopupDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate {
     @IBOutlet var titleView: UIView!
 
     @IBOutlet var emailView: UIView!
@@ -26,10 +26,15 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
     var singleton : Singleton!
     
     
+    
     var keyboardRect : CGRect!
     var emailPosition : CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.interactivePopGestureRecognizer!.enabled = true
+
+        
         singleton = Singleton.sharedInstance
         
         passwordViewVerticalConstraint.constant = -passwordView.frame.width
@@ -120,7 +125,6 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
     }
 
     
-    
     func showPasswordField(){
         self.passwordTextField.becomeFirstResponder()
         
@@ -135,17 +139,12 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
         })
         
     }
-    func alertView(alertView: UIAlertView, clickedButtonAtIndex buttonIndex: Int){
-        if(buttonIndex == 1){
-            transitionToRegisterVc()
-        }
-    }
-    
+
     
     func transitionToRegisterVc(){
         singleton.email = self.emailTextField.text
         let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RegisterViewController") as! RegisterViewController
-        self.presentViewController(vc, animated: true, completion: nil)
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     func promptUserToRegister(){
         let modalPopup : ModalPopup = ModalPopup(message: "Let's get you registered!", delegate: self)
@@ -242,7 +241,18 @@ class ViewController: UIViewController, UITextFieldDelegate, UIAlertViewDelegate
         return true
     }
     
+    override func viewWillAppear(animated: Bool){
+        super.viewWillAppear(animated)
+        
+        if self.isMovingFromParentViewController(){
+            self.expandImageView.prepare()
+            self.expandImageView.beginExpanding()
+        }
+        
+    }
+    
     override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
         self.expandImageView.stopExpanding()
     }
     
