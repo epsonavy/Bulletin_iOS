@@ -216,6 +216,7 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate, Mod
             do {
                 decodedJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
                 singleton.API.setToken(decodedJson["token"] as! String!)
+                print("Token was set to \(singleton.API.token)")
             }
             catch (let e) {
                 //Error in parsing
@@ -245,7 +246,7 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate, Mod
             //get the token and store it
             
             //registration complete.. now log in.
-            singleton.API.login(singleton.email, password: singleton.password, completion: loginComplete)
+            singleton.API.login(self.emailTextField.text, password: self.passwordTextField.text, completion: loginComplete)
             
         }
     }
@@ -335,9 +336,6 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate, Mod
             
             if let seeValid = valid{
                 if(seeValid){
-                    if(position >= 3){
-                        transitionToConfirm()
-                    }else{
                         if position == 0{
                             okayButton.setTitle("Checking", forState: .Normal)
                             singleton.API.checkEmailExists(self.emailTextField.text, completion: checkEmailComplete)
@@ -357,7 +355,6 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate, Mod
                         }else{
                             nextRegisterItem()
                         }
-                    }
                   
                 }else{
                     resignFirstResponders()

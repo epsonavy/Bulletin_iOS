@@ -12,7 +12,7 @@ class Singleton{
     static let sharedInstance = Singleton()
     
     //replace with aws address later
-    let API : BulletinAPI = BulletinAPI("http://localhost:8080/api")
+    let API : BulletinAPI = BulletinAPI("http://54.145.163.155/api")
     
     
     //pretty vital. you need this or nothing will work.
@@ -33,6 +33,7 @@ class Singleton{
     var email : String!
     var password: String!
     var displayName : String!
+    var profilePicture: String!
     
     
     

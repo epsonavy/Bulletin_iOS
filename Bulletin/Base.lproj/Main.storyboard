@@ -420,6 +420,9 @@
                                 <state key="normal" title="Done">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="proceedToMainTab:" destination="54b-Sw-0XU" eventType="touchUpInside" id="ed3-dp-tS4"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make sure to confirm your email!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NEw-Ht-Cw2">
                                 <rect key="frame" x="0.0" y="546" width="374" height="53"/>
@@ -430,17 +433,17 @@
                                 <color key="textColor" white="0.31316810340000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="DNM-Zh-Y32" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="DNM-Zh-Y32" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
                                 <rect key="frame" x="112" y="143" width="150" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="JhK-gV-896"/>
                                     <constraint firstAttribute="height" constant="150" id="eTC-9d-Sqe"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to take a picture!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLQ-ZZ-orZ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to set your picture!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hLQ-ZZ-orZ">
                                 <rect key="frame" x="16" y="301" width="343" height="18"/>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
-                                <color key="textColor" white="0.31316810340000001" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" white="0.56443965519999995" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -462,6 +465,9 @@
                             <constraint firstItem="rKf-Gc-7d0" firstAttribute="leading" secondItem="RWd-Ny-nVQ" secondAttribute="leadingMargin" constant="-20" id="uSe-6h-bp2"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="profileImageView" destination="DNM-Zh-Y32" id="MLQ-jd-M5X"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6FV-HF-rcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -93,8 +93,9 @@ class ModalPopup: UIView {
         
         self.messageView.addSubview(exclamationIcon)
         
-        let okayButton : FlatButton = FlatButton(frame: CGRect(x: 0, y: self.messageView.frame.height - 40, width: self.messageView.frame.width, height: 40))
+        let okayButton : UIButton = UIButton(frame: CGRect(x: 0, y: self.messageView.frame.height - 40, width: self.messageView.frame.width, height: 40))
         okayButton.setTitle("Okay", forState: .Normal)
+        okayButton.backgroundColor = Singleton.sharedInstance.mainThemeColor
 
 
         self.messageView.addSubview(okayButton)

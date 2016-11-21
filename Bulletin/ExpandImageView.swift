@@ -112,6 +112,9 @@ class ExpandImageView: UIView {
         imageViewFirst = UIImageView(frame: frame)
         imageViewSecond = UIImageView(frame: frame)
         
+        imageViewFirst.contentMode = .ScaleAspectFill
+        imageViewSecond.contentMode = .ScaleAspectFill
+        
         imageCounter = 0
         
         delay = 5
@@ -129,6 +132,9 @@ class ExpandImageView: UIView {
         
         imageViewFirst = UIImageView(frame: UIScreen().bounds)
         imageViewSecond = UIImageView(frame: UIScreen().bounds)
+        
+        imageViewFirst.contentMode = .ScaleAspectFill
+        imageViewSecond.contentMode = .ScaleAspectFill
         
         imageCounter = 0
         
