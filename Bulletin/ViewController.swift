@@ -31,8 +31,6 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
     var emailPosition : CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setValue("token", forKey:"token")
         
         self.navigationController?.interactivePopGestureRecognizer!.enabled = true
 
