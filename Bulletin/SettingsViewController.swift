@@ -273,7 +273,7 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
         profileScrollViewVerticalConstraint.constant = keyboardRect.height - self.tabBarController!.tabBar.frame.height + okayButton.frame.height
         okayButtonVerticalConstraint.constant = keyboardRect.height - self.tabBarController!.tabBar.frame.height
         
-        UIView.animateWithDuration(0.75, animations: {
+        UIView.animateWithDuration(0.75, delay: 0.25, options: [], animations: {
             self.view.layoutIfNeeded()
             }, completion: {
                 (finished: Bool) -> Void in
