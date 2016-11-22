@@ -12,8 +12,8 @@ class Singleton{
     static let sharedInstance = Singleton()
     
     //replace with aws address later
-    //REMOVE THE last /
-    let API : BulletinAPI = BulletinAPI("http://localhost:8080/api")
+    //if not change to
+    let API : BulletinAPI = BulletinAPI("http://54.145.163.155/api")
     
     
     //pretty vital. you need this or nothing will work.

@@ -21,6 +21,7 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
         super.viewDidLoad()
         self.tabBar.tintColor = UIColor.blackColor()
         self.tabBar.barTintColor = UIColor(red:0.985, green:0.985, blue:0.985, alpha: 1.0)
+
         
         /*
         let swipeUpGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))

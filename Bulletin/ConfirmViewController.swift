@@ -65,7 +65,7 @@ class ConfirmViewController: UIViewController, UIImagePickerControllerDelegate, 
         }
     }
     
-    func checkLoginComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
+    func checkUploadComplete(response: NSURLResponse?, data:NSData?, error: NSError?){
         let responseHTTP = response as! NSHTTPURLResponse!
         let resCode = responseHTTP.statusCode
         
@@ -99,7 +99,7 @@ class ConfirmViewController: UIViewController, UIImagePickerControllerDelegate, 
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             profileImageView.contentMode = .ScaleAspectFill
             profileImageView.image = image
-            singleton.API.uploadImage(profileImageView.image, completion: checkLoginComplete)
+            singleton.API.uploadImage(profileImageView.image, completion: checkUploadComplete)
         }
         dismissViewControllerAnimated(true, completion: nil)
     }
