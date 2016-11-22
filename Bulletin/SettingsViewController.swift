@@ -189,11 +189,11 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
         
         if (resCode == 200){
             let modalPopup : ModalPopup = ModalPopup(message: "Image upload successful!", delegate: self)
-            modalPopup.id = 2
+            modalPopup.id = 4
             modalPopup.show()
         }else{
             let modalPopup : ModalPopup = ModalPopup(message: "There was a problem with updating your profile!", delegate: self)
-            modalPopup.id = 2
+            modalPopup.id = 4
             modalPopup.show()
         }
     }
@@ -221,7 +221,7 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
             
         }else{
             let modalPopup : ModalPopup = ModalPopup(message: "There was a problem with uploading!", delegate: self)
-            modalPopup.id = 2
+            modalPopup.id = 4
             modalPopup.show()
             
         }
