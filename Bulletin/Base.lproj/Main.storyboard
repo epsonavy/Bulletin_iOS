@@ -605,7 +605,7 @@
             </objects>
             <point key="canvasLocation" x="5507.2463768115949" y="919.56521739130437"/>
         </scene>
-        <!--Setting-->
+        <!--Settings View Controller-->
         <scene sceneID="1sK-oU-59Z">
             <objects>
                 <viewController storyboardIdentifier="SettingsViewController" id="o9e-38-bzy" customClass="SettingsViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
@@ -616,83 +616,20 @@
                     <view key="view" contentMode="scaleToFill" id="4sD-VX-rtW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="msV-rr-M6i" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="28" width="250" height="250"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="250" id="Vsd-N3-thz"/>
-                                    <constraint firstAttribute="width" constant="250" id="pTe-vq-Bm8"/>
-                                </constraints>
-                            </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sPq-uN-TJy" customClass="FlatTextField" customModule="Bulletin" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="314" width="250" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="B4R-g4-DBz"/>
-                                    <constraint firstAttribute="width" constant="250" id="sGO-kw-FvM"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NJK-36-FUD" customClass="FlatTextField" customModule="Bulletin" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="362" width="250" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Dwa-QL-dVb"/>
-                                    <constraint firstAttribute="width" constant="250" id="gAp-pw-KsJ"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nQr-Tb-JUR" customClass="FlatTextField" customModule="Bulletin" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="409" width="250" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fC6-5k-4kP"/>
-                                    <constraint firstAttribute="width" constant="250" id="yZV-Xk-d4N"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ZK-KX-NsC" customClass="FlatTextField" customModule="Bulletin" customModuleProvider="target">
-                                <rect key="frame" x="62.5" y="461" width="250" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="R3Y-ly-8vY"/>
-                                    <constraint firstAttribute="height" constant="30" id="TXe-r0-nG0"/>
-                                </constraints>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="NJK-36-FUD" firstAttribute="top" secondItem="sPq-uN-TJy" secondAttribute="bottom" constant="18" id="N8p-B5-U2f"/>
-                            <constraint firstItem="4ZK-KX-NsC" firstAttribute="top" secondItem="nQr-Tb-JUR" secondAttribute="bottom" constant="22" id="QlN-Aj-bdd"/>
-                            <constraint firstItem="nQr-Tb-JUR" firstAttribute="top" secondItem="NJK-36-FUD" secondAttribute="bottom" constant="17" id="RLf-41-Bia"/>
-                            <constraint firstItem="nQr-Tb-JUR" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="X53-zW-B40"/>
-                            <constraint firstItem="msV-rr-M6i" firstAttribute="top" secondItem="Ipv-dG-7fx" secondAttribute="bottom" constant="8" id="a6j-9K-vs2"/>
-                            <constraint firstItem="sPq-uN-TJy" firstAttribute="top" secondItem="msV-rr-M6i" secondAttribute="bottom" constant="36" id="bQy-wV-bNb"/>
-                            <constraint firstItem="4ZK-KX-NsC" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="g4z-aK-zic"/>
-                            <constraint firstItem="msV-rr-M6i" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="i1h-k4-YRO"/>
-                            <constraint firstItem="sPq-uN-TJy" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="jrh-SP-hB9"/>
-                            <constraint firstItem="NJK-36-FUD" firstAttribute="centerX" secondItem="4sD-VX-rtW" secondAttribute="centerX" id="sXa-av-4Uc"/>
-                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Setting" image="Settings-50.png" id="8XM-03-eM3"/>
-                    <connections>
-                        <outlet property="email" destination="nQr-Tb-JUR" id="uAq-of-89V"/>
-                        <outlet property="firstName" destination="sPq-uN-TJy" id="KoJ-4w-c9j"/>
-                        <outlet property="lastName" destination="NJK-36-FUD" id="xj6-N6-pcV"/>
-                        <outlet property="phoneNum" destination="4ZK-KX-NsC" id="Bnd-o7-fPg"/>
-                        <outlet property="profilePic" destination="msV-rr-M6i" id="yZZ-ml-i7S"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="" image="Settings-50.png" id="8XM-03-eM3">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="Settings Filled-50"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vaZ-Q3-wsF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2310.144927536232" y="1132.3369565217392"/>
+            <point key="canvasLocation" x="2309.5999999999999" y="1131.1844077961021"/>
         </scene>
-        <!--Activity-->
+        <!--Activity View Controller-->
         <scene sceneID="v3p-tO-iIu">
             <objects>
                 <viewController storyboardIdentifier="ActivityViewController" id="G2g-CJ-5mC" customClass="ActivityViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
@@ -705,7 +642,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Activity" image="Meeting-50.png" id="XHe-2t-pTo"/>
+                    <tabBarItem key="tabBarItem" title="" image="Meeting-50.png" id="XHe-2t-pTo">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KSt-84-eko" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1038,11 +977,16 @@
             </objects>
             <point key="canvasLocation" x="6276.811594202899" y="919.56521739130437"/>
         </scene>
-        <!--Post-->
+        <!--Navigation Controller-->
         <scene sceneID="fdY-oX-zQy">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FA8-aE-APt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Post" image="Speech Bubble-50.png" id="ixc-WJ-UAe"/>
+                    <tabBarItem key="tabBarItem" title="" image="Speech Bubble-50.png" id="ixc-WJ-UAe">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="Speech Bubble Filled-50"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ULf-ym-lxW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1057,11 +1001,16 @@
             </objects>
             <point key="canvasLocation" x="4742.0289855072469" y="919.56521739130437"/>
         </scene>
-        <!--Message-->
+        <!--Navigation Controller-->
         <scene sceneID="jSu-z3-0o4">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="NFy-1j-izU" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Message" image="Message-50.png" id="lmK-vx-vRD"/>
+                    <tabBarItem key="tabBarItem" title="" image="Message-50.png" id="lmK-vx-vRD">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="Message Filled-50"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zNh-Hd-veT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1094,11 +1043,16 @@
             </objects>
             <point key="canvasLocation" x="6276.811594202899" y="226.63043478260872"/>
         </scene>
-        <!--Home-->
+        <!--Navigation Controller-->
         <scene sceneID="8xx-O0-siZ">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pda-Wp-In8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home-50.png" id="sfo-of-dHc"/>
+                    <tabBarItem key="tabBarItem" title="" image="Home-50.png" id="sfo-of-dHc">
+                        <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="image" keyPath="selectedImage" value="Home Filled-50"/>
+                        </userDefinedRuntimeAttributes>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ut3-t8-zld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -1133,10 +1087,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Home Filled-50" width="128" height="128"/>
         <image name="Home-50.png" width="25" height="25"/>
         <image name="Meeting-50.png" width="25" height="25"/>
+        <image name="Message Filled-50" width="128" height="128"/>
         <image name="Message-50.png" width="25" height="25"/>
+        <image name="Settings Filled-50" width="128" height="128"/>
         <image name="Settings-50.png" width="25" height="25"/>
+        <image name="Speech Bubble Filled-50" width="128" height="128"/>
         <image name="Speech Bubble-50.png" width="25" height="25"/>
         <image name="email_icon.png" width="128" height="128"/>
         <image name="name_icon.png" width="250" height="250"/>
