@@ -231,7 +231,7 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
     func logout(){
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setValue("InvalidToken", forKey: "token")
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("ViewController") as! ViewController
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginNavigationController") as! UINavigationController
         self.presentViewController(vc, animated: true, completion: nil)
     }
     

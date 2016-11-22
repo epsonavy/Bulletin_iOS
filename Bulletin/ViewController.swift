@@ -32,6 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.navigationController?.interactivePopGestureRecognizer!.enabled = true
 
         
