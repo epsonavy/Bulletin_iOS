@@ -62,6 +62,7 @@
 		057B82BA1DE18B60009B059E /* exclamation_icon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 057B82B91DE18B60009B059E /* exclamation_icon@2x.jpg */; };
 		057B82BF1DE19D7B009B059E /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82BE1DE19D7B009B059E /* RegisterViewController.swift */; };
 		057B82C11DE1A449009B059E /* name_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057B82C01DE1A449009B059E /* name_icon@2x.png */; };
+		05B9C12A1DE640930095D8BA /* ConversationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B9C1291DE640930095D8BA /* ConversationViewController.swift */; };
 		05C8C70D1DE2CEA50063930F /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C8C70C1DE2CEA50063930F /* ConfirmViewController.swift */; };
 		AA0941641DCD9C0C005F1F8D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941631DCD9C0C005F1F8D /* Item.swift */; };
 		AA0941671DCDA4AF005F1F8D /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941661DCDA4AF005F1F8D /* ItemStore.swift */; };
@@ -179,6 +180,7 @@
 		057B82B91DE18B60009B059E /* exclamation_icon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "exclamation_icon@2x.jpg"; path = "../exclamation_icon@2x.jpg"; sourceTree = "<group>"; };
 		057B82BE1DE19D7B009B059E /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		057B82C01DE1A449009B059E /* name_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "name_icon@2x.png"; path = "../name_icon@2x.png"; sourceTree = "<group>"; };
+		05B9C1291DE640930095D8BA /* ConversationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationViewController.swift; sourceTree = "<group>"; };
 		05C8C70C1DE2CEA50063930F /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		AA0941631DCD9C0C005F1F8D /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AA0941661DCDA4AF005F1F8D /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
@@ -523,6 +525,7 @@
 				AAD42CC51DD2BD47001DC51E /* Model */,
 				0526B7E81DBEBAA0005A136C /* MessageViewController.swift */,
 				AAD42CC31DD2B74E001DC51E /* DetailMessageViewController.swift */,
+				05B9C1291DE640930095D8BA /* ConversationViewController.swift */,
 			);
 			name = Message;
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				0500FFB91DBDCF0C00E83F4A /* AppDelegate.swift in Sources */,
 				AA332A661DDD93CE0076C4A3 /* MessageStore.swift in Sources */,
 				0500FFEA1DBDD06A00E83F4A /* FlatButton.swift in Sources */,
+				05B9C12A1DE640930095D8BA /* ConversationViewController.swift in Sources */,
 				0526B7EF1DBEBB67005A136C /* ActivityViewController.swift in Sources */,
 				AACC49D61DCF2DEE009D66B5 /* ImageStore.swift in Sources */,
 				0500FFF01DBDE98400E83F4A /* Singleton.swift in Sources */,

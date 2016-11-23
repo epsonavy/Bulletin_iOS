@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
     var emailPosition : CGFloat!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         
         self.navigationController?.interactivePopGestureRecognizer!.enabled = true
 
