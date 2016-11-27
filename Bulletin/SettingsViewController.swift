@@ -11,11 +11,12 @@ import UIKit
 
 class SettingsViewController : UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate, UITextFieldDelegate, ModalPopupDelegate {
     
+    @IBOutlet var emailTextField: UITextField!
     @IBOutlet var displayNameLabel: UILabel!
     @IBOutlet var titleView: UIView!
     @IBOutlet var contentView: UIView!
 
-    @IBOutlet var emailTextField: UIView!
+    @IBOutlet var emailView: UIView!
     @IBOutlet var okayButton: UIButton!
     
     @IBOutlet var profileScrollViewVerticalConstraint: NSLayoutConstraint!
@@ -23,6 +24,8 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
     @IBOutlet var changePasswordTextField: UITextField!
     @IBOutlet var imageView: CircleImageView!
     @IBOutlet var profileScrollView: UIScrollView!
+    
+    
     
     @IBOutlet var okayButtonVerticalConstraint: NSLayoutConstraint!
     
@@ -33,9 +36,20 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
     
     let singleton : Singleton = Singleton.sharedInstance
     
+    var refreshProfile : UIRefreshControl = UIRefreshControl()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         processing = false
+        
+        
+        getProfileDetails()
+        
+        refreshProfile.addTarget(self, action: #selector(getProfileDetails), forControlEvents: UIControlEvents.ValueChanged)
+        profileScrollView.addSubview(refreshProfile)
+        
+
+        
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardShowing), name: UIKeyboardWillShowNotification, object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardHiding), name:UIKeyboardWillHideNotification, object: nil)
@@ -54,6 +68,33 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
         
         imageView.addGestureRecognizer(changePictureTapGesture)
         
+    }
+    
+    func checkUserProfileComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        let resHTTP = response as! NSHTTPURLResponse
+        let resCode = resHTTP.statusCode
+        if(resCode == 200){
+            var decodedJson : AnyObject
+            do{
+                decodedJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+                singleton.email = decodedJson["email"] as! String!
+                singleton.displayName = decodedJson["display_name"] as! String!
+                
+                self.emailTextField.text = singleton.email
+                self.displayNameLabel.text = singleton.displayName
+                refreshProfile.endRefreshing()
+                
+                //This should update the settings page properly
+                
+            }catch(let e){
+                print(e)
+            }
+            
+        }
+    }
+    
+    func getProfileDetails(){
+        singleton.API.getUserDetails(checkUserProfileComplete)
     }
 
     func changePicture(gestureRecognizer: UIGestureRecognizer){
@@ -277,7 +318,7 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
             self.view.layoutIfNeeded()
             }, completion: {
                 (finished: Bool) -> Void in
-                self.profileScrollView.setContentOffset(CGPoint(x: 0, y: self.contentView.frame.height - self.profileScrollView.frame.height - self.emailTextField.frame.height), animated: true)
+                self.profileScrollView.setContentOffset(CGPoint(x: 0, y: self.contentView.frame.height - self.profileScrollView.frame.height - self.emailView.frame.height), animated: true)
 
         })
     }

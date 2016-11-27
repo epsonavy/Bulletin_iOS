@@ -30,6 +30,46 @@ class BulletinAPI{
     }
     
     
+    func getSpecificItem(itemId: String!, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        let url : NSURL! = NSURL(string: apiAddress + "/items/?token=" + getToken() + "&itemId=" + itemId)
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
+    func getUserItems(completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        let url : NSURL! = NSURL(string: apiAddress + "/items/?token=" + getToken())
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
+    func getSpecificUser(userId: String!, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        
+        let url : NSURL! = NSURL(string: apiAddress + "/users/find/?token=" + getToken() + "&userId=" + userId)
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
+    func getUserDetails(completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        
+        let url : NSURL! = NSURL(string: apiAddress + "/users/?token=" + getToken())
+    
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
+    
     func checkEmailExists(email: String!, completion : (response : NSURLResponse?, data : NSData?, error : NSError?) -> (Void)){
         //  /register/check
         

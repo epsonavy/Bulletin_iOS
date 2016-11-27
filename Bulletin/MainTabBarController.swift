@@ -13,8 +13,10 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
     var homeVc : UINavigationController! // =>HomeViewController!
     var messageVc : UINavigationController! // =>MessageViewController!
     var postVc : UINavigationController! // => PostViewController!
-    var activityVc : ActivityViewController!
+    var activityVc : UINavigationController!
     var settingsVc : SettingsViewController!
+    
+    let singleton = Singleton.sharedInstance
   
     
     override func viewDidLoad() {
@@ -22,34 +24,20 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
         self.tabBar.tintColor = UIColor.blackColor()
         self.tabBar.barTintColor = UIColor(red:0.985, green:0.985, blue:0.985, alpha: 1.0)
 
-        
-        /*
-        let swipeUpGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))
-        let swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(swipeAction))*
-        
-        
-        self.view.backgroundColor = UIColor.whiteColor()
-        
-        swipeUpGestureRecognizer.direction = .Up
-        
-        swipeDownGestureRecognizer.direction = .Down
-        swipeUpGestureRecognizer.enabled = true
-        swipeDownGestureRecognizer.enabled = true
-        swipeUpGestureRecognizer.cancelsTouchesInView = true
-        swipeDownGestureRecognizer.cancelsTouchesInView = true
 
-        
-        self.view.addGestureRecognizer(swipeUpGestureRecognizer)
-        self.view.addGestureRecognizer(swipeDownGestureRecognizer)*/
-        
+    
         homeVc = self.viewControllers![0] as! UINavigationController // =>HomeViewController
         messageVc = self.viewControllers![1] as! UINavigationController // =>MessageViewController
         postVc = self.viewControllers![2] as! UINavigationController // => PostViewController
-        activityVc = self.viewControllers![3] as! ActivityViewController
+        activityVc = self.viewControllers![3] as! UINavigationController //shit..
         settingsVc = self.viewControllers![4] as! SettingsViewController
         
         //hideTabBarAnimated(false)
     }
+    
+
+    
+ 
     
     /*
     func scrollViewWillBeginDragging(scrollView: UIScrollView) {

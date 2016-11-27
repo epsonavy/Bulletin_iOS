@@ -13,7 +13,7 @@ class Singleton{
     
     //replace with aws address later
     //if not change to
-    let API : BulletinAPI = BulletinAPI("http://54.145.163.155/api")
+    let API : BulletinAPI = BulletinAPI("http://localhost:8080/api")
     
     
     //pretty vital. you need this or nothing will work.
@@ -35,6 +35,13 @@ class Singleton{
     var password: String!
     var displayName : String!
     var profilePicture: String!
+    
+    
+    var items : [ItemModel]
+    
+    private init(){
+        items = [ItemModel]()
+    }
     
     
     
