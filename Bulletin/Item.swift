@@ -8,12 +8,29 @@
 
 import UIKit
 
-class Item: NSObject {
+class Item: NSObject, NSCoding {
     var name: String
     var price: Int
     let dateCreated: NSDate
     let itemKey: String
     var image: UIImage?
+    
+    required init(coder aDecoder: NSCoder) {
+        name = aDecoder.decodeObjectForKey("name") as! String
+        price = aDecoder.decodeIntegerForKey("price")
+        dateCreated = aDecoder.decodeObjectForKey("dateCreated") as! NSDate
+        itemKey = aDecoder.decodeObjectForKey("itemKey") as! String
+        image = aDecoder.decodeObjectForKey("image") as! UIImage?
+        super.init()
+    }
+    
+    func encodeWithCoder(aCoder: NSCoder) {
+        aCoder.encodeObject(name, forKey: "name")
+        aCoder.encodeInteger(price, forKey: "price")
+        aCoder.encodeObject(dateCreated, forKey: "dateCreated")
+        aCoder.encodeObject(itemKey, forKey: "itemKey")
+        aCoder.encodeObject(image, forKey: "image")
+    }
     
     init(name: String, price: Int, url: String) {
         self.name = name
@@ -21,11 +38,12 @@ class Item: NSObject {
         self.dateCreated = NSDate()
         self.itemKey = NSUUID().UUIDString
         super.init()
+        /*
         if (url.characters.count > 4) {
             load_image(url)
         } else {
             self.image = nil
-        }
+        }*/
     }
     
     // test only: load image from url
