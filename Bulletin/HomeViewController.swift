@@ -65,7 +65,14 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
             }
         }
     }
+    func
+        collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        // Set cell width to 100%
+        return CGSize(width: self.view.frame.width - 15, height: self.view.frame.height / 2.35)
+    }
     
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

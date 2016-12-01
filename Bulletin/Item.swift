@@ -30,6 +30,7 @@ class Item: NSObject, NSCoding {
         aCoder.encodeObject(dateCreated, forKey: "dateCreated")
         aCoder.encodeObject(itemKey, forKey: "itemKey")
         aCoder.encodeObject(image, forKey: "image")
+        print("hello")
     }
     
     init(name: String, price: Int, url: String) {

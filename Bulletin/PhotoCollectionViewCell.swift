@@ -17,6 +17,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     func updateWithImage(image: UIImage?) {
         if let imageToDisplay = image {
             spinner.stopAnimating()
+            spinner.hidden = true
             imageView.image = imageToDisplay
             bottomRect.hidden = false
             priceTag.hidden = false
