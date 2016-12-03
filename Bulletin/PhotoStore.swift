@@ -61,14 +61,66 @@ class PhotoStore {
         return FlickrAPI.photoFromJSONData(jsonData)
     }
     
-    func fetchRecentPhotos(completion completion: (PhotosResult) -> Void) {
+    
+    func processItemsJSONData(data: NSData!) -> PhotosResult{
         
-        let url = FlickrAPI.recentPhotoURL()
+        var decodedJson : AnyObject
+        do {
+            decodedJson = try NSJSONSerialization.JSONObjectWithData(data!, options: .MutableContainers)
+            let items = decodedJson as! NSArray
+            
+            var photos = [Photo]()
+            
+            for var item in items{
+                
+                let itemDescription = item as! NSDictionary
+                let title = itemDescription["title"] as! String
+                let itemId = itemDescription["_id"] as! String
+                let userId = itemDescription["userId"] as! String
+                let description = itemDescription["description"] as! String
+                let price = itemDescription["price"] as! NSNumber
+                let expiration = itemDescription["expiration"] as! NSNumber
+                let pictures = itemDescription["pictures"] as! NSArray
+                let picture : NSURL! = NSURL(string: pictures[0] as! String)
+                
+                photos.append(ItemPhoto(title: title, photoID: itemId, remoteURL: picture, dateTaken: NSDate(), itemId: itemId, userId: userId, description: description, price: price, expiration: expiration))
+                
+            }
+            return .Success(photos)
+        }
+        catch (let e) {
+            
+            return .Failure(e)
+        }
+
+
+    }
+    
+    func processItemsRequest(data data: NSData?, response: NSURLResponse?, error: NSError?) -> PhotosResult{
+        guard let responseHttp = response as! NSHTTPURLResponse? else {
+            return .Failure(error!)
+        }
+        
+        guard let jsonData = data else {
+            return .Failure(error!)
+        }
+        print(responseHttp.statusCode)
+        if responseHttp.statusCode == 200 {
+            return self.processItemsJSONData(jsonData)
+            
+        }
+        return .Failure(FlickrError.InvalidJSONData)
+    }
+    
+    
+    func getItems(completion completion: (PhotosResult) -> Void) {
+        
+        let url = Singleton.sharedInstance.API.getItemsUrl()
         let request = NSURLRequest(URL: url)
         let task = session.dataTaskWithRequest(request) {
             (data, response, error) -> Void in
             
-            let result = self.processRecentPhotosRequest(data: data, error: error)
+            let result = self.processItemsRequest(data: data, response: response, error: error)
             completion(result)
             
         }

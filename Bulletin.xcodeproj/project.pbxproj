@@ -28,6 +28,9 @@
 		0526B7EB1DBEBAD4005A136C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7EA1DBEBAD4005A136C /* SettingsViewController.swift */; };
 		0526B7ED1DBEBB19005A136C /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7EC1DBEBB19005A136C /* PostViewController.swift */; };
 		0526B7EF1DBEBB67005A136C /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7EE1DBEBB67005A136C /* ActivityViewController.swift */; };
+		0545A1AD1DF22BE20081F2B5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545A1AC1DF22BE20081F2B5 /* ItemViewController.swift */; };
+		0545A1AF1DF22BF50081F2B5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545A1AE1DF22BF50081F2B5 /* UserViewController.swift */; };
+		0545A1B11DF23A6F0081F2B5 /* ItemPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545A1B01DF23A6F0081F2B5 /* ItemPhoto.swift */; };
 		057754E21DEAA56E00C1A1EB /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057754E11DEAA56E00C1A1EB /* ItemModel.swift */; };
 		057B82771DDFF39F009B059E /* ExpandImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82761DDFF39F009B059E /* ExpandImageView.swift */; };
 		057B82791DDFF9B6009B059E /* background_second@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 057B82781DDFF9B6009B059E /* background_second@2x.jpg */; };
@@ -147,6 +150,9 @@
 		0526B7EA1DBEBAD4005A136C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		0526B7EC1DBEBB19005A136C /* PostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
 		0526B7EE1DBEBB67005A136C /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
+		0545A1AC1DF22BE20081F2B5 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
+		0545A1AE1DF22BF50081F2B5 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		0545A1B01DF23A6F0081F2B5 /* ItemPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhoto.swift; sourceTree = "<group>"; };
 		057754E11DEAA56E00C1A1EB /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		057B82761DDFF39F009B059E /* ExpandImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandImageView.swift; sourceTree = "<group>"; };
 		057B82781DDFF9B6009B059E /* background_second@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background_second@2x.jpg"; path = "../background_second@2x.jpg"; sourceTree = "<group>"; };
@@ -382,6 +388,8 @@
 			isa = PBXGroup;
 			children = (
 				050000071DBE263300E83F4A /* MainTabBarController.swift */,
+				0545A1AC1DF22BE20081F2B5 /* ItemViewController.swift */,
+				0545A1AE1DF22BF50081F2B5 /* UserViewController.swift */,
 				AA332A671DDE35940076C4A3 /* Home */,
 				AAD42CC21DD2B657001DC51E /* Message */,
 				AA09416A1DCDB1BC005F1F8D /* PostGroup */,
@@ -534,6 +542,7 @@
 				AA332A6D1DDEC57A0076C4A3 /* PhotoDataSource.swift */,
 				AA332A6F1DDEC5A60076C4A3 /* PhotoCollectionViewCell.swift */,
 				AA332A711DDEC73C0076C4A3 /* PhotoStore.swift */,
+				0545A1B01DF23A6F0081F2B5 /* ItemPhoto.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -748,11 +757,13 @@
 				AA0941641DCD9C0C005F1F8D /* Item.swift in Sources */,
 				057B82771DDFF39F009B059E /* ExpandImageView.swift in Sources */,
 				0500FFFF1DBE004B00E83F4A /* OrangeBarView.swift in Sources */,
+				0545A1AF1DF22BF50081F2B5 /* UserViewController.swift in Sources */,
 				AA0941671DCDA4AF005F1F8D /* ItemStore.swift in Sources */,
 				057B82B51DE180CC009B059E /* ModalPopup.swift in Sources */,
 				AA332A6A1DDE35F20076C4A3 /* FlickrAPI.swift in Sources */,
 				057754E21DEAA56E00C1A1EB /* ItemModel.swift in Sources */,
 				AA332A721DDEC73C0076C4A3 /* PhotoStore.swift in Sources */,
+				0545A1B11DF23A6F0081F2B5 /* ItemPhoto.swift in Sources */,
 				0526B7E91DBEBAA0005A136C /* MessageViewController.swift in Sources */,
 				0500FFBB1DBDCF0C00E83F4A /* ViewController.swift in Sources */,
 				0526B7E71DBEBA72005A136C /* HomeViewController.swift in Sources */,
@@ -774,6 +785,7 @@
 				05B9C12A1DE640930095D8BA /* ConversationViewController.swift in Sources */,
 				0526B7EF1DBEBB67005A136C /* ActivityViewController.swift in Sources */,
 				AACC49D61DCF2DEE009D66B5 /* ImageStore.swift in Sources */,
+				0545A1AD1DF22BE20081F2B5 /* ItemViewController.swift in Sources */,
 				0500FFF01DBDE98400E83F4A /* Singleton.swift in Sources */,
 				0500FFFD1DBDF58F00E83F4A /* CircleLabelView.swift in Sources */,
 				AAD42CC41DD2B74E001DC51E /* DetailMessageViewController.swift in Sources */,

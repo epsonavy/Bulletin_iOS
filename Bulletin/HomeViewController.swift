@@ -15,6 +15,7 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var collectionView: UICollectionView!
 
+    var refreshItemsControl : UIRefreshControl!
     
     let photoDataSource = PhotoDataSource()
     
@@ -23,7 +24,22 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
         collectionView.dataSource = photoDataSource
         collectionView.delegate = self
         
-        Singleton.sharedInstance.photoStore.fetchRecentPhotos() {
+        collectionView.bounces = true
+        collectionView.alwaysBounceVertical = true
+        
+        
+        refreshItems()
+        refreshItemsControl = UIRefreshControl()
+        
+        refreshItemsControl.addTarget(self, action: #selector(refreshItems), forControlEvents: UIControlEvents.ValueChanged)
+        collectionView.addSubview(refreshItemsControl)
+        
+    
+    }
+    
+    func refreshItems(){
+        print("bitch")
+        Singleton.sharedInstance.photoStore.getItems() {
             (photosResult) -> Void in
             
             NSOperationQueue.mainQueue().addOperationWithBlock() {
@@ -36,10 +52,10 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
                     print("Error: \(e)")
                 }
                 self.collectionView.reloadSections(NSIndexSet(index: 0))
+                self.refreshItemsControl.endRefreshing()
             }
         }
     }
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowPhoto" {
             if let selectedIndexPath = collectionView.indexPathsForSelectedItems()?.first {
@@ -53,6 +69,7 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         let photo = photoDataSource.photos[indexPath.row]
+        print("getting photo for \(indexPath.row)")
         Singleton.sharedInstance.photoStore.fetchImageForPhoto(photo) { (result) -> Void in
             NSOperationQueue.mainQueue().addOperationWithBlock() {
                 let photoIndex = self.photoDataSource.photos.indexOf(photo)!
@@ -60,6 +77,7 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
                 
                 if let cell = self.collectionView.cellForItemAtIndexPath(photoIndexPath)
                     as? PhotoCollectionViewCell {
+                    print("finished photo for \(indexPath.row)")
                     cell.updateWithImage(photo.image)
                 }
             }

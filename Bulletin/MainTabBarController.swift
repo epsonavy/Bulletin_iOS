@@ -29,72 +29,20 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
         homeVc = self.viewControllers![0] as! UINavigationController // =>HomeViewController
         messageVc = self.viewControllers![1] as! UINavigationController // =>MessageViewController
         postVc = self.viewControllers![2] as! UINavigationController // => PostViewController
-        activityVc = self.viewControllers![3] as! UINavigationController //shit..
+        activityVc = self.viewControllers![3] as! UINavigationController
         settingsVc = self.viewControllers![4] as! SettingsViewController
-        
-        //hideTabBarAnimated(false)
+ 
     }
     
-
+    
     
  
-    
-    /*
-    func scrollViewWillBeginDragging(scrollView: UIScrollView) {
-        hideTabBarAnimated(true)
-    }
 
-    
-    func swipeAction(gesture: UIGestureRecognizer){
-        let swipeRecognizer = gesture as! UISwipeGestureRecognizer
-            if swipeRecognizer.direction == UISwipeGestureRecognizerDirection.Up {
-                hideTabBarAnimated(true)
-            }else if swipeRecognizer.direction == UISwipeGestureRecognizerDirection.Down {
-                hideTabBarAnimated(false)
-            }
-    }*/
 
     override func viewDidAppear(animated: Bool){
         super.viewDidAppear(animated)
     }
 
-    /*
-    func hideChildViewControllersTab(hide: Bool){
-        if hide {
-            homeVc.hideNavigationBar(hide);
-        } else {
-            homeVc.hideNavigationBar(hide)
-        }
-    }
-
-    func hideTabBarAnimated(hide:Bool) {
-        if hide{
-            homeVc.automaticallyAdjustsScrollViewInsets = true
-            UIView.animateWithDuration(0.3, animations: {
-                  self.homeVc.edgesForExtendedLayout = UIRectEdge.Bottom
-            })
-          
-            homeVc.extendedLayoutIncludesOpaqueBars = false
-        }else{
-            homeVc.automaticallyAdjustsScrollViewInsets = true
-            UIView.animateWithDuration(0.3, animations: {
-                self.homeVc.edgesForExtendedLayout = UIRectEdge.None
-            })
-            homeVc.extendedLayoutIncludesOpaqueBars = false
-        }
-
-        
-        UIView.animateWithDuration(0.3, delay: 0, options: .CurveEaseIn, animations: {
-                if hide {
-                    self.tabBar.transform = CGAffineTransformMakeTranslation(0, 50)
-                } else {
-                    self.tabBar.transform = CGAffineTransformIdentity
-      
-                }
-        }, completion: nil)
-        
-        hideChildViewControllersTab(hide)
-    }*/
     
     override func didReceiveMemoryWarning(){
         super.didReceiveMemoryWarning()

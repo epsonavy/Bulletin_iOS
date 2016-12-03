@@ -8,7 +8,7 @@
 
 import UIKit
 
-class PhotoInfoViewController: UIViewController {    
+class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var imageView: UIImageView!
     var photo: Photo! {
         didSet {
@@ -19,6 +19,9 @@ class PhotoInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.interactivePopGestureRecognizer!.enabled = true
+        self.navigationController?.interactivePopGestureRecognizer!.delegate = self
         
         store.fetchImageForPhoto(photo) { (result) -> Void in
             switch result {

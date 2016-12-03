@@ -14,6 +14,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bottomRect: UIView!
     @IBOutlet weak var priceTag: UILabel!
     
+    @IBOutlet var details: UILabel!
+    @IBOutlet var title: UILabel!
     func updateWithImage(image: UIImage?) {
         if let imageToDisplay = image {
             spinner.stopAnimating()
@@ -29,6 +31,7 @@ class PhotoCollectionViewCell: UICollectionViewCell {
             
         }
     }
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

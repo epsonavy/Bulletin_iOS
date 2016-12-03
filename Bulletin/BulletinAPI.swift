@@ -10,14 +10,13 @@ import UIKit
 
 class BulletinAPI{
     var apiAddress : String!
-    
     var token : String!
-    
+
     
     init(_ address: String!){
         apiAddress = address
         //retrieve token from preferences OR make it empty..
-        token = ""
+        token = "NoToken"
     }
     
     func setToken(token: String!){
@@ -29,7 +28,9 @@ class BulletinAPI{
         return token
     }
     
-    
+    func getItemsUrl() -> NSURL!{
+        return NSURL(string: apiAddress + "/items/all/?token=" + token) as NSURL!
+    }
     func getSpecificItem(itemId: String!, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
         let url : NSURL! = NSURL(string: apiAddress + "/items/?token=" + getToken() + "&itemId=" + itemId)
         
@@ -38,6 +39,8 @@ class BulletinAPI{
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
     }
+    
+    
     
     func getUserItems(completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
         let url : NSURL! = NSURL(string: apiAddress + "/items/?token=" + getToken())
