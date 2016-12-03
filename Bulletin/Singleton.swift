@@ -35,6 +35,7 @@ class Singleton{
     var password: String!
     var displayName : String!
     var profilePicture: String!
+    var userId: String!
     
     
     var items : [ItemModel]
@@ -42,6 +43,7 @@ class Singleton{
     private init(){
         items = [ItemModel]()
     }
+    
     
     
     

@@ -10,7 +10,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulletin/ViewController.swift"
-            timestampString = "501914549.404005"
+            timestampString = "502429727.840979"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
@@ -64,6 +64,22 @@
             startingLineNumber = "99"
             endingLineNumber = "99"
             landmarkName = "processItemsRequest(data:response:error:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Bulletin/RegisterViewController.swift"
+            timestampString = "502430516.172309"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
+            landmarkName = "checkEmailComplete(response:data:error:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

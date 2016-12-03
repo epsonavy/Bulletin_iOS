@@ -16,23 +16,48 @@ class MessageViewController : UITableViewController {
     var refreshMessagesControl : UIRefreshControl!
     
     
+    let singleton = Singleton.sharedInstance
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         navigationItem.leftBarButtonItem = editButtonItem()
         navigationController!.navigationBar.tintColor = Singleton.sharedInstance.mainThemeColor
     }
-
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        refreshMessages()
         
         refreshMessagesControl = UIRefreshControl()
         refreshMessagesControl.addTarget(self, action: #selector(refreshMessages), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshMessagesControl
     }
     
-    func refreshMessages(){
+    func checkGetConversationsComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
         refreshMessagesControl.endRefreshing()
+        guard let resHTTP = response as! NSHTTPURLResponse! else{
+            return
+        }
+        guard let jsonData = data else{
+            return
+        }
+        if resHTTP.statusCode == 200 {
+            print("hello")
+        }else if resHTTP.statusCode == 418{
+            
+        }
+        
+        
+        
+        
+    }
+    
+    func refreshMessages(){
+        
+        singleton.API.getConversations(checkGetConversationsComplete)
+        
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -52,7 +77,8 @@ class MessageViewController : UITableViewController {
              let detailViewController = segue.destinationViewController as! DetailViewController
              detailViewController.item = item
              detailViewController.imageStore = imageStore
-             }*/
+             }
+            */
         }
     }
     

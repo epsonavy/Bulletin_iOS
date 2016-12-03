@@ -25,6 +25,9 @@ class BulletinAPI{
     }
     
     func getToken() -> String!{
+        if token == nil{
+            return ""
+        }
         return token
     }
     
@@ -59,6 +62,15 @@ class BulletinAPI{
         }catch{
             
         }
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
+    func getConversations(completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        let url : NSURL! = NSURL(string: apiAddress + "/conversations/?token=" + getToken())
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
         
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
     }

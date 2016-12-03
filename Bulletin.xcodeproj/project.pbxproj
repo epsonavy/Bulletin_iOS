@@ -31,6 +31,7 @@
 		0545A1AD1DF22BE20081F2B5 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545A1AC1DF22BE20081F2B5 /* ItemViewController.swift */; };
 		0545A1AF1DF22BF50081F2B5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545A1AE1DF22BF50081F2B5 /* UserViewController.swift */; };
 		0545A1B11DF23A6F0081F2B5 /* ItemPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545A1B01DF23A6F0081F2B5 /* ItemPhoto.swift */; };
+		057220971DF27F6400BBC3FD /* ItemMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057220961DF27F6400BBC3FD /* ItemMessage.swift */; };
 		057754E21DEAA56E00C1A1EB /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057754E11DEAA56E00C1A1EB /* ItemModel.swift */; };
 		057B82771DDFF39F009B059E /* ExpandImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82761DDFF39F009B059E /* ExpandImageView.swift */; };
 		057B82791DDFF9B6009B059E /* background_second@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 057B82781DDFF9B6009B059E /* background_second@2x.jpg */; };
@@ -153,6 +154,7 @@
 		0545A1AC1DF22BE20081F2B5 /* ItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
 		0545A1AE1DF22BF50081F2B5 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		0545A1B01DF23A6F0081F2B5 /* ItemPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhoto.swift; sourceTree = "<group>"; };
+		057220961DF27F6400BBC3FD /* ItemMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMessage.swift; sourceTree = "<group>"; };
 		057754E11DEAA56E00C1A1EB /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		057B82761DDFF39F009B059E /* ExpandImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandImageView.swift; sourceTree = "<group>"; };
 		057B82781DDFF9B6009B059E /* background_second@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background_second@2x.jpg"; path = "../background_second@2x.jpg"; sourceTree = "<group>"; };
@@ -564,6 +566,7 @@
 				AAD42CC61DD2BD6C001DC51E /* MessageCell.swift */,
 				AAD42CC81DD2BD89001DC51E /* Message.swift */,
 				AA332A651DDD93CE0076C4A3 /* MessageStore.swift */,
+				057220961DF27F6400BBC3FD /* ItemMessage.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 				057B82B51DE180CC009B059E /* ModalPopup.swift in Sources */,
 				AA332A6A1DDE35F20076C4A3 /* FlickrAPI.swift in Sources */,
 				057754E21DEAA56E00C1A1EB /* ItemModel.swift in Sources */,
+				057220971DF27F6400BBC3FD /* ItemMessage.swift in Sources */,
 				AA332A721DDEC73C0076C4A3 /* PhotoStore.swift in Sources */,
 				0545A1B11DF23A6F0081F2B5 /* ItemPhoto.swift in Sources */,
 				0526B7E91DBEBAA0005A136C /* MessageViewController.swift in Sources */,

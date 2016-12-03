@@ -13,9 +13,24 @@ class MessageStore {
     
     //test only
     init() {
+        
+
+        /*
         for _ in 0..<3 {
             createItem()
         }
+        */
+    }
+    
+    func messagesFromData(data: NSData?){
+        guard let jsonData = data else{
+            return
+        }
+        let messages = jsonData as! NSArray
+        for var message in messages{
+            
+        }
+        
     }
     
     func createItem() -> Message {

@@ -36,6 +36,8 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
     
     
     func goToMessages(){
+        let vc = messageVc.childViewControllers[0] as! MessageViewController
+        vc.refreshMessages()
         self.selectedIndex = 1
     }
     
