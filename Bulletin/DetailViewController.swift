@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIGestureRecognizerDelegate {
 
     @IBOutlet var nameField: UITextField!
     @IBOutlet var priceField: UITextField!
@@ -35,6 +35,13 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UINavigationC
         formatter.timeStyle = .MediumStyle
         return formatter
     }()
+    
+    override func viewDidLoad(){
+        super.viewDidLoad()
+        self.navigationController!.interactivePopGestureRecognizer!.delegate = self
+        self.navigationController!.interactivePopGestureRecognizer!.enabled = true
+    }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
