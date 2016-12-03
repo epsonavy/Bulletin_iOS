@@ -595,9 +595,42 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="SxH-Mb-nBg" userLabel="Title View">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My listings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2xA-qU-gfs">
+                                    <rect key="frame" x="15" y="8" width="352" height="43"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="43" id="1AB-0X-YVR"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="40"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No items." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yGh-9A-frd">
+                                    <rect key="frame" x="15" y="52" width="352" height="33"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="33" id="tk1-Jj-OCt"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="17"/>
+                                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="yGh-9A-frd" secondAttribute="trailing" constant="8" id="7aK-DY-roL"/>
+                                <constraint firstAttribute="bottom" secondItem="yGh-9A-frd" secondAttribute="bottom" constant="15" id="9d2-Hj-Jqk"/>
+                                <constraint firstAttribute="height" constant="100" id="JtA-GA-DFl"/>
+                                <constraint firstAttribute="trailing" secondItem="2xA-qU-gfs" secondAttribute="trailing" constant="8" id="cv2-Vb-wF5"/>
+                                <constraint firstItem="2xA-qU-gfs" firstAttribute="top" secondItem="SxH-Mb-nBg" secondAttribute="top" constant="8" id="gIb-GR-FSi"/>
+                                <constraint firstItem="2xA-qU-gfs" firstAttribute="leading" secondItem="SxH-Mb-nBg" secondAttribute="leading" constant="15" id="kXM-Mr-Kky"/>
+                                <constraint firstItem="yGh-9A-frd" firstAttribute="leading" secondItem="SxH-Mb-nBg" secondAttribute="leading" constant="15" id="mP4-nM-Mle"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ItemCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="ItemCell" rowHeight="129" id="Hbk-uP-ITh" customClass="ItemCell" customModule="Bulletin" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="129"/>
+                                <rect key="frame" x="0.0" y="128" width="375" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hbk-uP-ITh" id="T21-pb-xXB">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
@@ -1236,7 +1269,7 @@
         <!--Navigation Controller-->
         <scene sceneID="fdY-oX-zQy">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FA8-aE-APt" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FA8-aE-APt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="Speech Bubble-50.png" id="ixc-WJ-UAe">
                         <inset key="imageInsets" minX="0.0" minY="5" maxX="0.0" maxY="-5"/>
                         <userDefinedRuntimeAttributes>
@@ -1244,7 +1277,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ULf-ym-lxW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ULf-ym-lxW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1431,7 +1464,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8D-V9-bRJ">
-                                                        <rect key="frame" x="66" y="9" width="301" height="32"/>
+                                                        <rect key="frame" x="66" y="8.5" width="301" height="33"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="17"/>
                                                         <state key="normal" title="LuckyPaws">
                                                             <color key="titleColor" red="0.99215686270000003" green="0.45882352939999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
