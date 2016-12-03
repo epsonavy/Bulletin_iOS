@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Bulletin/ActivityViewController.swift"
-            timestampString = "501915903.847617"
+            timestampString = "502432494.777933"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
             landmarkName = "ActivityViewController"
             landmarkType = "3">
          </BreakpointContent>

@@ -32,6 +32,9 @@
 		0545A1AF1DF22BF50081F2B5 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545A1AE1DF22BF50081F2B5 /* UserViewController.swift */; };
 		0545A1B11DF23A6F0081F2B5 /* ItemPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0545A1B01DF23A6F0081F2B5 /* ItemPhoto.swift */; };
 		057220971DF27F6400BBC3FD /* ItemMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057220961DF27F6400BBC3FD /* ItemMessage.swift */; };
+		057220991DF2838000BBC3FD /* default_item@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 057220981DF2838000BBC3FD /* default_item@2x.png */; };
+		0572209B1DF2857300BBC3FD /* title_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0572209A1DF2857300BBC3FD /* title_icon@2x.png */; };
+		0572209D1DF285EE00BBC3FD /* price_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0572209C1DF285EE00BBC3FD /* price_icon@2x.png */; };
 		057754E21DEAA56E00C1A1EB /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057754E11DEAA56E00C1A1EB /* ItemModel.swift */; };
 		057B82771DDFF39F009B059E /* ExpandImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 057B82761DDFF39F009B059E /* ExpandImageView.swift */; };
 		057B82791DDFF9B6009B059E /* background_second@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 057B82781DDFF9B6009B059E /* background_second@2x.jpg */; };
@@ -155,6 +158,9 @@
 		0545A1AE1DF22BF50081F2B5 /* UserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
 		0545A1B01DF23A6F0081F2B5 /* ItemPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemPhoto.swift; sourceTree = "<group>"; };
 		057220961DF27F6400BBC3FD /* ItemMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemMessage.swift; sourceTree = "<group>"; };
+		057220981DF2838000BBC3FD /* default_item@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default_item@2x.png"; path = "../default_item@2x.png"; sourceTree = "<group>"; };
+		0572209A1DF2857300BBC3FD /* title_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "title_icon@2x.png"; path = "../title_icon@2x.png"; sourceTree = "<group>"; };
+		0572209C1DF285EE00BBC3FD /* price_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "price_icon@2x.png"; path = "../price_icon@2x.png"; sourceTree = "<group>"; };
 		057754E11DEAA56E00C1A1EB /* ItemModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
 		057B82761DDFF39F009B059E /* ExpandImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExpandImageView.swift; sourceTree = "<group>"; };
 		057B82781DDFF9B6009B059E /* background_second@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "background_second@2x.jpg"; path = "../background_second@2x.jpg"; sourceTree = "<group>"; };
@@ -357,6 +363,9 @@
 		0500FFFB1DBDF53400E83F4A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0572209A1DF2857300BBC3FD /* title_icon@2x.png */,
+				0572209C1DF285EE00BBC3FD /* price_icon@2x.png */,
+				057220981DF2838000BBC3FD /* default_item@2x.png */,
 				057B82C01DE1A449009B059E /* name_icon@2x.png */,
 				057B82B91DE18B60009B059E /* exclamation_icon@2x.jpg */,
 				057B82B01DE00F30009B059E /* asian_ghetto_men@2x.png */,
@@ -678,6 +687,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0572209D1DF285EE00BBC3FD /* price_icon@2x.png in Resources */,
+				0572209B1DF2857300BBC3FD /* title_icon@2x.png in Resources */,
+				057220991DF2838000BBC3FD /* default_item@2x.png in Resources */,
 				057B82C11DE1A449009B059E /* name_icon@2x.png in Resources */,
 				057B82BA1DE18B60009B059E /* exclamation_icon@2x.jpg in Resources */,
 				057B82B11DE00F30009B059E /* asian_ghetto_men@2x.png in Resources */,
