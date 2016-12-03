@@ -41,6 +41,28 @@ class BulletinAPI{
     }
     
     
+    func makeConversation(itemId: String, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        let url : NSURL! = NSURL(string: apiAddress + "/conversations/new/?token=" + getToken())
+        
+        let request = NSMutableURLRequest(URL: url)
+        
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        
+        let loginDetails = ["itemId": itemId]
+        request.HTTPMethod = "POST"
+        
+        do{
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(loginDetails, options: .PrettyPrinted)
+            request.HTTPBody = jsonData
+            print(NSString(data: jsonData, encoding: NSUTF8StringEncoding))
+        }catch{
+            
+        }
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
     
     func getUserItems(completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
         let url : NSURL! = NSURL(string: apiAddress + "/items/?token=" + getToken())

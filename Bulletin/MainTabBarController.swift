@@ -28,12 +28,16 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
     
         homeVc = self.viewControllers![0] as! UINavigationController // =>HomeViewController
         messageVc = self.viewControllers![1] as! UINavigationController // =>MessageViewController
-        postVc = self.viewControllers![2] as! UINavigationController // => PostViewController
-        activityVc = self.viewControllers![3] as! UINavigationController
+        activityVc = self.viewControllers![2] as! UINavigationController
+        postVc = self.viewControllers![3] as! UINavigationController // => PostViewController
         settingsVc = self.viewControllers![4] as! SettingsViewController
  
     }
     
+    
+    func goToMessages(){
+        self.selectedIndex = 1
+    }
     
     
  

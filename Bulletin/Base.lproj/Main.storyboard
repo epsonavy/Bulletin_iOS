@@ -527,32 +527,45 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="QgP-PW-KC7" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
-                                            <rect key="frame" x="18" y="7" width="70" height="70"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="QgP-PW-KC7" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
+                                            <rect key="frame" x="8" y="11" width="70" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="fRv-VQ-FB7"/>
+                                                <constraint firstAttribute="height" constant="70" id="mpg-ko-Kjh"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRU-Up-Oj4">
-                                            <rect key="frame" x="102" y="32" width="266" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36S-vN-dml">
-                                            <rect key="frame" x="102" y="5" width="76" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36S-vN-dml">
+                                            <rect key="frame" x="86" y="11" width="45" height="20.5"/>
                                             <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date time" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-cF-yxF">
-                                            <rect key="frame" x="221" y="4" width="146" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="55/55/25, 55:15PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-cF-yxF">
+                                            <rect key="frame" x="139" y="11" width="228" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRU-Up-Oj4">
+                                            <rect key="frame" x="86" y="35.5" width="281" height="18"/>
+                                            <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="QgP-PW-KC7" firstAttribute="centerY" secondItem="Ghd-Vg-BU3" secondAttribute="centerY" id="6O8-bG-HGM"/>
+                                        <constraint firstItem="0pg-cF-yxF" firstAttribute="height" secondItem="36S-vN-dml" secondAttribute="height" id="7yd-Pc-Erh"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0pg-cF-yxF" secondAttribute="trailing" id="HbG-Te-bBY"/>
+                                        <constraint firstItem="36S-vN-dml" firstAttribute="top" secondItem="Ghd-Vg-BU3" secondAttribute="topMargin" constant="3" id="L5d-m5-TLA"/>
+                                        <constraint firstItem="MRU-Up-Oj4" firstAttribute="leading" secondItem="QgP-PW-KC7" secondAttribute="trailing" constant="8" id="jCa-vr-ke0"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="MRU-Up-Oj4" secondAttribute="trailing" id="jYC-6H-gqx"/>
+                                        <constraint firstItem="0pg-cF-yxF" firstAttribute="top" secondItem="Ghd-Vg-BU3" secondAttribute="topMargin" constant="3" id="q0J-Bj-xMT"/>
+                                        <constraint firstAttribute="leadingMargin" secondItem="QgP-PW-KC7" secondAttribute="leading" id="rwm-cP-hYo"/>
+                                        <constraint firstItem="0pg-cF-yxF" firstAttribute="leading" secondItem="36S-vN-dml" secondAttribute="trailing" constant="8" id="sJZ-j0-iVO"/>
+                                        <constraint firstItem="MRU-Up-Oj4" firstAttribute="top" secondItem="36S-vN-dml" secondAttribute="bottom" constant="4" id="trv-eV-Pmh"/>
+                                        <constraint firstItem="36S-vN-dml" firstAttribute="leading" secondItem="QgP-PW-KC7" secondAttribute="trailing" constant="8" id="vbe-nm-aWO"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="msgDetail" destination="MRU-Up-Oj4" id="brq-XS-beX"/>
@@ -1296,7 +1309,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ULf-ym-lxW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ULf-ym-lxW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1320,7 +1333,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zNh-Hd-veT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zNh-Hd-veT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1362,7 +1375,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ut3-t8-zld">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ut3-t8-zld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1380,7 +1393,7 @@
             <objects>
                 <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="QcD-11-soL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="te9-85-INO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="te9-85-INO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1404,7 +1417,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fqk-3V-pIA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fqk-3V-pIA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1537,7 +1550,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="proceedToMainTab:" destination="54b-Sw-0XU" eventType="touchUpInside" id="Iee-nZ-fEe"/>
+                                    <action selector="conversationTapped:" destination="GGg-wM-QUK" eventType="touchUpInside" id="gpH-oJ-6rB"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1563,6 +1576,7 @@
                     <navigationItem key="navigationItem" id="Osh-NN-uC5"/>
                     <connections>
                         <outlet property="contentViewHeightConstraint" destination="BDG-sK-FRw" id="i5u-Xo-60p"/>
+                        <outlet property="conversationButton" destination="B0Y-Oz-58L" id="9L4-wZ-PGj"/>
                         <outlet property="detailsText" destination="aRI-TP-pL6" id="2XC-gs-KdV"/>
                         <outlet property="imageView" destination="K9l-Cq-zws" id="j5a-Bw-2ay"/>
                         <outlet property="titleText" destination="Kou-GH-jxf" id="sMZ-1m-02m"/>

@@ -15,7 +15,8 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet var contentViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet var titleText: UILabel!
     @IBOutlet var detailsText: UITextView!
-
+    
+    let singleton = Singleton.sharedInstance
 
     @IBOutlet var viewUserButton: UIButton!
     
@@ -27,9 +28,46 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
             
         }
     }
+    
+    var processingConversation : Bool!
+    
     var store: PhotoStore!
     
+    func checkMakeConversationComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        guard let resHTTP = response as! NSHTTPURLResponse! else{
+            return
+        }
+        
+        guard let jsonData = data else{
+            return
+        }
+        let mainTabController = self.parentViewController!.parentViewController! as! MainTabBarController
 
+        if resHTTP.statusCode == 200 {
+            mainTabController.goToMessages()
+            conversationButton.setTitle("Conversation started!", forState: .Normal)
+        }else if resHTTP.statusCode == 418{
+            conversationButton.setTitle("Started conversation!", forState: .Normal)
+            mainTabController.goToMessages()
+        }else{
+            conversationButton.setTitle("No conversation available!", forState: .Normal)
+        }
+        processingConversation = false
+        
+    }
+    
+    
+    @IBAction func conversationTapped(sender: AnyObject) {
+        if processingConversation == false {
+            conversationButton.setTitle("Starting conversation...", forState: .Normal)
+            processingConversation = true
+            singleton.API.makeConversation(photo.itemId, completion: checkMakeConversationComplete)
+        }
+    }
+    
+    
+
+    @IBOutlet var conversationButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +88,6 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         titleText.text = photo.title
 
-
         detailsText.text = photo.description
        
         let size: CGSize = detailsText.font!.sizeOfString(detailsText.text, constrainedToWidth: Double(self.view.frame.width - 16))
@@ -61,6 +98,8 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
         self.view.layoutIfNeeded()
         
         viewUserButton.setTitle("User", forState: .Normal)
+        
+        processingConversation = false
 
     }
 
