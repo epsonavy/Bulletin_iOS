@@ -535,19 +535,19 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="36S-vN-dml">
-                                            <rect key="frame" x="86" y="11" width="45" height="20.5"/>
+                                            <rect key="frame" x="86" y="11" width="45" height="20"/>
                                             <fontDescription key="fontDescription" name="SFUIDisplay-Medium" family="SF UI Display" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="55/55/25, 55:15PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0pg-cF-yxF">
-                                            <rect key="frame" x="139" y="11" width="228" height="20.5"/>
+                                            <rect key="frame" x="139" y="11" width="228" height="20"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" name="disabledControlTextColor" catalog="System" colorSpace="catalog"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Detail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRU-Up-Oj4">
-                                            <rect key="frame" x="86" y="35.5" width="281" height="18"/>
+                                            <rect key="frame" x="86" y="35" width="281" height="18"/>
                                             <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
@@ -1431,7 +1431,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8D-V9-bRJ">
-                                                        <rect key="frame" x="66" y="8.5" width="301" height="33"/>
+                                                        <rect key="frame" x="66" y="9" width="301" height="32"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="17"/>
                                                         <state key="normal" title="LuckyPaws">
                                                             <color key="titleColor" red="0.99215686270000003" green="0.45882352939999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1611,13 +1611,13 @@
                                                     <constraint firstAttribute="height" constant="30" id="WqC-g3-fZX"/>
                                                 </constraints>
                                             </imageView>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Describe your item here." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pcu-ku-Yq4">
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Describe your item." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="pcu-ku-Yq4">
                                                 <rect key="frame" x="15" y="402" width="352" height="70"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="fID-4r-BN6"/>
                                                 </constraints>
-                                                <color key="textColor" white="0.56443965519999995" alpha="1" colorSpace="calibratedWhite"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
@@ -1691,6 +1691,13 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="WCx-fD-M1m"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="pcu-ku-Yq4" id="QfT-Wg-LCU"/>
+                        <outlet property="itemImageView" destination="gp1-qx-LXO" id="siw-vq-nv9"/>
+                        <outlet property="priceTextField" destination="cJA-fN-VeB" id="GYv-3Y-cue"/>
+                        <outlet property="titleTextField" destination="tjq-OC-AV7" id="hK9-iH-JEj"/>
+                        <outlet property="titleView" destination="Ak0-Ib-HI8" id="ebQ-nj-Zcf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQj-oq-pbY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
