@@ -8,14 +8,28 @@
 
 import UIKit
 
+
+
 class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
+    
+    @IBOutlet var contentViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet var titleText: UILabel!
+    @IBOutlet var detailsText: UITextView!
+
+
+    @IBOutlet var viewUserButton: UIButton!
+    
+    @IBOutlet var userImageView: CircleImageView!
     @IBOutlet weak var imageView: UIImageView!
-    var photo: Photo! {
+    var photo: ItemPhoto! {
         didSet {
             navigationItem.title = photo.title
+            
         }
     }
     var store: PhotoStore!
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,5 +48,24 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             
         }
+        titleText.text = photo.title
+
+
+        detailsText.text = photo.description
+       
+        let size: CGSize = detailsText.font!.sizeOfString(detailsText.text, constrainedToWidth: Double(self.view.frame.width - 16))
+        
+        contentViewHeightConstraint.constant = contentViewHeightConstraint.constant + size.height
+        print(size.height)
+        
+        self.view.layoutIfNeeded()
+        
+        viewUserButton.setTitle("User", forState: .Normal)
+
+    }
+
+    
+    override func viewDidAppear(animated: Bool){
+        super.viewDidAppear(animated)
     }
 }

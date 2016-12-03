@@ -12,6 +12,10 @@ class MessageViewController : UITableViewController {
     let messageStore = Singleton.sharedInstance.messageStore
     let imageStore = Singleton.sharedInstance.imageStore
     
+    
+    var refreshMessagesControl : UIRefreshControl!
+    
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         navigationItem.leftBarButtonItem = editButtonItem()
@@ -21,7 +25,16 @@ class MessageViewController : UITableViewController {
     
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        refreshMessagesControl = UIRefreshControl()
+        refreshMessagesControl.addTarget(self, action: #selector(refreshMessages), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshMessagesControl
     }
+    
+    func refreshMessages(){
+        refreshMessagesControl.endRefreshing()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }

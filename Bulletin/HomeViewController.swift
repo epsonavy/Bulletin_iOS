@@ -61,7 +61,7 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
             if let selectedIndexPath = collectionView.indexPathsForSelectedItems()?.first {
                 let photo = photoDataSource.photos[selectedIndexPath.row]
                 let destinationVC = segue.destinationViewController as! PhotoInfoViewController
-                destinationVC.photo = photo
+                destinationVC.photo = photo as! ItemPhoto
                 destinationVC.store = Singleton.sharedInstance.photoStore
             }
         }

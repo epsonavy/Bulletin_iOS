@@ -14,6 +14,8 @@ class PhotoCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bottomRect: UIView!
     @IBOutlet weak var priceTag: UILabel!
     
+    @IBOutlet var userImageView: CircleImageView!
+    
     @IBOutlet var details: UILabel!
     @IBOutlet var title: UILabel!
     func updateWithImage(image: UIImage?) {

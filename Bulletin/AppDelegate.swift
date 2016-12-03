@@ -9,11 +9,22 @@
 import UIKit
 import CoreData
 
+
+extension UIFont {
+    func sizeOfString (string: String, constrainedToWidth width: Double) -> CGSize {
+        return NSString(string: string).boundingRectWithSize(CGSize(width: width, height: DBL_MAX),
+                                                             options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+                                                             attributes: [NSFontAttributeName: self],
+                                                             context: nil).size
+    }
+}
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
