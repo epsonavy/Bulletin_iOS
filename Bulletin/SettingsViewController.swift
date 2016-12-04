@@ -318,7 +318,7 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
             self.view.layoutIfNeeded()
             }, completion: {
                 (finished: Bool) -> Void in
-                self.profileScrollView.setContentOffset(CGPoint(x: 0, y: self.contentView.frame.height - self.profileScrollView.frame.height - self.emailView.frame.height), animated: true)
+                self.profileScrollView.setContentOffset(CGPoint(x: 0, y: self.contentView.frame.height - self.profileScrollView.frame.height - self.emailView.frame.height * 2), animated: true)
 
         })
     }

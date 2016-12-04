@@ -37,8 +37,8 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
     
     }
     
+    
     func refreshItems(){
-        print("bitch")
         Singleton.sharedInstance.photoStore.getItems() {
             (photosResult) -> Void in
             
@@ -46,7 +46,7 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
                 switch photosResult {
                 case let .Success(photos):
                     print("Successfully found \(photos.count) recnet photos.\n")
-                    self.photoDataSource.photos = photos
+                    self.photoDataSource.photos = (photos as! [ItemPhoto]).sort{$0.expiration.intValue > $1.expiration.intValue}
                 case let .Failure(e):
                     self.photoDataSource.photos.removeAll()
                     print("Error: \(e)")
@@ -69,7 +69,6 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         let photo = photoDataSource.photos[indexPath.row]
-        print("getting photo for \(indexPath.row)")
         Singleton.sharedInstance.photoStore.fetchImageForPhoto(photo) { (result) -> Void in
             NSOperationQueue.mainQueue().addOperationWithBlock() {
                 let photoIndex = self.photoDataSource.photos.indexOf(photo)!
@@ -77,7 +76,6 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
                 
                 if let cell = self.collectionView.cellForItemAtIndexPath(photoIndexPath)
                     as? PhotoCollectionViewCell {
-                    print("finished photo for \(indexPath.row)")
                     cell.updateWithImage(photo.image)
                 }
             }

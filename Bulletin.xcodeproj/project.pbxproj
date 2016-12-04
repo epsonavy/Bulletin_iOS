@@ -23,6 +23,7 @@
 		0500FFF61DBDF17700E83F4A /* GrayBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFF51DBDF17700E83F4A /* GrayBarView.swift */; };
 		0500FFFD1DBDF58F00E83F4A /* CircleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFFC1DBDF58F00E83F4A /* CircleLabelView.swift */; };
 		0500FFFF1DBE004B00E83F4A /* OrangeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */; };
+		052427E91DF3D472000D363D /* BulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052427E81DF3D472000D363D /* BulletinItem.swift */; };
 		0526B7E71DBEBA72005A136C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7E61DBEBA72005A136C /* HomeViewController.swift */; };
 		0526B7E91DBEBAA0005A136C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7E81DBEBAA0005A136C /* MessageViewController.swift */; };
 		0526B7EB1DBEBAD4005A136C /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7EA1DBEBAD4005A136C /* SettingsViewController.swift */; };
@@ -149,6 +150,7 @@
 		0500FFF51DBDF17700E83F4A /* GrayBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrayBarView.swift; sourceTree = "<group>"; };
 		0500FFFC1DBDF58F00E83F4A /* CircleLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLabelView.swift; sourceTree = "<group>"; };
 		0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeBarView.swift; sourceTree = "<group>"; };
+		052427E81DF3D472000D363D /* BulletinItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinItem.swift; sourceTree = "<group>"; };
 		0526B7E61DBEBA72005A136C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0526B7E81DBEBAA0005A136C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
 		0526B7EA1DBEBAD4005A136C /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -521,6 +523,7 @@
 				AA0941631DCD9C0C005F1F8D /* Item.swift */,
 				AA0941661DCDA4AF005F1F8D /* ItemStore.swift */,
 				AACC49D51DCF2DEE009D66B5 /* ImageStore.swift */,
+				052427E81DF3D472000D363D /* BulletinItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -648,15 +651,18 @@
 				TargetAttributes = {
 					0500FFB41DBDCF0C00E83F4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 35B6YY236L;
 						LastSwiftMigration = 0800;
 					};
 					0500FFCB1DBDCF0C00E83F4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 35B6YY236L;
 						LastSwiftMigration = 0800;
 						TestTargetID = 0500FFB41DBDCF0C00E83F4A;
 					};
 					0500FFD61DBDCF0C00E83F4A = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = 35B6YY236L;
 						LastSwiftMigration = 0800;
 						TestTargetID = 0500FFB41DBDCF0C00E83F4A;
 					};
@@ -778,6 +784,7 @@
 				AA332A6A1DDE35F20076C4A3 /* FlickrAPI.swift in Sources */,
 				057754E21DEAA56E00C1A1EB /* ItemModel.swift in Sources */,
 				057220971DF27F6400BBC3FD /* ItemMessage.swift in Sources */,
+				052427E91DF3D472000D363D /* BulletinItem.swift in Sources */,
 				AA332A721DDEC73C0076C4A3 /* PhotoStore.swift in Sources */,
 				0545A1B11DF23A6F0081F2B5 /* ItemPhoto.swift in Sources */,
 				0526B7E91DBEBAA0005A136C /* MessageViewController.swift in Sources */,
@@ -884,6 +891,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 35B6YY236L;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -930,6 +938,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 35B6YY236L;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;

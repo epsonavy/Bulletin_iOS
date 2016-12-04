@@ -28,6 +28,9 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
             
         }
     }
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
     var processingConversation : Bool!
     
@@ -46,6 +49,10 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
         if resHTTP.statusCode == 200 {
             mainTabController.goToMessages()
             conversationButton.setTitle("Conversation started!", forState: .Normal)
+            
+            let parentVc = self.parentViewController!.parentViewController as! MainTabBarController
+            parentVc.refreshConversations()
+            
         }else if resHTTP.statusCode == 418{
             conversationButton.setTitle("Started conversation!", forState: .Normal)
             mainTabController.goToMessages()

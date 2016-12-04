@@ -26,16 +26,55 @@ class ItemStore {
     }*/
     
     init() {
+        /*
         if let archivedItems =
             NSKeyedUnarchiver.unarchiveObjectWithFile(itemArchiveURL.path!) as? [Item] {
             allItems += archivedItems
         }
+         */
     }
     
     func saveChanges()->Bool {
         print("Saving items to: \(itemArchiveURL.path!)")
         return NSKeyedArchiver.archiveRootObject(allItems, toFile: itemArchiveURL.path!)
     }
+    
+    
+    func createItemsFromData(data: NSData){
+        allItems.removeAll()
+        
+        var decodedJson : AnyObject
+        do {
+            decodedJson = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
+        
+        let items = decodedJson as! NSArray
+        for var item in items{
+            print(item)
+            
+            let title = item["title"] as! String
+            let price = item["price"] as! NSNumber
+            let details = item["description"] as! String
+            let expiration = item["expiration"] as! NSNumber
+            let pictures = item["pictures"] as! NSArray
+            let picture = pictures[0] as! String
+            
+            print(picture)
+            
+            let addedItem = BulletinItem(name: title, price: price, url: picture, details: details, expiration: expiration)
+            addedItem.load_image(picture)
+            
+            allItems.append(addedItem)
+            
+
+        }
+            
+        allItems = (allItems as! [BulletinItem]).sort{$0.expiration.intValue > $1.expiration.intValue}
+        }catch(let e){
+            print(e)
+        }
+        
+    }
+    
     
     func createItem() -> Item {
         let newItem = Item(random: true)

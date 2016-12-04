@@ -31,9 +31,12 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
         activityVc = self.viewControllers![2] as! UINavigationController
         postVc = self.viewControllers![3] as! UINavigationController // => PostViewController
         settingsVc = self.viewControllers![4] as! SettingsViewController
+        
+        loadAllViewControllers()
+        
  
     }
-    
+
     
     func goToMessages(){
         let vc = messageVc.childViewControllers[0] as! MessageViewController
@@ -42,7 +45,27 @@ class MainTabBarController : UITabBarController, UITabBarControllerDelegate, UIS
     }
     
     
- 
+    func loadAllViewControllers(){
+        for var viewController in self.viewControllers!{
+            let _ = viewController.view
+        }
+    }
+    
+    func refreshConversations(){
+        let messagesViewController = messageVc.childViewControllers[0] as! MessageViewController
+        messagesViewController.refreshMessages()
+    }
+    
+    
+    func refreshItems(){
+        let homeViewController = homeVc.childViewControllers[0] as! HomeViewController
+        let postViewController = postVc.childViewControllers[0] as! PostViewController
+        
+        homeViewController.refreshItems()
+        postViewController.refreshItems()
+        
+    }
+    
 
 
     override func viewDidAppear(animated: Bool){

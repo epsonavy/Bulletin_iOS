@@ -22,14 +22,22 @@ class MessageStore {
         */
     }
     
-    func messagesFromData(data: NSData?){
-        guard let jsonData = data else{
-            return
-        }
-        let messages = jsonData as! NSArray
-        for var message in messages{
+    func messagesFromData(data: NSData){
+        var decodedJson : AnyObject
+        do {
+            decodedJson = try NSJSONSerialization.JSONObjectWithData(data, options: .MutableContainers)
             
+            let conversations = decodedJson as! NSArray
+            for var conversation in conversations{
+                
+            
+                
+                
+            }
+        }catch(let e){
+            print(e)
         }
+
         
     }
     

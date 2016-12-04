@@ -12,14 +12,50 @@ class PostViewController : UITableViewController {
     let itemStore = Singleton.sharedInstance.itemStore
     let imageStore = Singleton.sharedInstance.imageStore
     
+    
+    let singleton = Singleton.sharedInstance
+    
+    
+    let refreshItemsControl = UIRefreshControl()
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         navigationItem.leftBarButtonItem = editButtonItem()
         navigationController!.navigationBar.tintColor = Singleton.sharedInstance.mainThemeColor
+        
+        refreshItems()
+        
     }
+    
+    func checkGetUserItemsComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        refreshItemsControl.endRefreshing()
+        
+        guard let resHTTP = response as! NSHTTPURLResponse! else{
+            return
+        }
+        
+        guard let jsonData = data else{
+            return
+        }
+        
+        if resHTTP.statusCode == 200 {
+            itemStore.createItemsFromData(jsonData)
+            self.tableView.reloadData()
+        }
+        
+    }
+    
+    func refreshItems(){
+        singleton.API.getUserItems(checkGetUserItemsComplete)
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        refreshItemsControl.addTarget(self, action: #selector(refreshItems), forControlEvents: UIControlEvents.ValueChanged)
+        self.refreshControl = refreshItemsControl
         
         //tableView.rowHeight = 200
         

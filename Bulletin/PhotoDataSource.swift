@@ -15,6 +15,7 @@ class PhotoDataSource: NSObject, UICollectionViewDataSource {
         return photos.count
     }
     
+    
     func collectionView(collectionView: UICollectionView,
                         cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let identifier = "UICollectionViewCell"

@@ -15,8 +15,10 @@ class ActivityViewController : UIViewController, UINavigationControllerDelegate,
     
     @IBOutlet var titleView: UIView!
     
+
     
-    
+    @IBOutlet var postButton: UIButton!
+
     @IBOutlet var itemImageView: UIImageView!
     
     @IBOutlet var titleTextField: UITextField!
@@ -28,9 +30,14 @@ class ActivityViewController : UIViewController, UINavigationControllerDelegate,
     var selectedImageUrl : String = ""
     
     
+    var processingPost : Bool!
+    
+    
     @IBOutlet var descriptionTextView: UITextView!
     override func viewDidLoad(){
         super.viewDidLoad()
+        
+        processingPost = false
         
         selectedImageUrl = "default_item.png"
         
@@ -47,6 +54,52 @@ class ActivityViewController : UIViewController, UINavigationControllerDelegate,
        
         
     }
+    
+    func checkPostComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
+        guard let resHTTP = response as! NSHTTPURLResponse! else{
+            return
+        }
+        
+        guard let jsonData = data else {
+            return
+        }
+        
+        if resHTTP.statusCode == 200 {
+            setToDefaults()
+            let modalPopup : ModalPopup = ModalPopup(message: "Posted successfully!", delegate: self)
+            modalPopup.id = 4
+            modalPopup.show()
+            
+            let parentVc = self.parentViewController!.parentViewController as! MainTabBarController
+            parentVc.refreshItems()
+            
+            
+
+        }else{
+            let modalPopup : ModalPopup = ModalPopup(message: "There was a problem with posting", delegate: self)
+            modalPopup.id = 4
+            modalPopup.show()
+        }
+        processingPost = false
+        
+    }
+    
+    func setToDefaults(){
+        self.priceTextField.text = ""
+        self.titleTextField.text = ""
+        self.descriptionTextView.text = ""
+        self.selectedImageUrl = "default_item.png"
+        self.itemImageView.image = UIImage(named: "default_item.png")
+    }
+    
+    
+    @IBAction func postTapped(sender: AnyObject) {
+        if processingPost == false{
+            processingPost = true
+            singleton.API.createNewItem(self.titleTextField.text!, pictureUrl: self.selectedImageUrl, price: NSNumberFormatter().numberFromString(self.priceTextField.text!)!, description: self.descriptionTextView.text, completion: checkPostComplete)
+        }
+    }
+    
 
     func modalPopupOkay(sender: ModalPopup) {
         

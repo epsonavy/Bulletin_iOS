@@ -10,14 +10,14 @@ import UIKit
 
 class Item: NSObject, NSCoding {
     var name: String
-    var price: Int
+    var price: NSNumber
     let dateCreated: NSDate
     let itemKey: String
     var image: UIImage?
     
     required init(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObjectForKey("name") as! String
-        price = aDecoder.decodeIntegerForKey("price")
+        price = aDecoder.decodeIntegerForKey("price") as NSNumber
         dateCreated = aDecoder.decodeObjectForKey("dateCreated") as! NSDate
         itemKey = aDecoder.decodeObjectForKey("itemKey") as! String
         image = aDecoder.decodeObjectForKey("image") as! UIImage?
@@ -26,14 +26,14 @@ class Item: NSObject, NSCoding {
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "name")
-        aCoder.encodeInteger(price, forKey: "price")
+        aCoder.encodeObject(price, forKey: "price")
         aCoder.encodeObject(dateCreated, forKey: "dateCreated")
         aCoder.encodeObject(itemKey, forKey: "itemKey")
         aCoder.encodeObject(image, forKey: "image")
         print("hello")
     }
     
-    init(name: String, price: Int, url: String) {
+    init(name: String, price: NSNumber, url: String) {
         self.name = name
         self.price = price
         self.dateCreated = NSDate()

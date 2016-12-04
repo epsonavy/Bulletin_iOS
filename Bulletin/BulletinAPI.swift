@@ -259,6 +259,34 @@ class BulletinAPI{
         
     }
     
+    func createNewItem(title: String, pictureUrl: String, price: NSNumber, description: String, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        
+        let url : NSURL! = NSURL(string: apiAddress + "/items/new/?token=" + getToken())
+        let request = NSMutableURLRequest(URL: url)
+        
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        
+        var itemDetails : NSDictionary
+        if(pictureUrl == "default_item.png"){
+            itemDetails = ["title": title, "description" : description, "price" : price]
+        }else{
+            itemDetails = ["title": title, "description" : description, "pictures": [pictureUrl], "price" : price]
+        }
+
+        request.HTTPMethod = "POST"
+        
+        do{
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(itemDetails, options: .PrettyPrinted)
+            request.HTTPBody = jsonData
+            print(NSString(data: jsonData, encoding: NSUTF8StringEncoding))
+        }catch{
+            
+        }
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
     
     func checkToken(token: String!, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
         let url : NSURL! = NSURL(string: apiAddress + "/auth?token=" + token);
