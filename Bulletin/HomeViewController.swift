@@ -12,6 +12,7 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var navigationBar: GrayBarView!
     @IBOutlet weak var navigationBarTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var universityLabel: UILabel!
     
     @IBOutlet weak var collectionView: UICollectionView!
 
@@ -33,10 +34,29 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
         
         refreshItemsControl.addTarget(self, action: #selector(refreshItems), forControlEvents: UIControlEvents.ValueChanged)
         collectionView.addSubview(refreshItemsControl)
-        
+        loadEduEmail()
     
     }
     
+    func loadEduEmail() {
+        if let email = Singleton.sharedInstance.email {
+            print(email)
+            let eduEmail = email.componentsSeparatedByString("@")[1]
+            let abbr = eduEmail.componentsSeparatedByString(".")[0]
+        
+            switch abbr {
+            // Only add Bay Area University
+            case "sjsu": universityLabel.text = "San Jose State University"
+            case "berkeley": universityLabel.text = "UC Berkeley"
+            case "ucdavis": universityLabel.text = "UC Davis"
+            case "ucsd" : universityLabel.text = "UC San Diego"
+            case "ucla" : universityLabel.text = "UC Los Angeles"
+            case "ucsb" : universityLabel.text = "UC Santa Barbara"
+            case "sfsu" : universityLabel.text = "San Francisco State University"
+            default : universityLabel.text = "San Jose State University"
+            }
+        }
+    }
     
     func refreshItems(){
         Singleton.sharedInstance.photoStore.getItems() {

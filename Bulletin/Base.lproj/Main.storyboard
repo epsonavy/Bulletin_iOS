@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcD-11-soL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcD-11-soL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -1125,6 +1125,7 @@
                     <navigationItem key="navigationItem" id="sUl-vv-Af1"/>
                     <connections>
                         <outlet property="collectionView" destination="qsz-wr-coy" id="7ay-jX-OIj"/>
+                        <outlet property="universityLabel" destination="NBj-rR-2dP" id="JRJ-n1-eHl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iSf-kd-b3k" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1492,7 +1493,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8D-V9-bRJ">
-                                                        <rect key="frame" x="66" y="8.5" width="301" height="33"/>
+                                                        <rect key="frame" x="66" y="9" width="301" height="32"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="17"/>
                                                         <state key="normal" title="LuckyPaws">
                                                             <color key="titleColor" red="0.99215686270000003" green="0.45882352939999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>

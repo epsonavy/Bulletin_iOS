@@ -138,7 +138,7 @@ class RegisterViewController: UIViewController, UIGestureRecognizerDelegate, Mod
         }
         
         
-        
+        singleton.email = email
         return true
     }
     
