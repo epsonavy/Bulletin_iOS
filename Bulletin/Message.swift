@@ -22,6 +22,7 @@ class Message: NSObject {
         self.dateCreated = NSDate(timeIntervalSince1970: dateCreated.doubleValue)
         self.conversationId = conversationId
         self.itemKey = itemKey
+
         super.init()
         if (url.characters.count > 4) {
             load_image(url)

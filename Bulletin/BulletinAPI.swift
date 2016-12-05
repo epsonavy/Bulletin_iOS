@@ -103,6 +103,7 @@ class BulletinAPI{
         let request = NSMutableURLRequest(URL: url)
         request.HTTPMethod = "GET"
         
+        
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
     }
     
@@ -236,6 +237,29 @@ class BulletinAPI{
         
     }
     
+    func sendMessage(conversationId: String, message: String, completion: (response: NSURLResponse?, data:NSData?, error:NSError?) -> (Void)){
+        let url : NSURL! = NSURL(string: apiAddress + "/conversations/messages/?token=" + getToken())
+        let request = NSMutableURLRequest(URL: url)
+        
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Accept")
+        
+        var messageDetails = [ "message" : message, "conversationId" : conversationId]
+        
+        request.HTTPMethod = "POST"
+        
+        do{
+            let jsonData = try NSJSONSerialization.dataWithJSONObject(messageDetails, options: .PrettyPrinted)
+            request.HTTPBody = jsonData
+            print(NSString(data: jsonData, encoding: NSUTF8StringEncoding))
+        }catch{
+            
+        }
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
+    
     func updatePassword(password : String!, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
         let url : NSURL! = NSURL(string: apiAddress + "/users/update/")
         let request = NSMutableURLRequest(URL: url)
@@ -258,6 +282,19 @@ class BulletinAPI{
         
         
     }
+    
+    func getAllMessages(conversationId: String, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+        let url : NSURL! = NSURL(string: apiAddress + "/conversations/messages/?token=" + getToken() + "&conversationId=" + conversationId + "&from=0")
+        
+        
+        let request = NSMutableURLRequest(URL: url)
+        request.HTTPMethod = "GET"
+        
+        
+        NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
+    }
+    
+    
     
     func createNewItem(title: String, pictureUrl: String, price: NSNumber, description: String, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
         

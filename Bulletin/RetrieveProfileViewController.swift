@@ -46,6 +46,7 @@ class RetrieveProfileViewController: UIViewController {
             return
         }
         let resCode = resHTTP.statusCode
+        
         if(resCode == 200){
             var decodedJson : AnyObject
             do{
@@ -63,6 +64,9 @@ class RetrieveProfileViewController: UIViewController {
                 print(e)
             }
             
+        }else{
+            let vc = self.storyboard?.instantiateViewControllerWithIdentifier("LoginNavigationController") as! UINavigationController
+            self.presentViewController(vc, animated: true, completion: nil)
         }
     }
     
