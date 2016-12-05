@@ -16,6 +16,7 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     @IBOutlet var withLabel: UILabel!
     @IBOutlet var inputTextField: UITextField!
     
+    @IBOutlet var conversationLabel: UILabel!
     
     var conversation : Message!
     
@@ -31,6 +32,12 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let recognizer = UITapGestureRecognizer(target: self, action:#selector(ConversationViewController.tapAndGoBack(_:)))
+        recognizer.numberOfTapsRequired = 1;
+        conversationLabel.addGestureRecognizer(recognizer)
+        conversationLabel.userInteractionEnabled = true;
+        
         sendingMessage = false
         print("peter is so gay")
         self.navigationController?.interactivePopGestureRecognizer!.enabled = true
@@ -57,6 +64,11 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         
         refreshMessages()
         
+    }
+    
+    func tapAndGoBack(recognizer: UITapGestureRecognizer){
+        print("tapped!")
+        navigationController?.popViewControllerAnimated(true)
     }
     
     func resignFirstResponders(){
