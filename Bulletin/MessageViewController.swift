@@ -32,6 +32,8 @@ class MessageViewController : UITableViewController {
         refreshMessagesControl = UIRefreshControl()
         refreshMessagesControl.addTarget(self, action: #selector(refreshMessages), forControlEvents: UIControlEvents.ValueChanged)
         self.refreshControl = refreshMessagesControl
+        
+        self.tableView.separatorStyle = .None
     }
     
     func checkGetConversationsComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
@@ -72,14 +74,12 @@ class MessageViewController : UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "ShowMessage" {
-            /*
              if let row = tableView.indexPathForSelectedRow?.row{
-             let item = itemStore.allItems[row]
-             let detailViewController = segue.destinationViewController as! DetailViewController
-             detailViewController.item = item
-             detailViewController.imageStore = imageStore
+             let item = messageStore.allItems[row]
+             let vc = segue.destinationViewController as! ConversationViewController
+             vc.conversation = item
+
              }
-            */
         }
     }
     

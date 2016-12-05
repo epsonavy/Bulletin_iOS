@@ -17,8 +17,10 @@ class ItemCell: UITableViewCell {
     // Adjust font size according to user system setting
     func updateLabels() {
         let bodyFont = UIFont.preferredFontForTextStyle(UIFontTextStyleBody)
+        /*
         nameLabel.font = bodyFont
         valueLabel.font = bodyFont
         dateLabel.font = bodyFont
+ */
     }
 }

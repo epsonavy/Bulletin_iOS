@@ -24,6 +24,7 @@
 		0500FFFD1DBDF58F00E83F4A /* CircleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFFC1DBDF58F00E83F4A /* CircleLabelView.swift */; };
 		0500FFFF1DBE004B00E83F4A /* OrangeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */; };
 		050967961DF4E813001896C9 /* RetrieveProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050967951DF4E813001896C9 /* RetrieveProfileViewController.swift */; };
+		050967981DF4F8B3001896C9 /* messaging_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 050967971DF4F8B3001896C9 /* messaging_icon@2x.png */; };
 		052427E91DF3D472000D363D /* BulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052427E81DF3D472000D363D /* BulletinItem.swift */; };
 		0526B7E71DBEBA72005A136C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7E61DBEBA72005A136C /* HomeViewController.swift */; };
 		0526B7E91DBEBAA0005A136C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7E81DBEBAA0005A136C /* MessageViewController.swift */; };
@@ -151,6 +152,7 @@
 		0500FFFC1DBDF58F00E83F4A /* CircleLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLabelView.swift; sourceTree = "<group>"; };
 		0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeBarView.swift; sourceTree = "<group>"; };
 		050967951DF4E813001896C9 /* RetrieveProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveProfileViewController.swift; sourceTree = "<group>"; };
+		050967971DF4F8B3001896C9 /* messaging_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "messaging_icon@2x.png"; path = "../messaging_icon@2x.png"; sourceTree = "<group>"; };
 		052427E81DF3D472000D363D /* BulletinItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinItem.swift; sourceTree = "<group>"; };
 		0526B7E61DBEBA72005A136C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0526B7E81DBEBAA0005A136C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 		0500FFFB1DBDF53400E83F4A /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				050967971DF4F8B3001896C9 /* messaging_icon@2x.png */,
 				0572209A1DF2857300BBC3FD /* title_icon@2x.png */,
 				0572209C1DF285EE00BBC3FD /* price_icon@2x.png */,
 				057220981DF2838000BBC3FD /* default_item@2x.png */,
@@ -693,6 +696,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				050967981DF4F8B3001896C9 /* messaging_icon@2x.png in Resources */,
 				0572209D1DF285EE00BBC3FD /* price_icon@2x.png in Resources */,
 				0572209B1DF2857300BBC3FD /* title_icon@2x.png in Resources */,
 				057220991DF2838000BBC3FD /* default_item@2x.png in Resources */,

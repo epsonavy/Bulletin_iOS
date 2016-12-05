@@ -61,6 +61,7 @@ class PostViewController : UITableViewController {
         
         //tableView.rowHeight = UITableViewAutomaticDimension
         //tableView.estimatedRowHeight = 65
+              self.tableView.separatorStyle = .None
     }
     
     override func didReceiveMemoryWarning() {
