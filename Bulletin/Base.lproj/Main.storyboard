@@ -1469,7 +1469,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9M-du-ctX" userLabel="Bar">
-                                                    <rect key="frame" x="8" y="36" width="1" height="50"/>
+                                                    <rect key="frame" x="8" y="31" width="1" height="55"/>
                                                     <color key="backgroundColor" red="0.99215686270000003" green="0.45882352939999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="1" id="DFu-AU-kF1"/>
@@ -1497,7 +1497,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="topMargin" secondItem="EyA-ic-BqH" secondAttribute="top" id="8cK-95-SXs"/>
-                                                <constraint firstItem="g9M-du-ctX" firstAttribute="top" secondItem="EpQ-vr-NFh" secondAttribute="bottom" constant="10" id="CfA-xe-Jac"/>
+                                                <constraint firstItem="g9M-du-ctX" firstAttribute="top" secondItem="EpQ-vr-NFh" secondAttribute="bottom" constant="5" id="CfA-xe-Jac"/>
                                                 <constraint firstAttribute="topMargin" secondItem="EpQ-vr-NFh" secondAttribute="top" id="MNe-Gl-L6O"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="RkV-1o-EBT" secondAttribute="trailing" id="PEm-uZ-lXS"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EyA-ic-BqH" secondAttribute="trailing" id="UvC-xu-IIo"/>
