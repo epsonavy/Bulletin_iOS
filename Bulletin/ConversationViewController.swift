@@ -146,6 +146,8 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
             print(e)
         }
         self.messageTableView.reloadData()
+        let parentVc = self.parentViewController!.parentViewController as! MainTabBarController
+        parentVc.refreshConversations()
         
     }
     
