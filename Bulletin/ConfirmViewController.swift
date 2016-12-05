@@ -16,7 +16,7 @@ class ConfirmViewController: UIViewController, UIImagePickerControllerDelegate, 
     let singleton = Singleton.sharedInstance
 
     @IBAction func proceedToMainTab(sender: AnyObject) {
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabBarController") as! MainTabBarController
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RetrieveProfileViewController") as! RetrieveProfileViewController
         self.presentViewController(vc, animated: true, completion: nil)
         
     }

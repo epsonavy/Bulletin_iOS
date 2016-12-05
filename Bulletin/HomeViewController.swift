@@ -66,7 +66,7 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
                 switch photosResult {
                 case let .Success(photos):
                     print("Successfully found \(photos.count) recnet photos.\n")
-                    self.photoDataSource.photos = (photos as! [ItemPhoto]).sort{$0.expiration.intValue > $1.expiration.intValue}
+                    self.photoDataSource.photos = (photos as! [ItemPhoto]).sort{$0.expiration.intValue > $1.expiration.intValue}.filter{$0.userId != Singleton.sharedInstance.userId}
                 case let .Failure(e):
                     self.photoDataSource.photos.removeAll()
                     print("Error: \(e)")
@@ -89,6 +89,23 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
     
     func collectionView(collectionView: UICollectionView, willDisplayCell cell: UICollectionViewCell, forItemAtIndexPath indexPath: NSIndexPath) {
         let photo = photoDataSource.photos[indexPath.row]
+        
+        let itemPhoto = photo as! ItemPhoto
+        
+        Singleton.sharedInstance.photoStore.fetchUserImageForPhoto(itemPhoto) { (result) -> Void in
+            NSOperationQueue.mainQueue().addOperationWithBlock() {
+                let photoIndex = self.photoDataSource.photos.indexOf(itemPhoto)!
+                let photoIndexPath = NSIndexPath(forRow: photoIndex, inSection: 0)
+                
+                if let cell = self.collectionView.cellForItemAtIndexPath(photoIndexPath)
+                    as? PhotoCollectionViewCell {
+                    let itemPhoto = photo as! ItemPhoto
+                    cell.updateWithUserImageView(itemPhoto.userImage)
+                }
+            }
+        }
+        
+        
         Singleton.sharedInstance.photoStore.fetchImageForPhoto(photo) { (result) -> Void in
             NSOperationQueue.mainQueue().addOperationWithBlock() {
                 let photoIndex = self.photoDataSource.photos.indexOf(photo)!

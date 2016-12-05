@@ -23,6 +23,7 @@
 		0500FFF61DBDF17700E83F4A /* GrayBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFF51DBDF17700E83F4A /* GrayBarView.swift */; };
 		0500FFFD1DBDF58F00E83F4A /* CircleLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFFC1DBDF58F00E83F4A /* CircleLabelView.swift */; };
 		0500FFFF1DBE004B00E83F4A /* OrangeBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */; };
+		050967961DF4E813001896C9 /* RetrieveProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 050967951DF4E813001896C9 /* RetrieveProfileViewController.swift */; };
 		052427E91DF3D472000D363D /* BulletinItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 052427E81DF3D472000D363D /* BulletinItem.swift */; };
 		0526B7E71DBEBA72005A136C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7E61DBEBA72005A136C /* HomeViewController.swift */; };
 		0526B7E91DBEBAA0005A136C /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0526B7E81DBEBAA0005A136C /* MessageViewController.swift */; };
@@ -150,6 +151,7 @@
 		0500FFF51DBDF17700E83F4A /* GrayBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GrayBarView.swift; sourceTree = "<group>"; };
 		0500FFFC1DBDF58F00E83F4A /* CircleLabelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleLabelView.swift; sourceTree = "<group>"; };
 		0500FFFE1DBE004B00E83F4A /* OrangeBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrangeBarView.swift; sourceTree = "<group>"; };
+		050967951DF4E813001896C9 /* RetrieveProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetrieveProfileViewController.swift; sourceTree = "<group>"; };
 		052427E81DF3D472000D363D /* BulletinItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BulletinItem.swift; sourceTree = "<group>"; };
 		0526B7E61DBEBA72005A136C /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		0526B7E81DBEBAA0005A136C /* MessageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
@@ -450,6 +452,7 @@
 				0500FFBA1DBDCF0C00E83F4A /* ViewController.swift */,
 				057B82BE1DE19D7B009B059E /* RegisterViewController.swift */,
 				05C8C70C1DE2CEA50063930F /* ConfirmViewController.swift */,
+				050967951DF4E813001896C9 /* RetrieveProfileViewController.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -791,6 +794,7 @@
 				0500FFBB1DBDCF0C00E83F4A /* ViewController.swift in Sources */,
 				0526B7E71DBEBA72005A136C /* HomeViewController.swift in Sources */,
 				0526B7EB1DBEBAD4005A136C /* SettingsViewController.swift in Sources */,
+				050967961DF4E813001896C9 /* RetrieveProfileViewController.swift in Sources */,
 				AACF32D11DCC5AC500139293 /* CircleImageView.swift in Sources */,
 				057B82BF1DE19D7B009B059E /* RegisterViewController.swift in Sources */,
 				AAD42CC71DD2BD6C001DC51E /* MessageCell.swift in Sources */,

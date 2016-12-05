@@ -93,6 +93,22 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
             }
             
         }
+        
+        let itemPhoto = photo as ItemPhoto
+        
+        store.fetchUserImageForPhoto(itemPhoto) { (result) -> Void in
+            switch result {
+            case let .Success(image):
+                NSOperationQueue.mainQueue().addOperationWithBlock() {
+                    self.userImageView.image = image
+                }
+            case let .Failure(e):
+                print("Error fetching image: \(e)")
+            }
+            
+        }
+        
+        
         titleText.text = photo.title
 
         detailsText.text = photo.description
@@ -104,7 +120,9 @@ class PhotoInfoViewController: UIViewController, UIGestureRecognizerDelegate {
         
         self.view.layoutIfNeeded()
         
-        viewUserButton.setTitle("User", forState: .Normal)
+        
+        viewUserButton.setTitle(itemPhoto.userName, forState: .Normal)
+        
         
         processingConversation = false
 

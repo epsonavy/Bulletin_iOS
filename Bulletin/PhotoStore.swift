@@ -44,6 +44,29 @@ class PhotoStore {
         task.resume()
     }
     
+    func fetchUserImageForPhoto(photo: ItemPhoto, completion: (ImageResult) -> Void) {
+        if let image = photo.userImage {
+            completion(.Success(image))
+            return
+        }
+        
+        let photoURL : NSURL! = NSURL(string:photo.userProfilePictureUrl)
+        let request = NSURLRequest(URL: photoURL)
+        let task = session.dataTaskWithRequest(request) {
+            (data, response, error) -> Void in
+            
+            let result = self.processImageRequest(data: data, error: error)
+            
+            if case let .Success(image) = result {
+                photo.userImage = image
+            }
+            completion(result)
+        }
+        task.resume()
+    }
+
+    
+    
     func processImageRequest(data data: NSData?, error: NSError?) -> ImageResult {
         guard let
             imageData = data,
@@ -81,9 +104,11 @@ class PhotoStore {
                 let price = itemDescription["price"] as! NSNumber
                 let expiration = itemDescription["expiration"] as! NSNumber
                 let pictures = itemDescription["pictures"] as! NSArray
+                let userProfilePicture = itemDescription["userPicture"] as! String
                 let picture : NSURL! = NSURL(string: pictures[0] as! String)
+                let userName = itemDescription["userName"] as! String
                 
-                photos.append(ItemPhoto(title: title, photoID: itemId, remoteURL: picture, dateTaken: NSDate(), itemId: itemId, userId: userId, description: description, price: price, expiration: expiration))
+                photos.append(ItemPhoto(title: title, photoID: itemId, remoteURL: picture, dateTaken: NSDate(), itemId: itemId, userId: userId, description: description, price: price, expiration: expiration, userName: userName, userProfilePictureUrl: userProfilePicture))
                 
             }
             return .Success(photos)

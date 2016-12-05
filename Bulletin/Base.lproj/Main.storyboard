@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcD-11-soL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcD-11-soL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -477,6 +477,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6FV-HF-rcR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2080.8000000000002" y="345.87706146926541"/>
+        </scene>
+        <!--Retrieve Profile View Controller-->
+        <scene sceneID="PRu-vZ-gcZ">
+            <objects>
+                <viewController storyboardIdentifier="RetrieveProfileViewController" id="o1O-Fb-Ml2" customClass="RetrieveProfileViewController" customModule="Bulletin" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Qw3-Kr-ck1"/>
+                        <viewControllerLayoutGuide type="bottom" id="lKk-YQ-vdh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3a6-aq-thy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tcw-me-2Ia">
+                                <rect key="frame" x="16" y="324.5" width="343" height="18"/>
+                                <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
+                                <color key="textColor" white="0.56443965519999995" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tcw-me-2Ia" firstAttribute="centerY" secondItem="3a6-aq-thy" secondAttribute="centerY" id="gAm-P1-OnI"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="tcw-me-2Ia" secondAttribute="leading" id="gXl-DO-ZTE"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tcw-me-2Ia" secondAttribute="trailing" id="k3Q-A2-Bre"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dSi-YS-CPV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2807" y="346"/>
         </scene>
         <!--Message View Controller-->
         <scene sceneID="wE4-v1-jeR">
@@ -1493,7 +1524,7 @@
                                                         </constraints>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8D-V9-bRJ">
-                                                        <rect key="frame" x="66" y="9" width="301" height="32"/>
+                                                        <rect key="frame" x="66" y="8.5" width="301" height="33"/>
                                                         <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="17"/>
                                                         <state key="normal" title="LuckyPaws">
                                                             <color key="titleColor" red="0.99215686270000003" green="0.45882352939999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>

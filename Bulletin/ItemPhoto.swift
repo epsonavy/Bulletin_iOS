@@ -14,9 +14,15 @@ class ItemPhoto : Photo{
     let expiration: NSNumber
     let userId: String
     let itemId: String
+    var userImage : UIImage?
+    let userName: String
     
-    init(title: String, photoID: String, remoteURL: NSURL, dateTaken: NSDate, itemId: String, userId: String, description: String, price: NSNumber, expiration: NSNumber) {
-        
+    let userProfilePictureUrl: String
+    
+    
+    init(title: String, photoID: String, remoteURL: NSURL, dateTaken: NSDate, itemId: String, userId: String, description: String, price: NSNumber, expiration: NSNumber, userName: String, userProfilePictureUrl: String) {
+        self.userName = userName
+        self.userProfilePictureUrl = userProfilePictureUrl
         self.itemId = itemId
         self.userId = userId
         self.expiration = expiration
@@ -24,6 +30,8 @@ class ItemPhoto : Photo{
         self.price = price
         
         super.init(title: title, photoID: photoID, remoteURL: remoteURL, dateTaken: dateTaken)
+        print(self.userId)
+        print(Singleton.sharedInstance.userId)
         
     }
 }

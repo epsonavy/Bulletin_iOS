@@ -279,7 +279,7 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
     
     func transitionToMainTabBar(){
         resignFirstResponders()
-        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabBarController") as! MainTabBarController
+        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("RetrieveProfileViewController") as! RetrieveProfileViewController
         self.presentViewController(vc, animated: true, completion: nil)
     }
 

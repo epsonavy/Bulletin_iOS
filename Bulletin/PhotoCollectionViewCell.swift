@@ -34,6 +34,11 @@ class PhotoCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    func updateWithUserImageView(image: UIImage?){
+        if let imageToDisplay = image{
+            userImageView.image = imageToDisplay
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
