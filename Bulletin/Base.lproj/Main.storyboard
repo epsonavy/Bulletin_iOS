@@ -1488,7 +1488,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkV-1o-EBT">
-                                                    <rect key="frame" x="15" y="25" width="352" height="61"/>
+                                                    <rect key="frame" x="12" y="25" width="355" height="61"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="14"/>
@@ -1502,7 +1502,7 @@
                                                 <constraint firstAttribute="trailingMargin" secondItem="RkV-1o-EBT" secondAttribute="trailing" id="PEm-uZ-lXS"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="EyA-ic-BqH" secondAttribute="trailing" id="UvC-xu-IIo"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="g9M-du-ctX" secondAttribute="leading" id="Wxi-gl-LGS"/>
-                                                <constraint firstItem="RkV-1o-EBT" firstAttribute="leading" secondItem="g9M-du-ctX" secondAttribute="trailing" constant="6" id="YF1-Sd-9Sr"/>
+                                                <constraint firstItem="RkV-1o-EBT" firstAttribute="leading" secondItem="g9M-du-ctX" secondAttribute="trailing" constant="3" id="YF1-Sd-9Sr"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="RkV-1o-EBT" secondAttribute="bottom" constant="3" id="cFb-W4-yk1"/>
                                                 <constraint firstItem="RkV-1o-EBT" firstAttribute="top" secondItem="EpQ-vr-NFh" secondAttribute="bottom" constant="-1" id="d1C-j5-ROn"/>
                                                 <constraint firstItem="EyA-ic-BqH" firstAttribute="leading" secondItem="EpQ-vr-NFh" secondAttribute="trailing" constant="8" id="gJj-B4-KkF"/>

@@ -89,7 +89,7 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat{
         
-        let size: CGSize = inputTextField.font!.sizeOfString(messages[indexPath.row].message, constrainedToWidth: Double(self.view.frame.width - 23))
+        let size: CGSize = inputTextField.font!.sizeOfString(messages[indexPath.row].message, constrainedToWidth: Double(self.view.frame.width - 20))
         print(size.height)
         return 45 + size.height
     }
