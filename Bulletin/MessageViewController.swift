@@ -44,6 +44,7 @@ class MessageViewController : UITableViewController {
         }
         if resHTTP.statusCode == 200 {
             messageStore.messagesFromData(jsonData)
+            self.tableView.reloadData()
         }else if resHTTP.statusCode == 418{
             
         }

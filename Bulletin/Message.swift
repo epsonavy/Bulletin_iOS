@@ -14,12 +14,14 @@ class Message: NSObject {
     let dateCreated: NSDate
     let itemKey: String
     var image: UIImage?
+    var conversationId: String
     
-    init(name: String, detail: String, url: String) {
+    init(name: String, detail: String, url: String, itemKey: String, conversationId: String, dateCreated: NSNumber) {
         self.name = name
         self.detail = detail
-        self.dateCreated = NSDate()
-        self.itemKey = NSUUID().UUIDString
+        self.dateCreated = NSDate(timeIntervalSince1970: dateCreated.doubleValue)
+        self.conversationId = conversationId
+        self.itemKey = itemKey
         super.init()
         if (url.characters.count > 4) {
             load_image(url)
@@ -43,7 +45,9 @@ class Message: NSObject {
     }
     
     // test only: generate random items
+    /*
     convenience init(random: Bool = false) {
+        /*
         if random {
             let adjective = ["Hello", "Still available?", "Hi, I am ..."]
             let nouns = ["Kevin", "Peter", "Jeff"]
@@ -68,5 +72,7 @@ class Message: NSObject {
         } else {
             self.init(name: "No Name", detail:"No Detail", url: "")
         }
+ */
     }
+ */
 }
