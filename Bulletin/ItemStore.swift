@@ -58,6 +58,7 @@ class ItemStore {
             let pictures = item["pictures"] as! NSArray
             let picture = pictures[0] as! String
             
+            
             print(picture)
             
             let addedItem = BulletinItem(name: title, price: price, url: picture, details: details, expiration: expiration)

@@ -12,6 +12,8 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
     
     let singleton = Singleton.sharedInstance
     
+    @IBOutlet var topTitle: UILabel!
+    
     @IBOutlet var titleView: UIView!
     
     @IBOutlet var postButton: UIButton!
@@ -22,7 +24,6 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
     
     @IBOutlet var priceTextField: UITextField!
     
-    @IBOutlet var contentView: UIView!
     @IBOutlet var scrollView: UIScrollView!
     @IBOutlet var descriptionTextView: UITextView!
     
@@ -31,6 +32,17 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
     var selectedImageUrl : String = ""
     
     var processingPost : Bool!
+    
+    var item: Item!
+    
+    var imageStore: ImageStore!
+    
+    let dateFormatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = .MediumStyle
+        formatter.timeStyle = .MediumStyle
+        return formatter
+    }()
     
     @IBAction func descriptionTextTapped(sender: UITapGestureRecognizer) {
         
@@ -60,12 +72,23 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
         return true
     }
     
+    func tapAndGoBack(recognizer: UITapGestureRecognizer){
+        print("tapped!")
+        //navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil);
+    }
+    
     override func viewDidLoad(){
         super.viewDidLoad()
         
+        let recognizer = UITapGestureRecognizer(target: self, action:#selector(DetailPostViewController.tapAndGoBack(_:)))
+        recognizer.numberOfTapsRequired = 1;
+        topTitle.addGestureRecognizer(recognizer)
+        topTitle.userInteractionEnabled = true;
+        
         processingPost = false
         
-        selectedImageUrl = "default_item.png"
+        //selectedImageUrl = "default_item.png"
         
         let changePictureTapGesture : UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(changePicture))
         
@@ -79,6 +102,14 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.titleTextField.text = item.name
+        self.priceTextField.text = "\(item.price)"
+        self.descriptionTextView.text = "test"
+        self.itemImageView.image = item.image
+    }
+    
     func checkPostComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
         guard let resHTTP = response as! NSHTTPURLResponse! else{
             return
@@ -89,7 +120,7 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
         }
         
         if resHTTP.statusCode == 200 {
-            setToDefaults()
+            //setToDefaults()
             let modalPopup : ModalPopup = ModalPopup(message: "Posted successfully!", delegate: self)
             modalPopup.id = 4
             modalPopup.show()
@@ -120,7 +151,7 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
     @IBAction func postTapped(sender: AnyObject) {
         if processingPost == false{
             processingPost = true
-            singleton.API.createNewItem(self.titleTextField.text!, pictureUrl: self.selectedImageUrl, price: NSNumberFormatter().numberFromString(self.priceTextField.text!)!, description: self.descriptionTextView.text, completion: checkPostComplete)
+            singleton.API.updateItem(self.titleTextField.text!, pictureUrl: self.selectedImageUrl, price: NSNumberFormatter().numberFromString(self.priceTextField.text!)!, description: self.descriptionTextView.text, completion: checkPostComplete)
         }
     }
     

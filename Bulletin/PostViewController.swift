@@ -77,9 +77,9 @@ class PostViewController : UITableViewController {
         if segue.identifier == "ShowItem" {
             if let row = tableView.indexPathForSelectedRow?.row{
                 let item = itemStore.allItems[row]
-                let detailViewController = segue.destinationViewController as! DetailViewController
-                detailViewController.item = item
-                detailViewController.imageStore = imageStore
+                let detailViewController = segue.destinationViewController as! DetailPostViewController
+                    detailViewController.item = item
+                    detailViewController.imageStore = imageStore
             }
         }
     }

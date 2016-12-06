@@ -79,7 +79,6 @@
 		AA0941641DCD9C0C005F1F8D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941631DCD9C0C005F1F8D /* Item.swift */; };
 		AA0941671DCDA4AF005F1F8D /* ItemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941661DCDA4AF005F1F8D /* ItemStore.swift */; };
 		AA0941691DCDA9F0005F1F8D /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA0941681DCDA9F0005F1F8D /* ItemCell.swift */; };
-		AA09416C1DCDB1DF005F1F8D /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09416B1DCDB1DF005F1F8D /* DetailViewController.swift */; };
 		AA09416E1DCE63B7005F1F8D /* ItemImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA09416D1DCE63B7005F1F8D /* ItemImageView.swift */; };
 		AA318E9C1DCC08EE0068F222 /* FlatTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA318E9B1DCC08EE0068F222 /* FlatTextField.swift */; };
 		AA332A661DDD93CE0076C4A3 /* MessageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA332A651DDD93CE0076C4A3 /* MessageStore.swift */; };
@@ -210,7 +209,6 @@
 		AA0941631DCD9C0C005F1F8D /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		AA0941661DCDA4AF005F1F8D /* ItemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemStore.swift; sourceTree = "<group>"; };
 		AA0941681DCDA9F0005F1F8D /* ItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		AA09416B1DCDB1DF005F1F8D /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		AA09416D1DCE63B7005F1F8D /* ItemImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemImageView.swift; sourceTree = "<group>"; };
 		AA318E9B1DCC08EE0068F222 /* FlatTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlatTextField.swift; sourceTree = "<group>"; };
 		AA332A651DDD93CE0076C4A3 /* MessageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageStore.swift; sourceTree = "<group>"; };
@@ -543,7 +541,6 @@
 			children = (
 				AA0941651DCDA2A0005F1F8D /* Model */,
 				0526B7EC1DBEBB19005A136C /* PostViewController.swift */,
-				AA09416B1DCDB1DF005F1F8D /* DetailViewController.swift */,
 				AA6F65621DF65B2F00687913 /* DetailPostViewController.swift */,
 			);
 			name = PostGroup;
@@ -815,7 +812,6 @@
 				AA318E9C1DCC08EE0068F222 /* FlatTextField.swift in Sources */,
 				AA332A701DDEC5A60076C4A3 /* PhotoCollectionViewCell.swift in Sources */,
 				057B82B31DE01438009B059E /* BulletinAPI.swift in Sources */,
-				AA09416C1DCDB1DF005F1F8D /* DetailViewController.swift in Sources */,
 				AA0941691DCDA9F0005F1F8D /* ItemCell.swift in Sources */,
 				0500FFB91DBDCF0C00E83F4A /* AppDelegate.swift in Sources */,
 				AA332A661DDD93CE0076C4A3 /* MessageStore.swift in Sources */,

@@ -1982,7 +1982,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wMz-uR-iaq" userLabel="Title View">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="85"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◂ Editing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jy9-sW-jNt">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="◂ Modifying" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jy9-sW-jNt">
                                                         <rect key="frame" x="15" y="8" width="352" height="43"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="43" id="x5j-Zs-C60"/>
@@ -1991,7 +1991,7 @@
                                                         <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post an item." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZd-Ey-oIh">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit an item." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZZd-Ey-oIh">
                                                         <rect key="frame" x="15" y="52" width="352" height="33"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="33" id="rSr-Vp-AEv"/>
@@ -2083,7 +2083,7 @@
                                     <constraint firstAttribute="height" constant="60" id="vek-62-mgg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="20"/>
-                                <state key="normal" title="Post">
+                                <state key="normal" title="Save">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -2116,13 +2116,15 @@
                         <outlet property="itemImageView" destination="1ct-9o-tYz" id="ggj-F8-4im"/>
                         <outlet property="postButton" destination="q25-4D-akr" id="mfK-OT-VCk"/>
                         <outlet property="priceTextField" destination="i6p-oB-Ny2" id="eNG-Ea-7ve"/>
+                        <outlet property="scrollView" destination="Mk1-Q5-uy2" id="UfP-RY-9dl"/>
                         <outlet property="titleTextField" destination="5nh-o0-Ayf" id="knL-1O-dMp"/>
                         <outlet property="titleView" destination="wMz-uR-iaq" id="tH9-Hp-XNA"/>
+                        <outlet property="topTitle" destination="Jy9-sW-jNt" id="aUV-R2-OGQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BvL-iV-M2p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7265" y="919"/>
+            <point key="canvasLocation" x="7264.8000000000002" y="918.89055472263874"/>
         </scene>
     </scenes>
     <resources>
