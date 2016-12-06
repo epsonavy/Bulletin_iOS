@@ -1,21 +1,21 @@
 //
-//  ActivityViewController.swift
+//  DetailPostViewController.swift
 //  Bulletin
 //
-//  Created by Kevin Trinh on 10/24/16.
+//  Created by Pei Liu on 12/5/16.
 //  Copyright © 2016 KPP, Inc. All rights reserved.
 //
 
 import UIKit
 
-class ActivityViewController : UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate , UITextFieldDelegate, UITextViewDelegate, ModalPopupDelegate {
+class DetailPostViewController : UIViewController, UINavigationControllerDelegate,UIImagePickerControllerDelegate , UITextFieldDelegate, UITextViewDelegate, ModalPopupDelegate {
     
     let singleton = Singleton.sharedInstance
     
     @IBOutlet var titleView: UIView!
     
     @IBOutlet var postButton: UIButton!
-
+    
     @IBOutlet var itemImageView: UIImageView!
     
     @IBOutlet var titleTextField: UITextField!
@@ -76,7 +76,7 @@ class ActivityViewController : UIViewController, UINavigationControllerDelegate,
         itemImageView.userInteractionEnabled = true
         
         itemImageView.addGestureRecognizer(changePictureTapGesture)
- 
+        
     }
     
     func checkPostComplete(response: NSURLResponse?, data: NSData?, error: NSError?){
@@ -98,7 +98,7 @@ class ActivityViewController : UIViewController, UINavigationControllerDelegate,
             parentVc.refreshItems()
             
             
-
+            
         }else{
             let modalPopup : ModalPopup = ModalPopup(message: "There was a problem with posting", delegate: self)
             modalPopup.id = 4
@@ -124,7 +124,7 @@ class ActivityViewController : UIViewController, UINavigationControllerDelegate,
         }
     }
     
-
+    
     func modalPopupOkay(sender: ModalPopup) {
         
     }
