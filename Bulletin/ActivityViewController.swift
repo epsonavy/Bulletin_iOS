@@ -48,6 +48,10 @@ class ActivityViewController : UIViewController, UINavigationControllerDelegate,
         return true
     }
     
+    func textViewDidBeginEditing(textView: UITextView) {
+        self.scrollView.contentOffset = CGPointMake(0, self.descriptionTextView.contentSize.height * 2);
+    }
+    
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         
         self.scrollView.contentOffset = CGPointMake(0, self.descriptionTextView.contentSize.height * 2);
