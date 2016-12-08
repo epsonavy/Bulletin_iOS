@@ -125,10 +125,7 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
             modalPopup.id = 4
             modalPopup.show()
             
-            let parentVc = self.parentViewController!.parentViewController as! MainTabBarController
-            parentVc.refreshItems()
-            
-            
+
             
         }else{
             let modalPopup : ModalPopup = ModalPopup(message: "There was a problem with posting", delegate: self)
