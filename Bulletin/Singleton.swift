@@ -37,6 +37,8 @@ class Singleton{
     var profilePicture: String!
     var userId: String!
     
+    var userProfileImage : UIImage?
+    
     
     var items : [ItemModel]
     

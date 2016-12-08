@@ -59,8 +59,9 @@ class MessageStore {
                 let itemId = conversationDetails["itemId"] as! String
        
 
-                
-                allItems.append(Message(name: name, detail: lastMessage, url: userImage, itemKey: itemId, conversationId: conversationId, dateCreated: lastTimestamp))
+                let messageToAdd = Message(name: name, detail: lastMessage, url: userImage, itemKey: itemId, conversationId: conversationId, dateCreated: lastTimestamp)
+                messageToAdd.load_image(userImage)
+                allItems.append(messageToAdd)
             
                 
                 

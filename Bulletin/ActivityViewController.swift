@@ -98,8 +98,6 @@ class ActivityViewController : UIViewController, UINavigationControllerDelegate,
             modalPopup.id = 4
             modalPopup.show()
             
-            let parentVc = self.parentViewController!.parentViewController as! MainTabBarController
-            parentVc.refreshItems()
             
             
 

@@ -48,7 +48,9 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
         refreshProfile.addTarget(self, action: #selector(getProfileDetails), forControlEvents: UIControlEvents.ValueChanged)
         profileScrollView.addSubview(refreshProfile)
         
-
+        if let imageUser = singleton.userProfileImage {
+            imageView.image = imageUser
+        }
         
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(keyboardShowing), name: UIKeyboardWillShowNotification, object: nil)

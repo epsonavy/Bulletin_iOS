@@ -14,9 +14,12 @@ class BulletinItem : Item{
     
     var expiration : NSNumber
     
-    init(name: String, price: NSNumber, url: String, details: String, expiration: NSNumber) {
+    var itemId: String
+    
+    init(name: String, price: NSNumber, url: String, details: String, expiration: NSNumber, itemId: String) {
         self.expiration = expiration
         self.details = details
+        self.itemId = itemId
         super.init(name: name, price: price, url: url)
     }
     

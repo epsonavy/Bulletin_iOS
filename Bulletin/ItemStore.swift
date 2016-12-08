@@ -55,13 +55,14 @@ class ItemStore {
             let price = item["price"] as! NSNumber
             let details = item["description"] as! String
             let expiration = item["expiration"] as! NSNumber
+            let itemId = item["_id"] as! String
             let pictures = item["pictures"] as! NSArray
             let picture = pictures[0] as! String
             
             
             print(picture)
             
-            let addedItem = BulletinItem(name: title, price: price, url: picture, details: details, expiration: expiration)
+            let addedItem = BulletinItem(name: title, price: price, url: picture, details: details, expiration: expiration, itemId: itemId)
             addedItem.load_image(picture)
             
             allItems.append(addedItem)

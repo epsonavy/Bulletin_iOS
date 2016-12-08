@@ -151,7 +151,7 @@ class DetailPostViewController : UIViewController, UINavigationControllerDelegat
     @IBAction func postTapped(sender: AnyObject) {
         if processingPost == false{
             processingPost = true
-            singleton.API.updateItem(self.titleTextField.text!, pictureUrl: self.selectedImageUrl, price: NSNumberFormatter().numberFromString(self.priceTextField.text!)!, description: self.descriptionTextView.text, completion: checkPostComplete)
+            singleton.API.updateItem(self.titleTextField.text!, pictureUrl: self.selectedImageUrl, price: NSNumberFormatter().numberFromString(self.priceTextField.text!)!, description: self.descriptionTextView.text, itemId: (item as! BulletinItem).itemId,  completion: checkPostComplete)
         }
     }
     

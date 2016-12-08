@@ -324,9 +324,9 @@ class BulletinAPI{
         NSURLConnection.sendAsynchronousRequest(request, queue: NSOperationQueue.mainQueue(), completionHandler: completion)
     }
     
-    func updateItem(title: String, pictureUrl: String, price: NSNumber, description: String, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
+    func updateItem(title: String, pictureUrl: String, price: NSNumber, description: String, itemId: String, completion: (response: NSURLResponse?, data: NSData?, error: NSError?) -> (Void)){
         
-        let url : NSURL! = NSURL(string: apiAddress + "/items/new/?token=" + getToken())
+        let url : NSURL! = NSURL(string: apiAddress + "/items/update/?token=" + getToken() + "&itemId=" + itemId)
         let request = NSMutableURLRequest(URL: url)
         
         request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")

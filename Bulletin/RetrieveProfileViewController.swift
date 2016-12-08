@@ -54,9 +54,22 @@ class RetrieveProfileViewController: UIViewController {
                 singleton.email = decodedJson["email"] as! String!
                 singleton.displayName = decodedJson["display_name"] as! String!
                 singleton.userId = decodedJson["_id"] as! String!
+                let profilePicture = decodedJson["profile_picture"] as! String
                 
-                let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabBarController") as! MainTabBarController
-                self.presentViewController(vc, animated: true, completion: nil)
+                let imgURL: NSURL = NSURL(string: profilePicture)!
+                let request: NSURLRequest = NSURLRequest(URL: imgURL)
+                NSURLConnection.sendAsynchronousRequest(
+                    request, queue: NSOperationQueue.mainQueue(),
+                    completionHandler: {(response: NSURLResponse?,data: NSData?,error: NSError?) -> Void in
+                        if error == nil {
+                            self.singleton.userProfileImage = UIImage(data: data!)
+                        }
+                        let vc = self.storyboard?.instantiateViewControllerWithIdentifier("MainTabBarController") as! MainTabBarController
+                        self.presentViewController(vc, animated: true, completion: nil)
+                        
+                })
+                
+ 
                 
                 //This should update the settings page properly
                 
