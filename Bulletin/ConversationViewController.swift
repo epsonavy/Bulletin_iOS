@@ -105,19 +105,27 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
         print(size.height)
         return 45 + size.height
     }
-    
+    func scrollToBottom(animated: Bool){
+        if self.messages.count > 0 {
+            let nsPath = NSIndexPath(forRow: self.messages.count - 1, inSection: 0)
+        
+            self.messageTableView.scrollToRowAtIndexPath(nsPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: animated)
+        }
+    }
     
     func keyboardShowing(notification: NSNotification){
         let userInfo : NSDictionary = notification.userInfo!
         let keyboardFrame:NSValue = userInfo.valueForKey(UIKeyboardFrameEndUserInfoKey) as! NSValue
         let keyboardRect = keyboardFrame.CGRectValue()
-        
-        
+
         inputViewVerticalConstraint.constant = keyboardRect.height - self.tabBarController!.tabBar.frame.height
         
         UIView.animateWithDuration(0.75, animations: {
             self.view.layoutIfNeeded()
-            }, completion: nil)
+            }, completion: {
+                (finished : Bool) -> (Void) in
+                self.scrollToBottom(true)
+        })
     }
     
     func keyboardHiding(notification: NSNotification){
@@ -158,6 +166,8 @@ class ConversationViewController: UIViewController, UIGestureRecognizerDelegate,
             print(e)
         }
         self.messageTableView.reloadData()
+        
+        scrollToBottom(false)
         let parentVc = self.parentViewController!.parentViewController as! MainTabBarController
         parentVc.refreshConversations()
         
