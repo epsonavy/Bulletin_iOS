@@ -48,9 +48,9 @@ class ViewController: UIViewController, UITextFieldDelegate, ModalPopupDelegate 
         self.view.layoutIfNeeded()
         
         expandImageView = ExpandImageView(frame: self.view.frame)
-        expandImageView.addImage(UIImage(named: "background1.jpg")!)
-        expandImageView.addImage(UIImage(named: "background2.jpeg")!)
-        expandImageView.addImage(UIImage(named: "background3.jpeg")!)
+        expandImageView.addImage(UIImage(named: "background1.png")!)
+        expandImageView.addImage(UIImage(named: "background2.png")!)
+        expandImageView.addImage(UIImage(named: "background3.png")!)
         
         emailPosition = 0
         
