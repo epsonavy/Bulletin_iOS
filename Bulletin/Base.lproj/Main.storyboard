@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcD-11-soL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C68" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="QcD-11-soL">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -438,8 +438,13 @@
                                 <color key="textColor" white="0.31316810340000001" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ggq-Sa-0nC">
+                                <rect key="frame" x="0.0" y="126" width="383" height="167"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="DNM-Zh-Y32" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
-                                <rect key="frame" x="112.5" y="143" width="150" height="150"/>
+                                <rect key="frame" x="112" y="143" width="150" height="150"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="150" id="JhK-gV-896"/>
                                     <constraint firstAttribute="height" constant="150" id="eTC-9d-Sqe"/>
@@ -555,7 +560,7 @@
                                 <rect key="frame" x="0.0" y="128" width="375" height="93"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dWX-nv-cF7" id="Ghd-Vg-BU3">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="92.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="92"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="QgP-PW-KC7" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
@@ -664,7 +669,7 @@
                                 <rect key="frame" x="0.0" y="128" width="375" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hbk-uP-ITh" id="T21-pb-xXB">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="128"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noImage.png" translatesAutoresizingMaskIntoConstraints="NO" id="RtF-Ht-7OF" customClass="ItemImageView" customModule="Bulletin" customModuleProvider="target">
@@ -783,6 +788,12 @@
                                                     <constraint firstAttribute="trailing" secondItem="uZF-Z9-yaG" secondAttribute="trailing" constant="8" id="zFX-lb-gd1"/>
                                                 </constraints>
                                             </view>
+                                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eDy-Sv-VlQ">
+                                                <rect key="frame" x="0.0" y="107" width="375" height="168"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="168" id="5L9-2m-LV7"/>
+                                                </constraints>
+                                            </imageView>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="name_icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="89N-d9-SMp" customClass="CircleImageView" customModule="Bulletin" customModuleProvider="target">
                                                 <rect key="frame" x="123" y="128" width="128" height="128"/>
                                                 <constraints>
@@ -886,7 +897,7 @@
                                                         <color key="onTintColor" red="0.99215686270000003" green="0.45882352939999999" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     </switch>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow push notifications." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yjM-rm-BZd">
-                                                        <rect key="frame" x="71" y="16.5" width="280" height="18"/>
+                                                        <rect key="frame" x="71" y="16" width="280" height="18"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <color key="textColor" white="0.56443965519999995" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
@@ -906,13 +917,16 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="Pbo-rQ-ylj" firstAttribute="top" secondItem="UOR-ob-2DW" secondAttribute="bottom" constant="8" id="0Ey-2r-7LU"/>
+                                            <constraint firstItem="m6C-OY-9eD" firstAttribute="top" secondItem="eDy-Sv-VlQ" secondAttribute="bottom" constant="54" id="1WM-XY-hJX"/>
                                             <constraint firstItem="m6C-OY-9eD" firstAttribute="top" secondItem="WMo-5w-MkN" secondAttribute="bottom" constant="8" id="313-XR-vPY"/>
                                             <constraint firstItem="Iqh-nX-sFX" firstAttribute="top" secondItem="Si7-Mi-WSq" secondAttribute="top" constant="20" id="3pu-uL-YxY"/>
                                             <constraint firstItem="89N-d9-SMp" firstAttribute="top" secondItem="Iqh-nX-sFX" secondAttribute="bottom" constant="8" id="4Eq-1h-lRi"/>
                                             <constraint firstItem="89N-d9-SMp" firstAttribute="centerX" secondItem="Si7-Mi-WSq" secondAttribute="centerX" id="5fz-JR-fOk"/>
                                             <constraint firstAttribute="trailing" secondItem="m6C-OY-9eD" secondAttribute="trailing" constant="8" id="9Ys-dL-dup"/>
                                             <constraint firstItem="WMo-5w-MkN" firstAttribute="leading" secondItem="Si7-Mi-WSq" secondAttribute="leading" constant="8" id="9vJ-Ak-52j"/>
+                                            <constraint firstItem="eDy-Sv-VlQ" firstAttribute="leading" secondItem="Iqh-nX-sFX" secondAttribute="leading" id="EQI-4r-FqW"/>
                                             <constraint firstItem="UOR-ob-2DW" firstAttribute="top" secondItem="m6C-OY-9eD" secondAttribute="bottom" constant="8" id="EZZ-NC-Xy3"/>
+                                            <constraint firstItem="eDy-Sv-VlQ" firstAttribute="trailing" secondItem="Iqh-nX-sFX" secondAttribute="trailing" id="JCh-4G-FqI"/>
                                             <constraint firstItem="WMo-5w-MkN" firstAttribute="top" secondItem="Si7-Mi-WSq" secondAttribute="top" constant="271" id="JTc-fF-FUx"/>
                                             <constraint firstItem="Iqh-nX-sFX" firstAttribute="leading" secondItem="Si7-Mi-WSq" secondAttribute="leading" id="R1C-up-cUa"/>
                                             <constraint firstItem="m6C-OY-9eD" firstAttribute="leading" secondItem="Si7-Mi-WSq" secondAttribute="leading" constant="8" id="Wy4-6w-NN4"/>
@@ -970,6 +984,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <connections>
+                        <outlet property="bgImage" destination="eDy-Sv-VlQ" id="glE-sm-uqS"/>
                         <outlet property="changePasswordTextField" destination="UzY-zo-QoM" id="vmg-6U-P3u"/>
                         <outlet property="confirmPasswordTextField" destination="xwB-e7-xab" id="mJe-zV-bkC"/>
                         <outlet property="contentView" destination="Si7-Mi-WSq" id="MhC-Ck-OjE"/>
@@ -1052,7 +1067,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="vyd-oh-5BP" customClass="PhotoCollectionViewCell" customModule="Bulletin" customModuleProvider="target">
-                                        <rect key="frame" x="31.5" y="4" width="312" height="232"/>
+                                        <rect key="frame" x="32" y="4" width="312" height="232"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="312" height="232"/>
@@ -1208,7 +1223,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ULf-ym-lxW">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ULf-ym-lxW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1232,7 +1247,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="zNh-Hd-veT">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="zNh-Hd-veT">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1323,7 +1338,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="97"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mUa-Tf-SGM" id="g80-z0-sG8">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g9M-du-ctX" userLabel="Bar">
@@ -1334,13 +1349,13 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Peter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EpQ-vr-NFh">
-                                                    <rect key="frame" x="8" y="8" width="293" height="18"/>
+                                                    <rect key="frame" x="8" y="8" width="293.5" height="18"/>
                                                     <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10:30PM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyA-ic-BqH">
-                                                    <rect key="frame" x="309" y="8" width="58" height="18"/>
+                                                    <rect key="frame" x="309.5" y="8" width="57.5" height="18"/>
                                                     <fontDescription key="fontDescription" name="SFUIDisplay-Light" family="SF UI Display" pointSize="15"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -1419,7 +1434,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ut3-t8-zld">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ut3-t8-zld">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1437,7 +1452,7 @@
             <objects>
                 <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="QcD-11-soL" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="te9-85-INO">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="te9-85-INO">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -1461,7 +1476,7 @@
                         </userDefinedRuntimeAttributes>
                     </tabBarItem>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Fqk-3V-pIA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Fqk-3V-pIA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

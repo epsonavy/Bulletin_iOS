@@ -22,6 +22,8 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
     @IBOutlet var profileScrollViewVerticalConstraint: NSLayoutConstraint!
     @IBOutlet var confirmPasswordTextField: UITextField!
     @IBOutlet var changePasswordTextField: UITextField!
+    
+    @IBOutlet var bgImage: UIImageView!
     @IBOutlet var imageView: CircleImageView!
     @IBOutlet var profileScrollView: UIScrollView!
     
@@ -49,7 +51,9 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
         profileScrollView.addSubview(refreshProfile)
         
         if let imageUser = singleton.userProfileImage {
+            bgImage.image = imageUser
             imageView.image = imageUser
+            
         }
         
         
@@ -349,6 +353,7 @@ class SettingsViewController : UIViewController, UINavigationControllerDelegate,
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageView.contentMode = .ScaleAspectFill
             imageView.image = image
+            bgImage.image = image
             singleton.API.uploadImage(imageView.image, completion: checkUploadComplete)
         }
         /* Store images in the ImageStore
