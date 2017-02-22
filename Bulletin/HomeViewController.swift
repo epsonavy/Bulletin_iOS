@@ -92,6 +92,21 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
         
         let itemPhoto = photo as! ItemPhoto
         
+        /*  // round shape
+        cell.contentView.layer.cornerRadius = 20.0
+        cell.contentView.layer.borderWidth = 3.0
+        cell.contentView.layer.borderColor = UIColor.clearColor().CGColor
+        cell.contentView.layer.masksToBounds = true
+         */
+        
+        // shadow effect on cell
+        cell.layer.shadowColor = UIColor.lightGrayColor().CGColor
+        cell.layer.shadowOffset = CGSize(width: 0, height: 2.0)
+        cell.layer.shadowRadius = 4.0
+        cell.layer.shadowOpacity = 2.0
+        cell.layer.masksToBounds = false
+        cell.layer.shadowPath = UIBezierPath(roundedRect: cell.bounds, cornerRadius: cell.contentView.layer.cornerRadius).CGPath
+        
         Singleton.sharedInstance.photoStore.fetchUserImageForPhoto(itemPhoto) { (result) -> Void in
             NSOperationQueue.mainQueue().addOperationWithBlock() {
                 let photoIndex = self.photoDataSource.photos.indexOf(itemPhoto)!
@@ -118,10 +133,10 @@ class HomeViewController : UIViewController, UICollectionViewDelegate {
             }
         }
     }
-    func
-        collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        // Set cell width to 100%
-        return CGSize(width: self.view.frame.width - 15, height: self.view.frame.height / 2.35)
+    
+    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+        // Set cell width to 100%(was -15 /2.35), 02/21/2017 adjusted -25 /2.45
+        return CGSize(width: self.view.frame.width - 25, height: self.view.frame.height / 2.45)
     }
     
     

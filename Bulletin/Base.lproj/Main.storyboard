@@ -1071,7 +1071,6 @@
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hxd-pV-dE0" userLabel="Item Image">
                                                     <rect key="frame" x="0.0" y="0.0" width="312" height="232"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sMY-PJ-eUJ">
                                                     <rect key="frame" x="0.0" y="182" width="312" height="50"/>
@@ -1138,7 +1137,6 @@
                                                 </activityIndicatorView>
                                             </subviews>
                                         </view>
-                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="b7h-I8-JfH" firstAttribute="centerX" secondItem="vyd-oh-5BP" secondAttribute="centerX" id="0O5-NY-z3D"/>
                                             <constraint firstItem="b7h-I8-JfH" firstAttribute="centerY" secondItem="vyd-oh-5BP" secondAttribute="centerY" id="3il-Br-1FL"/>
